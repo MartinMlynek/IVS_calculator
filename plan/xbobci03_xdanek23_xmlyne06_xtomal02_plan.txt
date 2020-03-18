@@ -17,7 +17,7 @@ xbobci03
   - Vytvoření grafického rozhraní
   - Implementace knihovny
 
-xdane23
+xdanek23
   - mockup
   - Implementace knihovny 
 
@@ -26,7 +26,7 @@ xmlyne06
   - Doxyfile
   - Profiling
 
-xtomala02
+xtomal02
   - Testy pro Test-drive development
   - Napojení knihovny na GUI
 ------------------------------------------------------------------------
