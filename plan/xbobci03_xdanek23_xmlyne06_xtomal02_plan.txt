@@ -12,6 +12,24 @@
 	14.-16. 4. 	Uživatelský manuál
 	17.-21. 4. 	Finální kontroly, opravy a dodělávky
 
+Rozdělení práce:
+xbobci03
+  - Vytvoření grafického rozhraní
+  - Implementace knihovny
+
+xdane23
+  - mockup
+  - Implementace knihovny 
+
+xmlyne03
+  - Testy pro Test-driven development
+  - Doxyfile
+  - Profiling
+
+xtomala02
+  - Testy pro Test-drive development
+  - Napojení knihovny na GUI
+
 Komunikace:
 Skupinový chat na Facebook
 Soukromý skupinový server pro hlasovou a textovou komunikaci na Discord
