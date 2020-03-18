@@ -1,3 +1,17 @@
+Termíny:
+	18. 3.	Odevzdání předběžného plánu projektu
+	18. 3.	Vytvoření repozitáře
+	20. 3.	Mockup         
+	22. 3. 	Testy pro Test-driven development
+	26. 3. 	Implementace knihovny
+	1. 4. 	Vytvoření grafického rozhraní
+	4. 4. 	Napojení knihovny na GUI
+	7. 4. 	Profiling
+	10. 4. 	Dokumentace
+	12. 4. 	Nástroj na instalaci
+	14. 4. 	Uživatelský manuál
+	17. 4. 	Finální kontroly a opravy
+
 Komunikace:
 Skupinový chat na Facebook
 Soukromý skupinový server pro hlasovou a textovou komunikaci na Discord
