@@ -38,6 +38,7 @@ Plánování, průběžný update a označení hotových kroků v Trello
 Využitý repozitář:
 GitHub
 odkaz: https://github.com/Chuja/IVS_calculator
+------------------------------------------------------------------------
 Programovací jazyk:
 Java
 ------------------------------------------------------------------------
