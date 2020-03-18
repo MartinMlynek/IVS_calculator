@@ -1,4 +1,4 @@
-Termíny:
+﻿Termíny:
 	18. 3.		Odevzdání předběžného plánu projektu
 	18. 3.		Vytvoření repozitáře
 	20.-21. 3.	Mockup         
@@ -19,7 +19,7 @@ Plánování kroků, průběžný update a označení hotových v Trello
 
 Využitý repozitář:
 GitHub
-
+odkaz: https://github.com/Chuja/IVS_calculator
 Programovací jazyk:
 Java
 
