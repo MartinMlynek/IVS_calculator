@@ -21,7 +21,7 @@ xdane23
   - mockup
   - Implementace knihovny 
 
-xmlyne03
+xmlyne06
   - Testy pro Test-driven development
   - Doxyfile
   - Profiling
