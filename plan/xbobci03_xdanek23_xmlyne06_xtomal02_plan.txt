@@ -1,4 +1,4 @@
-﻿Termíny:
+Termíny:
 	18. 3.		Odevzdání předběžného plánu projektu
 	18. 3.		Vytvoření repozitáře
 	20.-21. 3.	Mockup         
@@ -18,7 +18,7 @@ xbobci03
   - Implementace knihovny
 
 xdanek23
-  - mockup
+  - Mockup
   - Implementace knihovny 
 
 xmlyne06
@@ -33,7 +33,7 @@ xtomal02
 Komunikace:
 Skupinový chat na Facebook
 Soukromý skupinový server pro hlasovou a textovou komunikaci na Discord
-Plánování kroků, průběžný update a označení hotových v Trello
+Plánování, průběžný update a označení hotových kroků v Trello
 ------------------------------------------------------------------------
 Využitý repozitář:
 GitHub
