@@ -1,16 +1,16 @@
 Termíny:
-	18. 3.	Odevzdání předběžného plánu projektu
-	18. 3.	Vytvoření repozitáře
-	20. 3.	Mockup         
-	22. 3. 	Testy pro Test-driven development
-	26. 3. 	Implementace knihovny
-	1. 4. 	Vytvoření grafického rozhraní
-	4. 4. 	Napojení knihovny na GUI
-	7. 4. 	Profiling
-	10. 4. 	Dokumentace
-	12. 4. 	Nástroj na instalaci
-	14. 4. 	Uživatelský manuál
-	17. 4. 	Finální kontroly a opravy
+	18. 3.		Odevzdání předběžného plánu projektu
+	18. 3.		Vytvoření repozitáře
+	20.-21. 3.	Mockup         
+	22.-25. 3. 	Testy pro Test-driven development
+	26.-31. 3. 	Implementace knihovny
+	1.-3. 4. 	Vytvoření grafického rozhraní
+	4.-6. 4. 	Napojení knihovny na GUI
+	7.-9. 4. 	Profiling
+	10.-11. 4. 	Dokumentace
+	12.-13. 4. 	Nástroj na instalaci
+	14.-16. 4. 	Uživatelský manuál
+	17.-21. 4. 	Finální kontroly, opravy a dodělávky
 
 Komunikace:
 Skupinový chat na Facebook
