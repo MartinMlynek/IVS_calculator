@@ -11,7 +11,7 @@
 	12.-13. 4. 	Nástroj na instalaci
 	14.-16. 4. 	Uživatelský manuál
 	17.-21. 4. 	Finální kontroly, opravy a dodělávky
-
+------------------------------------------------------------------------
 Rozdělení práce:
 xbobci03
   - Vytvoření grafického rozhraní
@@ -29,17 +29,17 @@ xmlyne03
 xtomala02
   - Testy pro Test-drive development
   - Napojení knihovny na GUI
-
+------------------------------------------------------------------------
 Komunikace:
 Skupinový chat na Facebook
 Soukromý skupinový server pro hlasovou a textovou komunikaci na Discord
 Plánování kroků, průběžný update a označení hotových v Trello
-
+------------------------------------------------------------------------
 Využitý repozitář:
 GitHub
 odkaz: https://github.com/Chuja/IVS_calculator
 Programovací jazyk:
 Java
-
+------------------------------------------------------------------------
 GUI:
 Visual Studio
