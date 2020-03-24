@@ -51,7 +51,7 @@ public class UtilitiesTest {
         assertEquals(-109283, utils.add(-84759,-24524));
         assertEquals(-60235, utils.add(-84759,24524));
         assertEquals(0.05, utils.add(0.05,0),EPSILON);
-        assertEquals(8.95, utils.add(-0.05,9),EPSILON);
+        assertEquals(5.05, utils.add(5,0.05),EPSILON);
         assertEquals(0.15, utils.add(0.05,0.1),EPSILON);
         assertEquals(-0.05, utils.add(0.05,-0.1),EPSILON);
         assertEquals(238.1195, utils.add(6.423,-244.5425),EPSILON);
@@ -81,7 +81,7 @@ public class UtilitiesTest {
         assertEquals(-60235, utils.sub(-84759,-24524));
         assertEquals(-109283, utils.sub(-84759,24524));
         assertEquals(0.05, utils.sub(0.05,0),EPSILON);
-        assertEquals(-9.05, utils.sub(-0.05,9),EPSILON);
+        assertEquals(9.05, utils.sub(9,-0.05),EPSILON);
         assertEquals(-0.05, utils.sub(0.05,0.1),EPSILON);
         assertEquals(0.15, utils.sub(0.05,-0.1),EPSILON);
         assertEquals(250.9655, utils.sub(6.423,-244.5425),EPSILON);
@@ -94,4 +94,47 @@ public class UtilitiesTest {
         assertFalse(utils.sub(-1, -1)==2);
         assertFalse(0==utils.sub(-2147183646,300000));
     }
+    
+    @Test
+    public void testMultiply() {
+        //Equals
+        assertEquals(0, utils.mul(0,1));
+        assertEquals(0, utils.mul(1,0));
+        assertEquals(0, utils.mul(0,-1));
+        assertEquals(1, utils.mul(1,1));
+        assertEquals(-1, utils.mul(1,-1));
+        assertEquals(9, utils.mul(1,-9));
+        assertEquals(524288, utils.mul(-1024,-512));
+        assertEquals(0, utils.mul(56252,0));
+        assertEquals(1, utils.mul(2,0.5),EPSILON);
+        assertEquals(0, utils.mul(0,0.5),EPSILON);
+        assertEquals(1047, utils.mul(523.5,2),EPSILON);
+        assertEquals(0, utils.mul(523.5,0),EPSILON);
+        assertEquals(1099.35, utils.mul(523.5,2.1),EPSILON);
+        assertEquals(-1099.35, utils.mul(523.5,-2.1),EPSILON);
+        assertEquals(1099.35, utils.mul(-523.5,-2.1),EPSILON);
+        assertEquals(-2147483647, utils.mul(-2147183646, 1));
+        assertEquals(2147483647, utils.mul(-2147183646, -1));
+
+        //Doesnt equal
+        assertFalse(0==utils.mul(-2147183646, 1));
+        assertFalse(0==utils.mul(-2147183646, -1));
+        assertFalse(utils.mul(0, 0)==1);
+        assertFalse(utils.mul(1, 0)==-1);
+        assertFalse(utils.mul(56245.5, 0.5)==0);
+        assertFalse(utils.mul(0.5, 56245.5)==0);
+        assertFalse(utils.mul(1, -1)==1);
+    }
+    
+    @Test
+    public void testDivide() {
+        //Equals
+
+        //Doesnt equal
+        
+        //Throws exception
+
+    }
+    
+
 }
