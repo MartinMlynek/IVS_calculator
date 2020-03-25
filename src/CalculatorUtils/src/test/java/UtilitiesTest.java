@@ -179,7 +179,47 @@ public class UtilitiesTest {
         assertThrows(IllegalArgumentException.class, () -> {
             assertEquals(6, utils.fact(-3));
         });
+    }
+    
+    @Test
+    public void testExp() {
+        assertEquals(0, utils.exp(0,1));
+        assertEquals(1, utils.exp(1,0));
+        assertEquals(4, utils.exp(2,2));
+        assertEquals(16, utils.exp(4,2));
+        assertEquals(1, utils.exp(-1,2));
+        assertEquals(-1, utils.exp(-1,3));        
+        assertEquals(100000, utils.exp(10,5));
+        assertEquals(1, utils.exp(2,0));
+        assertEquals(1, utils.exp(10,0));
+        assertEquals(-1, utils.exp(-10,0));
+        assertEquals(3.375,utils.exp(1.5,3));
+        assertEquals(-3.375,utils.exp(-1.5,3));
+        assertEquals(1,utils.exp(1.5,0));
+        assertEquals(68.89,utils.exp(8.3,2));
+        assertEquals(68.89,utils.exp(-8.3,2));
 
+        
+        assertFalse(0==utils.exp(0,0));
+        assertFalse(1==utils.exp(-10,0));
+        assertFalse(0 ==utils.exp(10,0));
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            assertEquals(1,utils.exp(5,-1));
+        });
+        
+        assertThrows(IllegalArgumentException.class, () -> {
+            assertEquals(1,utils.exp(5.1,-2));
+        });
+        
+        assertThrows(IllegalArgumentException.class, () -> {
+            assertEquals(1,utils.exp(5,2.3));
+        });
+        
+    }
+    
+    public void testRoot() {
+    
     }
 
 }
