@@ -129,18 +129,34 @@ public class UtilitiesTest {
     @Test
     public void testDivide() {
         //Equals
-        assertEquals(1, utils.mul(42,42));
-        assertEquals(42, utils.mul(42,1));
-
+        assertEquals(1, utils.div(42,42));
+        assertEquals(42, utils.div(42,1));
+        assertEquals(-1, utils.div(42,-42));
+        assertEquals(2, utils.div(42,21));
+        assertEquals(10, utils.div(100,10));
+        assertEquals(1, utils.div(2147483646,2147483646));
+        assertEquals(2, utils.div(1,0.5),EPSILON);
+        assertEquals(-2, utils.div(1,-0.5),EPSILON);
+        assertEquals(1.54, utils.div(804.496,522.4),EPSILON);
+        assertEquals(0.88, utils.div(459.712,522.4),EPSILON);
+        
         //Doesnt equal
-        assertFalse(42==utils.mul(42,42));
-        assertFalse(0==utils.mul(42,1));
+        assertFalse(0==utils.mul(1,1));
+        assertFalse(1==utils.mul(1,0.5));
+        assertFalse(0==utils.mul(1,0.5));
+        assertFalse(-2==utils.mul(-1,-0.5));
+        assertFalse(-2==utils.mul(-1,-0.5));
+
+
         //Throws exception
         assertThrows(ArithmeticException.class, () -> {
             utils.div(1, 0);
         });
         assertThrows(ArithmeticException.class, () -> {
             utils.div(42, 0);
+        });
+        assertThrows(ArithmeticException.class, () -> {
+            utils.div(0.5, 0);
         });
     }
     
