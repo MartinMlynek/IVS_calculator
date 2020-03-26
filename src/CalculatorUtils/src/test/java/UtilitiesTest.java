@@ -235,7 +235,9 @@ public class UtilitiesTest {
         assertEquals(2345, utils.radical(2345, 1));
         assertEquals(-5, utils.radical(-125, 3));
         assertEquals(-7, utils.radical(-823543,7));
-
+        assertEquals(49, utils.radical(7, 1.5));
+        
+        
         //False
         assertFalse(-6 == utils.radical(25, 42));
         assertFalse(2 == utils.radical(12.34, 45.02));
@@ -260,7 +262,27 @@ public class UtilitiesTest {
     
     @Test
     public void testAbs() {
+        //Equals
+        assertEquals(1, utils.abs(1));
+        assertEquals(5, utils.abs(5));
+        assertEquals(4, utils.abs(-4));
+        assertEquals(12, utils.abs(-12));
+        assertEquals(10, utils.abs(10));
+        assertEquals(250015564, utils.abs(250015564));
+        assertEquals(utils.abs(2335), utils.abs(-2335));
+        assertEquals(0, utils.abs(0));
+        assertEquals(135.54, utils.abs(135.54));
+        assertEquals(0.000002, utils.abs(0.000002));
         
+        //Not equals
+        assertNotEquals(1203, utils.abs(1202.5));
+        assertNotEquals(-33, utils.abs(-33));
+        assertNotEquals(-656, utils.abs(123));
+        
+        //True
+        assertTrue(2 == utils.abs(2));
+        assertTrue(utils.abs(-2445.2345) == utils.abs(2445.2345));
+        assertTrue(25322.15454 == utils.abs(-25322.15454));
     }
     
     
