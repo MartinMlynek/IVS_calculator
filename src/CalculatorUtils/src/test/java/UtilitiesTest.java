@@ -183,6 +183,7 @@ public class UtilitiesTest {
     
     @Test
     public void testExp() {
+        //Eqauls
         assertEquals(0, utils.exp(0,1));
         assertEquals(1, utils.exp(1,0));
         assertEquals(4, utils.exp(2,2));
@@ -199,11 +200,12 @@ public class UtilitiesTest {
         assertEquals(68.89,utils.exp(8.3,2));
         assertEquals(68.89,utils.exp(-8.3,2));
 
-        
+        //False
         assertFalse(0==utils.exp(0,0));
         assertFalse(1==utils.exp(-10,0));
         assertFalse(0 ==utils.exp(10,0));
 
+        //Throws
         assertThrows(IllegalArgumentException.class, () -> {
             assertEquals(1,utils.exp(5,-1));
         });
@@ -217,6 +219,50 @@ public class UtilitiesTest {
         });
         
     }
+    
+    @Test
+    public void testRadical() {
+        //Equals
+        assertEquals(1, utils.radical(1, 2)); 
+        assertEquals(utils.radical(1, 2),  utils.radical(1, 3));
+        assertEquals(0, utils.radical(0, 2));
+        assertEquals(0, utils.radical(0, 1));
+        assertEquals(1, utils.radical(1, 1/2));
+        assertEquals(4, utils.radical(16, 2));
+        assertEquals(2, utils.radical(4096, 12));
+        assertEquals(9, utils.radical(729, 3));
+        assertEquals(125, utils.radical(5, 1/3));
+        assertEquals(2345, utils.radical(2345, 1));
+        assertEquals(-5, utils.radical(-125, 3));
+        assertEquals(-7, utils.radical(-823543,7));
+
+        //False
+        assertFalse(-6 == utils.radical(25, 42));
+        assertFalse(2 == utils.radical(12.34, 45.02));
+        assertFalse(0 == utils.radical(25, 2));
+        assertFalse(-4 == utils.radical(64, 3));
+        assertFalse(-3 == utils.radical(-35, 5));
+
+        //Throws
+        assertThrows(ArithmeticException.class, () -> {
+            utils.radical(20, -5);
+        });
+        assertThrows(ArithmeticException.class, () -> {
+            utils.radical(1, -3);
+        });
+        assertThrows(ArithmeticException.class, () -> {
+            utils.radical(-4, 2);
+        });
+        assertThrows(ArithmeticException.class, () -> {
+            utils.radical(-625, 4);
+        });
+    }
+    
+    @Test
+    public void testAbs() {
+        
+    }
+    
     
     public void testRoot() {
     
