@@ -167,7 +167,7 @@ public class Utilities {
         return result;
     }
     
-    public void exp(double first, int second) throws Exception{
+    public void exp(int first, double second) throws Exception{
         
             throw new Exception("We don't do that here.");
     }
