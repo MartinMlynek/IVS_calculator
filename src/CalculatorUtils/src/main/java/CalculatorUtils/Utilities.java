@@ -1,88 +1,203 @@
 package CalculatorUtils;
 
+package mathlibrary;
+
 /**
  *
- * @author tomal
+ * @author Pavel Bobčík, xbobci03
+ * @author Tomáš Daněk, xdanek23
  */
 public class Utilities {
-    public int add(int a, int b){
-        return a+b;
-    }
+    public double add(double first, double second) throws Exception{
+        double result = first + second; 
 
-    public double add(double d, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY){
+            throw new Exception("Infinity value");
+        }
+        
+        return result;
     }
+    
+    public int add(int first, int second) throws Exception{
+        int result = first + second; 
 
-    public double add(double d, double d0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(first > 0 && second > 0 && result < 0){
+            throw new Exception("Value overflow");
+        }else if(first < 0 && second < 0 && result > 0){
+            throw new Exception("Value underflow");
+        }
+        
+        return result;
     }
+    
+    public double sub(double first, double second) throws Exception{
+        double result = first - second; 
 
-    public short sub(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY){
+            throw new Exception("Infinity value");
+        }
+        
+        return result;
     }
+    
+    public int sub(int first, int second) throws Exception{
+        int result = first - second; 
 
-    public double sub(double d, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(first > 0 && second < 0 && result < 0){
+            throw new Exception("Value overflow");
+        }else if(first < 0 && second > 0 && result > 0){
+            throw new Exception("Value underflow");
+        }
+        
+        return result;
     }
+    
+    public double multiply(double first, double second) throws Exception{
+        double result = first * second; 
 
-    public double sub(double d, double d0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY){
+            throw new Exception("Infinity value");
+        }
+        
+        return result;
     }
+    
+    public int multiply(int first, int second) throws Exception{
+        int result = first * second; 
 
-    public short mul(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(first > 0 && second > 0 && result < 0){
+            throw new Exception("Value overflow");
+        }else if(first < 0 && second < 0 && result < 0){
+            throw new Exception("Value overflow");
+        }else if(first < 0 && second > 0 && result > 0){
+            throw new Exception("Value underflow");
+        }else if(first > 0 && second < 0 && result > 0){
+            throw new Exception("Value underflow");
+        }
+        
+        return result;
     }
-
-    public short mul(double d, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    /**
+    * @param first - dividend
+    * @param second - divisor
+    */
+    public double divide(double first, double second) throws Exception{  
+        if(second == 0.0){
+            throw new Exception("Dividing by zero value");
+        }
+        
+        double result = first / second;
+        
+        if(result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY){
+            throw new Exception("Infinity value");
+        }
+        
+        return result;
     }
-
-    public short mul(int i, double d) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public int fact(int first) throws Exception{
+        if(first < 0){
+            throw new Exception("Value under zero");
+        }else if(first > 12){
+            throw new Exception("Value overflow");
+        }
+        
+        int result = 1;
+        for(int i = first; i > 1; i--){
+            result = result * i;
+        }
+        
+        return result;
     }
-
-    public int mul(double d, double d0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    
+    /**
+    * @param first - power
+    * @param second - exponent
+    */
+    public double exp(double first, int second) throws Exception{
+        double result = 1;
+        
+        if(second == 0){
+            if(first > 0){
+                return result;
+            }else{
+                return result;
+            }
+        }else if(second < 0){
+            throw new Exception("Not supported");
+        }
+        
+        for(int i = second; i > 0; i--){
+            result = result * first;
+        }
+        
+        if(result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY){
+            throw new Exception("Infinity value");
+        }
+        
+        return result;
     }
-
-    public int div(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public int exp(int first, int second) throws Exception{
+        int result = 1;
+        
+        if(second == 0){
+            if(first > 0){
+                return result;
+            }else{
+                return result;
+            }
+        }else if(second < 0){
+            throw new Exception("Not supported");
+        }
+        
+        int tmpPrevStep=first;
+        int tmpDivide=1;
+        for(int i = second; i > 0; i--){
+            result = result * first;
+            if((result / tmpDivide) != tmpPrevStep){
+                throw new Exception("Value overflow");
+            }
+            tmpDivide=first;
+            tmpPrevStep = result;
+        }
+        
+        return result;
     }
+    
+    /**
+    * @param first - root
+    * @param second - index of the root
+    */
+    public double radical(double first, int second) throws Exception{
+        
+        if(second == 0){
+            throw new Exception("Zero square root number");
+        }else if(first < 0){
+            throw new Exception("Negative value");
+        }
 
-    public double div(double d, double d0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double result = Math.pow(first, ((double) 1 / second));
+        
+        return result;
     }
-
-    public short fact(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public double abs(double first){
+        if(first < 0){
+            return -(first);
+        }
+        
+        return first;
     }
-
-    public short exp(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public double exp(double d, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public short exp(double d, double d0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public short radical(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public int radical(double d, double d0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public short abs(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public short abs(double d) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public int abs(int first){
+        if(first < 0){
+            return -(first);
+        }
+        
+        return first;
     }
     
 }
