@@ -170,10 +170,18 @@ public class MathLibrary {
     }*/
     
     public double abs(double first){
-        return -(first);
+        if(first < 0){
+            return -(first);
+        }
+        
+        return first;
     }
     
     public int abs(int first){
-        return -(first);
+        if(first < 0){
+            return -(first);
+        }
+        
+        return first;
     }
 }
