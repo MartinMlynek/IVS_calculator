@@ -1,6 +1,6 @@
 package CalculatorUtils;
 
-package mathlibrary;
+import java.lang.Math;
 
 /**
  *
