@@ -82,6 +82,10 @@ public class MathLibrary {
         return result;
     }
     
+    /**
+    * @param first - dividend
+    * @param second - divisor
+    */
     public double divide(double first, double second) throws Exception{  
         if(second == 0.0){
             throw new Exception("Dividing by zero value");
@@ -111,6 +115,11 @@ public class MathLibrary {
         return result;
     }
     
+    
+    /**
+    * @param first - power
+    * @param second - exponent
+    */
     public double exp(double first, int second) throws Exception{
         double result = 1;
         
@@ -162,6 +171,10 @@ public class MathLibrary {
         return result;
     }
     
+    /**
+    * @param first - root
+    * @param second - index of the root
+    */
     public double radical(double first, int second) throws Exception{
         
         if(second == 0){
