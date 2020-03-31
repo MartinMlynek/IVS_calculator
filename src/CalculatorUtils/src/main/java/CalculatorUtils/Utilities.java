@@ -167,6 +167,11 @@ public class Utilities {
         return result;
     }
     
+    public void exp(double first, int second) throws Exception{
+        
+            throw new Exception("We don't do that here.");
+    }
+    
     /**
     * @param first - root
     * @param second - index of the root
@@ -174,7 +179,7 @@ public class Utilities {
     public double radical(double first, int second) throws Exception{
         
         if(second == 0){
-            throw new Exception("Zero square root number");
+            throw new Exception("Zero root number");
         }else if(first < 0){
             throw new Exception("Negative value");
         }
