@@ -52,7 +52,7 @@ public class Utilities {
         return result;
     }
     
-    public double multiply(double first, double second) throws Exception{
+    public double mul(double first, double second) throws Exception{
         double result = first * second; 
 
         if(result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY){
@@ -62,7 +62,7 @@ public class Utilities {
         return result;
     }
     
-    public int multiply(int first, int second) throws Exception{
+    public int mul(int first, int second) throws Exception{
         int result = first * second; 
 
         if(first > 0 && second > 0 && result < 0){
@@ -82,7 +82,7 @@ public class Utilities {
     * @param first - dividend
     * @param second - divisor
     */
-    public double divide(double first, double second) throws Exception{  
+    public double div(double first, double second) throws Exception{  
         if(second == 0.0){
             throw new Exception("Dividing by zero value");
         }
