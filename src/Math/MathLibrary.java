@@ -162,12 +162,18 @@ public class MathLibrary {
         return result;
     }
     
-    /*public double radical(double first, double second){
+    public double radical(double first, int second) throws Exception{
         
-        
+        if(second == 0){
+            throw new Exception("Zero square root number");
+        }else if(first < 0){
+            throw new Exception("Negative value");
+        }
+
+        double result = Math.pow(first, ((double) 1 / second));
         
         return result;
-    }*/
+    }
     
     public double abs(double first){
         if(first < 0){
