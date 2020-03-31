@@ -171,7 +171,7 @@ public class Utilities {
         
             throw new Exception("We don't do that here.");
         
-            return null;
+            return 0;
     }
     
     /**
