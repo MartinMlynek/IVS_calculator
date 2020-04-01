@@ -123,7 +123,7 @@ public class Utilities {
             if(first > 0){
                 return result;
             }else{
-                return result;
+                return -result;
             }
         }else if(second < 0){
             throw new Exception("Not supported");
@@ -147,7 +147,7 @@ public class Utilities {
             if(first > 0){
                 return result;
             }else{
-                return result;
+                return -result;
             }
         }else if(second < 0){
             throw new Exception("Not supported");
@@ -168,10 +168,17 @@ public class Utilities {
     }
     
     public double exp(int first, double second) throws Exception{
+        double result = 1;
         
+        if(second != 0.0){
             throw new Exception("We don't do that here.");
+        }
         
-            return second;
+        if(first > 0){
+            return result;
+        }else{
+            return -result;
+        }
     }
     
     /**
