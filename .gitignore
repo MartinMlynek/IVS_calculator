@@ -27,3 +27,5 @@
 *.exe
 *.out
 *.app
+/src/Calculator/.gradle/
+/src/Calculator/build/
