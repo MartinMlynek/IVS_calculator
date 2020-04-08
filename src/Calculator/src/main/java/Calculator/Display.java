@@ -6,6 +6,8 @@
 package Calculator;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  *
@@ -17,37 +19,60 @@ public class Display extends javax.swing.JFrame {
      * @author Pavel Bobčík, xbobci03
      * @author tomalatomas, xtomal02
      */
-    
-    
     public Display() {
         initComponents();
         this.setTitle("OAGUH Calculator");
     }
-    
-    public int getOperatorPriority(char operator){
-        switch(operator){
+
+    public int getOperatorPriority(char operator) {
+        switch (operator) {
             case '!': return 1;
             case '/': return 2;
             case '*': return 2;
             case '+': return 3;
             case '-': return 3;
             default: return 0;
-        }    
+        }
     }
 
-    public ArrayList<Integer> findOperators(String equation){
-        ArrayList<Integer> operators = new ArrayList<Integer>();
-        //To do: searching through string anf find all operators
-        //Store them into the arraylist by their priority
-        for(int i=0; i<equation.length();i++){
+    public ArrayList<Integer> findFactorials(String equation) {
+        ArrayList<Integer> operatorsFactorial = new ArrayList<Integer>();
+        for (int i = 0; i < equation.length(); i++) {
             char o = equation.charAt(i);
-            if(this.getOperatorPriority(o)!=0){
-            
+            if (this.getOperatorPriority(o) != 0) {
+                switch (this.getOperatorPriority(o)) {
+                    case 1:
+                        operatorsFactorial.add(i);
+                }
             }
         }
-        return operators;
-    }    
-         
+        return operatorsFactorial;
+    }
+
+    public ArrayList<Integer> findOperators(String equation) {
+        ArrayList<Integer> operatorsPriorityTwo = new ArrayList<Integer>();
+        ArrayList<Integer> operatorsPriorityThree = new ArrayList<Integer>();
+        //To do: searching through string anf find all operators
+        //Store them into the arraylist by their priority
+        for (int i = 0; i < equation.length(); i++) {
+            char o = equation.charAt(i);
+            if (this.getOperatorPriority(o) != 0) {
+                switch (this.getOperatorPriority(o)) {
+                    case 2:
+                        operatorsPriorityTwo.add(i);
+                         break;
+                    case 3:
+                        operatorsPriorityThree.add(i);
+                        break;
+                }
+            }
+        }
+        ArrayList<Integer> operatorsPriorityTwoThree = new ArrayList<>();
+        operatorsPriorityTwoThree.addAll(operatorsPriorityTwo);
+        operatorsPriorityTwoThree.addAll(operatorsPriorityThree);
+        return operatorsPriorityTwoThree;
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -457,31 +482,31 @@ public class Display extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteAllActionPerformed
 
     private void btnDeleteLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteLastActionPerformed
-        tvDisplay.setText(""+tvDisplay.getText().substring(0, tvDisplay.getText().length() - 1));
+        tvDisplay.setText("" + tvDisplay.getText().substring(0, tvDisplay.getText().length() - 1));
     }//GEN-LAST:event_btnDeleteLastActionPerformed
 
     private void btnFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiveActionPerformed
-        tvDisplay.setText(tvDisplay.getText()+"5");
+        tvDisplay.setText(tvDisplay.getText() + "5");
     }//GEN-LAST:event_btnFiveActionPerformed
 
     private void btnEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEightActionPerformed
-        tvDisplay.setText(tvDisplay.getText()+"8");
+        tvDisplay.setText(tvDisplay.getText() + "8");
     }//GEN-LAST:event_btnEightActionPerformed
 
     private void btnFactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFactActionPerformed
-        tvDisplay.setText(tvDisplay.getText()+"!");
+        tvDisplay.setText(tvDisplay.getText() + "!");
     }//GEN-LAST:event_btnFactActionPerformed
 
     private void btnPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlusActionPerformed
-        tvDisplay.setText(tvDisplay.getText()+"+");
+        tvDisplay.setText(tvDisplay.getText() + "+");
     }//GEN-LAST:event_btnPlusActionPerformed
 
     private void btnZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZeroActionPerformed
-        tvDisplay.setText(tvDisplay.getText()+"0");
+        tvDisplay.setText(tvDisplay.getText() + "0");
     }//GEN-LAST:event_btnZeroActionPerformed
 
     private void btnMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinusActionPerformed
-        tvDisplay.setText(tvDisplay.getText()+"-");
+        tvDisplay.setText(tvDisplay.getText() + "-");
     }//GEN-LAST:event_btnMinusActionPerformed
 
     private void btnABSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnABSActionPerformed
@@ -489,52 +514,61 @@ public class Display extends javax.swing.JFrame {
     }//GEN-LAST:event_btnABSActionPerformed
 
     private void btnOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOneActionPerformed
-        tvDisplay.setText(tvDisplay.getText()+"1");
+        tvDisplay.setText(tvDisplay.getText() + "1");
     }//GEN-LAST:event_btnOneActionPerformed
 
     private void btnTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTwoActionPerformed
-        tvDisplay.setText(tvDisplay.getText()+"2");
+        tvDisplay.setText(tvDisplay.getText() + "2");
     }//GEN-LAST:event_btnTwoActionPerformed
 
     private void btnThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThreeActionPerformed
-        tvDisplay.setText(tvDisplay.getText()+"3");
+        tvDisplay.setText(tvDisplay.getText() + "3");
     }//GEN-LAST:event_btnThreeActionPerformed
 
     private void btnFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFourActionPerformed
-        tvDisplay.setText(tvDisplay.getText()+"4");
+        tvDisplay.setText(tvDisplay.getText() + "4");
     }//GEN-LAST:event_btnFourActionPerformed
 
     private void btnSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSixActionPerformed
-        tvDisplay.setText(tvDisplay.getText()+"6");
+        tvDisplay.setText(tvDisplay.getText() + "6");
     }//GEN-LAST:event_btnSixActionPerformed
 
     private void btnSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSevenActionPerformed
-        tvDisplay.setText(tvDisplay.getText()+"7");
+        tvDisplay.setText(tvDisplay.getText() + "7");
     }//GEN-LAST:event_btnSevenActionPerformed
 
     private void btnNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNineActionPerformed
-        tvDisplay.setText(tvDisplay.getText()+"9");
+        tvDisplay.setText(tvDisplay.getText() + "9");
     }//GEN-LAST:event_btnNineActionPerformed
 
     private void btnDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDotActionPerformed
-        tvDisplay.setText(tvDisplay.getText()+",");
+        tvDisplay.setText(tvDisplay.getText() + ",");
     }//GEN-LAST:event_btnDotActionPerformed
 
     private void btnTimesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimesActionPerformed
-        tvDisplay.setText(tvDisplay.getText()+"*");
+        tvDisplay.setText(tvDisplay.getText() + "*");
 
     }//GEN-LAST:event_btnTimesActionPerformed
 
     private void btnDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivisionActionPerformed
-        tvDisplay.setText(tvDisplay.getText()+"/");
+        tvDisplay.setText(tvDisplay.getText() + "/");
 
     }//GEN-LAST:event_btnDivisionActionPerformed
 
     private void btnEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqualsActionPerformed
-     String equation=tvDisplay.getText();
-     
- 
-     
+        String equation = tvDisplay.getText();
+        /*
+        System.out.println("----FACTS------");
+        for(int a:findFactorials(equation)){
+            System.out.println("Factorial Index: "+a);
+        }
+        System.out.println("----OPERS------");
+        for(int a:findOperators(equation)){
+            System.out.println("Operator Index: "+a);
+        }
+        */
+
+
     }//GEN-LAST:event_btnEqualsActionPerformed
 
     /**
