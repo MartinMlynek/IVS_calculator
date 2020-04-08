@@ -1,0 +1,19 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'application'
+
+
+mainClassName = 'CalculatorLibraryProfiling.Main'
+
+repositories {
+    flatDir {
+       dirs 'libs'
+   }
+    jcenter()
+}
+
+dependencies {
+    testImplementation     'junit:junit:4.13'
+    implementation files('libs/CalculatorUtils.jar')
+    compile fileTree(dir: 'libs', include: 'CalculatorUtils.jar')
+}
