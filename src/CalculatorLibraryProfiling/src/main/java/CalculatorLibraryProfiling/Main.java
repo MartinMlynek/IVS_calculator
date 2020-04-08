@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Martin
+ * @author Martin Mlýnek (xmlyne06)
  */
 public class Main {
 
@@ -32,6 +32,12 @@ public class Main {
         }
     }
     
+    /**
+     * Calculate average
+     * @param arr - ArrayList which is used to calculate his average 
+     * @return average of arrayList values
+     * @throws Exception 
+     */
     public double average(ArrayList<Double> arr) throws Exception {
         double sum = this.sum(arr);
         int size = arr.size();
@@ -44,7 +50,12 @@ public class Main {
         
         return result;
     }
-    
+    /**
+     * Calculate summarization
+     * @param arr - ArrayList which is used to summarize his values
+     * @return - sum
+     * @throws Exception 
+     */
     public double sum(ArrayList<Double> arr) throws Exception {
     
         double sumResult = 0;
@@ -57,7 +68,11 @@ public class Main {
        return sumResult;
     }
     
-    
+    /**
+     * Calculate standard deviation
+     * @param arr - ArrayList used to standard deviation´s calculation
+     * @throws Exception 
+     */
     public void standardDeviation(ArrayList<Double> arr) throws Exception {
         double size = arr.size();
         double sizeMinusOne = CalculatorUtils.Utilities.sub(size, 1);
