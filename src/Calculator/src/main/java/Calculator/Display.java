@@ -5,6 +5,8 @@
  */
 package Calculator;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author pavb1
@@ -13,6 +15,7 @@ public class Display extends javax.swing.JFrame {
 
     /**
      * @author Pavel Bobčík, xbobci03
+     * @author tomalatomas, xtomal02
      */
     
     
@@ -20,6 +23,31 @@ public class Display extends javax.swing.JFrame {
         initComponents();
         this.setTitle("OAGUH Calculator");
     }
+    
+    public int getOperatorPriority(char operator){
+        switch(operator){
+            case '!': return 1;
+            case '/': return 2;
+            case '*': return 2;
+            case '+': return 3;
+            case '-': return 3;
+            default: return 0;
+        }    
+    }
+
+    public ArrayList<Integer> findOperators(String equation){
+        ArrayList<Integer> operators = new ArrayList<Integer>();
+        //To do: searching through string anf find all operators
+        //Store them into the arraylist by their priority
+        for(int i=0; i<equation.length();i++){
+            char o = equation.charAt(i);
+            if(this.getOperatorPriority(o)!=0){
+            
+            }
+        }
+        return operators;
+    }    
+         
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -311,6 +339,11 @@ public class Display extends javax.swing.JFrame {
         btnEquals.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnEquals.setForeground(new java.awt.Color(240, 240, 240));
         btnEquals.setText("=");
+        btnEquals.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEqualsActionPerformed(evt);
+            }
+        });
 
         btnMinus.setBackground(new java.awt.Color(0, 0, 0));
         btnMinus.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -496,6 +529,13 @@ public class Display extends javax.swing.JFrame {
         tvDisplay.setText(tvDisplay.getText()+"/");
 
     }//GEN-LAST:event_btnDivisionActionPerformed
+
+    private void btnEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqualsActionPerformed
+     String equation=tvDisplay.getText();
+     
+ 
+     
+    }//GEN-LAST:event_btnEqualsActionPerformed
 
     /**
      * @param args the command line arguments
