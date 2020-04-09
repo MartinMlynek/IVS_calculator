@@ -50,16 +50,14 @@ public class Display extends javax.swing.JFrame {
     private ArrayList<Integer> findOperators(String equation) {
         ArrayList<Integer> operatorsPriorityTwo = new ArrayList<Integer>();
         ArrayList<Integer> operatorsPriorityThree = new ArrayList<Integer>();
-        //To do: searching through string anf find all operators
-        //Store them into the arraylist by their priority
         for (int i = 0; i < equation.length(); i++) {
             char o = equation.charAt(i);
             if (this.getOperatorPriority(o) != 0) {
                 switch (this.getOperatorPriority(o)) {
                     case 2:
                         operatorsPriorityTwo.add(i);
-                        System.out.println("Operator:'" + o + "', index:" + i + ",Number before:" + getStringNumberBeforeOper(equation, i)
-                                + ",Number after:" + getStringNumberAfterOper(equation, i));
+                        //System.out.println("Operator:'" + o + "', index:" + i + ",Number before:" + getStringNumberBeforeOper(equation, i)
+                          //      + ",Number after:" + getStringNumberAfterOper(equation, i));
                         break;
                     case 3:
                         operatorsPriorityThree.add(i);
@@ -116,6 +114,30 @@ public class Display extends javax.swing.JFrame {
             }
         }
         return number;
+    }
+    
+    private String solveOperator(String equation, int operIndex){
+       //Method check the operator, calls the appropriate library method and returns the number in String
+        switch(equation.charAt(operIndex)) {
+            case '!':
+                
+            case '/':
+
+            case '*':
+
+            case '+':
+
+            case '-':
+
+            default:
+                return "";
+        }
+       
+    }
+    
+    private void replaceOperator(String equation, int operIndex, String number){
+       //Method replaces the operator and its arguments with a result 
+        
     }
 
     /**
