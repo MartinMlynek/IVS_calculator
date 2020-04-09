@@ -232,7 +232,8 @@ public class Utilities {
             throw new Exception("Negative value");
         }
 
-        double result = Math.pow(first, ((double) 1 / second));
+        double toRound = Math.pow(first, ((double) 1 / second));
+        double result = (double)Math.round(toRound * 1000d) / 1000d;
         
         return result;
     }
