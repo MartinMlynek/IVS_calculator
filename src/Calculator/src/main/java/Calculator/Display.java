@@ -117,18 +117,43 @@ public class Display extends javax.swing.JFrame {
     }
     
     private String solveOperator(String equation, int operIndex){
-       //Method check the operator, calls the appropriate library method and returns the number in String
-        switch(equation.charAt(operIndex)) {
+               //Method check the operator, calls the appropriate library method and returns the number in String
+        String numberBef = getStringNumberBeforeOper(equation, operIndex);
+        String numberAft = getStringNumberAfterOper(equation, operIndex);
+        switch (equation.charAt(operIndex)) {
             case '!':
-                
+                if (numberBef.contains(Character.toString(','))) {
+                    return "" + fact(Double.parseDouble(numberBef));
+                } else {
+                    return "" + fact(Integer.parseInt(numberBef));
+                }
             case '/':
+                if (numberBef.contains(Character.toString(',')) || numberAft.contains(Character.toString(','))) {
+                    return "" + div(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
+                } else {
+                    return "" + div(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
+                }
 
             case '*':
+                if (numberBef.contains(Character.toString(',')) || numberAft.contains(Character.toString(','))) {
+                    return "" + mul(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
+                } else {
+                    return "" + mul(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
+                }
 
             case '+':
+                if (numberBef.contains(Character.toString(',')) || numberAft.contains(Character.toString(','))) {
+                    return "" + add(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
+                } else {
+                    return "" + add(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
+                }
 
             case '-':
-
+                if (numberBef.contains(Character.toString(',')) || numberAft.contains(Character.toString(','))) {
+                    return "" + sub(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
+                } else {
+                    return "" + sub(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
+                }
             default:
                 return "";
         }
@@ -136,8 +161,16 @@ public class Display extends javax.swing.JFrame {
     }
     
     private void replaceOperator(String equation, int operIndex, String number){
-       //Method replaces the operator and its arguments with a result 
+        //Method replaces the operator and its arguments with a result
+        String subEquation="";
+        if (equation.charAt(operIndex) == '!') {
+            subEquation=getStringNumberBeforeOper(equation, operIndex)+equation.charAt(operIndex);
+        } else {
+            subEquation=getStringNumberBeforeOper(equation, operIndex)+equation.charAt(operIndex)+getStringNumberAfterOper(equation, operIndex);
+        }
+        String solvedSubEquation=solveOperator(equation, operIndex);
         
+        equation.replace(subEquation, solvedSubEquation);
     }
 
     /**
