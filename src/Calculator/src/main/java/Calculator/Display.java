@@ -153,31 +153,37 @@ public class Display extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btnTwo = new javax.swing.JButton();
         btnThree = new javax.swing.JButton();
-        btnDivision = new javax.swing.JButton();
         btnDeleteAll = new javax.swing.JButton();
         btnOne = new javax.swing.JButton();
+        btnDeleteLasta = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         btnFive = new javax.swing.JButton();
         btnSix = new javax.swing.JButton();
-        btnTimes = new javax.swing.JButton();
-        btnDeleteLast = new javax.swing.JButton();
         btnFour = new javax.swing.JButton();
+        btnDivision = new javax.swing.JButton();
+        btnTimes = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         btnEight = new javax.swing.JButton();
         btnNine = new javax.swing.JButton();
-        btnPlus = new javax.swing.JButton();
-        btnFact = new javax.swing.JButton();
         btnSeven = new javax.swing.JButton();
+        btnPlus = new javax.swing.JButton();
+        btnMinus = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         btnZero = new javax.swing.JButton();
-        btnEquals = new javax.swing.JButton();
-        btnMinus = new javax.swing.JButton();
-        btnABS = new javax.swing.JButton();
         btnDot = new javax.swing.JButton();
+        btnPower = new javax.swing.JButton();
+        btnRoot = new javax.swing.JButton();
         tvDisplay = new javax.swing.JTextField();
+        jPanel7 = new javax.swing.JPanel();
+        btnEquals = new javax.swing.JButton();
+        btnDeleteLast = new javax.swing.JButton();
+        btnFact = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(200, 200, 200));
+
+        jPanel2.setBackground(new java.awt.Color(200, 200, 200));
         jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         btnTwo.setBackground(new java.awt.Color(75, 75, 75));
@@ -197,16 +203,6 @@ public class Display extends javax.swing.JFrame {
         btnThree.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThreeActionPerformed(evt);
-            }
-        });
-
-        btnDivision.setBackground(new java.awt.Color(0, 0, 0));
-        btnDivision.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnDivision.setForeground(new java.awt.Color(240, 240, 240));
-        btnDivision.setText("/");
-        btnDivision.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDivisionActionPerformed(evt);
             }
         });
 
@@ -230,6 +226,16 @@ public class Display extends javax.swing.JFrame {
             }
         });
 
+        btnDeleteLasta.setBackground(new java.awt.Color(0, 0, 0));
+        btnDeleteLasta.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnDeleteLasta.setForeground(new java.awt.Color(230, 76, 0));
+        btnDeleteLasta.setText("C");
+        btnDeleteLasta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteLastaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -242,7 +248,7 @@ public class Display extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnThree, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDivision, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnDeleteLasta, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDeleteAll, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -253,10 +259,12 @@ public class Display extends javax.swing.JFrame {
                     .addComponent(btnOne, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnThree, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDivision, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDeleteAll, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnDeleteAll, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDeleteLasta, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel4.setBackground(new java.awt.Color(200, 200, 200));
 
         btnFive.setBackground(new java.awt.Color(75, 75, 75));
         btnFive.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -278,26 +286,6 @@ public class Display extends javax.swing.JFrame {
             }
         });
 
-        btnTimes.setBackground(new java.awt.Color(0, 0, 0));
-        btnTimes.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnTimes.setForeground(new java.awt.Color(240, 240, 240));
-        btnTimes.setText("*");
-        btnTimes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTimesActionPerformed(evt);
-            }
-        });
-
-        btnDeleteLast.setBackground(new java.awt.Color(0, 0, 0));
-        btnDeleteLast.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnDeleteLast.setForeground(new java.awt.Color(230, 76, 0));
-        btnDeleteLast.setText("C");
-        btnDeleteLast.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteLastActionPerformed(evt);
-            }
-        });
-
         btnFour.setBackground(new java.awt.Color(75, 75, 75));
         btnFour.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnFour.setForeground(new java.awt.Color(240, 240, 240));
@@ -305,6 +293,26 @@ public class Display extends javax.swing.JFrame {
         btnFour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFourActionPerformed(evt);
+            }
+        });
+
+        btnDivision.setBackground(new java.awt.Color(0, 0, 0));
+        btnDivision.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnDivision.setForeground(new java.awt.Color(240, 240, 240));
+        btnDivision.setText("/");
+        btnDivision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDivisionActionPerformed(evt);
+            }
+        });
+
+        btnTimes.setBackground(new java.awt.Color(0, 0, 0));
+        btnTimes.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnTimes.setForeground(new java.awt.Color(240, 240, 240));
+        btnTimes.setText("*");
+        btnTimes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTimesActionPerformed(evt);
             }
         });
 
@@ -322,7 +330,7 @@ public class Display extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnTimes, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDeleteLast, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnDivision, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -332,10 +340,12 @@ public class Display extends javax.swing.JFrame {
                     .addComponent(btnFour, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFive, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSix, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTimes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDeleteLast, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnDivision, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTimes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel5.setBackground(new java.awt.Color(200, 200, 200));
 
         btnEight.setBackground(new java.awt.Color(75, 75, 75));
         btnEight.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -357,6 +367,16 @@ public class Display extends javax.swing.JFrame {
             }
         });
 
+        btnSeven.setBackground(new java.awt.Color(75, 75, 75));
+        btnSeven.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnSeven.setForeground(new java.awt.Color(240, 240, 240));
+        btnSeven.setText("7");
+        btnSeven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSevenActionPerformed(evt);
+            }
+        });
+
         btnPlus.setBackground(new java.awt.Color(0, 0, 0));
         btnPlus.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnPlus.setForeground(new java.awt.Color(240, 240, 240));
@@ -367,23 +387,13 @@ public class Display extends javax.swing.JFrame {
             }
         });
 
-        btnFact.setBackground(new java.awt.Color(0, 0, 0));
-        btnFact.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnFact.setForeground(new java.awt.Color(240, 240, 240));
-        btnFact.setText("!");
-        btnFact.addActionListener(new java.awt.event.ActionListener() {
+        btnMinus.setBackground(new java.awt.Color(0, 0, 0));
+        btnMinus.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnMinus.setForeground(new java.awt.Color(240, 240, 240));
+        btnMinus.setText("-");
+        btnMinus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFactActionPerformed(evt);
-            }
-        });
-
-        btnSeven.setBackground(new java.awt.Color(75, 75, 75));
-        btnSeven.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnSeven.setForeground(new java.awt.Color(240, 240, 240));
-        btnSeven.setText("7");
-        btnSeven.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSevenActionPerformed(evt);
+                btnMinusActionPerformed(evt);
             }
         });
 
@@ -401,7 +411,7 @@ public class Display extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnFact, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -412,9 +422,11 @@ public class Display extends javax.swing.JFrame {
                     .addComponent(btnEight, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNine, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnFact, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel6.setBackground(new java.awt.Color(200, 200, 200));
 
         btnZero.setBackground(new java.awt.Color(75, 75, 75));
         btnZero.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -423,36 +435,6 @@ public class Display extends javax.swing.JFrame {
         btnZero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnZeroActionPerformed(evt);
-            }
-        });
-
-        btnEquals.setBackground(new java.awt.Color(0, 0, 0));
-        btnEquals.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnEquals.setForeground(new java.awt.Color(240, 240, 240));
-        btnEquals.setText("=");
-        btnEquals.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEqualsActionPerformed(evt);
-            }
-        });
-
-        btnMinus.setBackground(new java.awt.Color(0, 0, 0));
-        btnMinus.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnMinus.setForeground(new java.awt.Color(240, 240, 240));
-        btnMinus.setText("-");
-        btnMinus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMinusActionPerformed(evt);
-            }
-        });
-
-        btnABS.setBackground(new java.awt.Color(0, 0, 0));
-        btnABS.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnABS.setForeground(new java.awt.Color(240, 240, 240));
-        btnABS.setText("ABS");
-        btnABS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnABSActionPerformed(evt);
             }
         });
 
@@ -466,6 +448,26 @@ public class Display extends javax.swing.JFrame {
             }
         });
 
+        btnPower.setBackground(new java.awt.Color(0, 0, 0));
+        btnPower.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnPower.setForeground(new java.awt.Color(240, 240, 240));
+        btnPower.setText("^");
+        btnPower.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPowerActionPerformed(evt);
+            }
+        });
+
+        btnRoot.setBackground(new java.awt.Color(0, 0, 0));
+        btnRoot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnRoot.setForeground(new java.awt.Color(240, 240, 240));
+        btnRoot.setText("?");
+        btnRoot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRootaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -475,12 +477,10 @@ public class Display extends javax.swing.JFrame {
                 .addComponent(btnDot, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnZero, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67)
+                .addComponent(btnPower, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEquals, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnABS, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRoot, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -489,15 +489,69 @@ public class Display extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDot, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnZero, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEquals, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnABS, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnPower, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRoot, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tvDisplay.setEditable(false);
         tvDisplay.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tvDisplay.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+
+        jPanel7.setBackground(new java.awt.Color(200, 200, 200));
+
+        btnEquals.setBackground(new java.awt.Color(0, 0, 0));
+        btnEquals.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnEquals.setForeground(new java.awt.Color(240, 240, 240));
+        btnEquals.setText("=");
+        btnEquals.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEqualsActionPerformed(evt);
+            }
+        });
+
+        btnDeleteLast.setBackground(new java.awt.Color(0, 0, 0));
+        btnDeleteLast.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnDeleteLast.setForeground(new java.awt.Color(240, 240, 240));
+        btnDeleteLast.setText("ABS");
+        btnDeleteLast.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteLastActionPerformed(evt);
+            }
+        });
+
+        btnFact.setBackground(new java.awt.Color(0, 0, 0));
+        btnFact.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnFact.setForeground(new java.awt.Color(240, 240, 240));
+        btnFact.setText("!");
+        btnFact.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFactActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnEquals, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDeleteLast, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnFact, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEquals, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDeleteLast, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnFact, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -506,11 +560,13 @@ public class Display extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tvDisplay, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tvDisplay, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -526,6 +582,8 @@ public class Display extends javax.swing.JFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -547,11 +605,11 @@ public class Display extends javax.swing.JFrame {
         tvDisplay.setText("");
     }//GEN-LAST:event_btnDeleteAllActionPerformed
 
-    private void btnDeleteLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteLastActionPerformed
+    private void btnDeleteLastaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteLastaActionPerformed
         if(tvDisplay.getText().length()!=0){
             tvDisplay.setText("" + tvDisplay.getText().substring(0, tvDisplay.getText().length() - 1));
         }
-    }//GEN-LAST:event_btnDeleteLastActionPerformed
+    }//GEN-LAST:event_btnDeleteLastaActionPerformed
 
     private void btnFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiveActionPerformed
         tvDisplay.setText(tvDisplay.getText() + "5");
@@ -577,9 +635,9 @@ public class Display extends javax.swing.JFrame {
         tvDisplay.setText(tvDisplay.getText() + "-");
     }//GEN-LAST:event_btnMinusActionPerformed
 
-    private void btnABSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnABSActionPerformed
+    private void btnDeleteLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteLastActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnABSActionPerformed
+    }//GEN-LAST:event_btnDeleteLastActionPerformed
 
     private void btnOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOneActionPerformed
         tvDisplay.setText(tvDisplay.getText() + "1");
@@ -609,10 +667,6 @@ public class Display extends javax.swing.JFrame {
         tvDisplay.setText(tvDisplay.getText() + "9");
     }//GEN-LAST:event_btnNineActionPerformed
 
-    private void btnDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDotActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + ",");
-    }//GEN-LAST:event_btnDotActionPerformed
-
     private void btnTimesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimesActionPerformed
         tvDisplay.setText(tvDisplay.getText() + "*");
 
@@ -623,18 +677,21 @@ public class Display extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnDivisionActionPerformed
 
+    private void btnPowerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPowerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPowerActionPerformed
+
     private void btnEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqualsActionPerformed
-        String equation = tvDisplay.getText();
-        if (checkDoubleOperators(equation)) {
-            tvDisplay.setText("Error:Stacked operators");
-        } else if (checkInvalidChars(equation)) {
-            tvDisplay.setText("Error:Invalid characters");
-        }
-        findFactorials(equation);
-        findOperators(equation);
-
-
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnEqualsActionPerformed
+
+    private void btnRootaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRootaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRootaActionPerformed
+
+    private void btnDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDotActionPerformed
+        tvDisplay.setText(tvDisplay.getText() + ",");
+    }//GEN-LAST:event_btnDotActionPerformed
 
     /**
      * @param args the command line arguments
@@ -672,9 +729,9 @@ public class Display extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnABS;
     private javax.swing.JButton btnDeleteAll;
     private javax.swing.JButton btnDeleteLast;
+    private javax.swing.JButton btnDeleteLasta;
     private javax.swing.JButton btnDivision;
     private javax.swing.JButton btnDot;
     private javax.swing.JButton btnEight;
@@ -686,6 +743,8 @@ public class Display extends javax.swing.JFrame {
     private javax.swing.JButton btnNine;
     private javax.swing.JButton btnOne;
     private javax.swing.JButton btnPlus;
+    private javax.swing.JButton btnPower;
+    private javax.swing.JButton btnRoot;
     private javax.swing.JButton btnSeven;
     private javax.swing.JButton btnSix;
     private javax.swing.JButton btnThree;
@@ -697,6 +756,7 @@ public class Display extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JTextField tvDisplay;
     // End of variables declaration//GEN-END:variables
 }
