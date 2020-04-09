@@ -8,6 +8,11 @@ import java.lang.Math;
  * @author Tomáš Daněk, xdanek23
  */
 public class Utilities {
+    /**
+    * @param first - addend
+    * @param second - addend
+    * @return sum
+    */
     public double add(double first, double second) throws Exception{
         double result = first + second; 
 
@@ -18,6 +23,11 @@ public class Utilities {
         return result;
     }
     
+    /**
+    * @param first - addend
+    * @param second - addend
+    * @return sum
+    */
     public int add(int first, int second) throws Exception{
         int result = first + second; 
 
@@ -30,6 +40,11 @@ public class Utilities {
         return result;
     }
     
+    /**
+    * @param first - minuend
+    * @param second - subtrahend
+    * @return difference
+    */
     public double sub(double first, double second) throws Exception{
         double result = first - second; 
 
@@ -40,6 +55,11 @@ public class Utilities {
         return result;
     }
     
+    /**
+    * @param first - minuend
+    * @param second - subtrahend
+    * @return difference
+    */
     public int sub(int first, int second) throws Exception{
         int result = first - second; 
 
@@ -52,6 +72,11 @@ public class Utilities {
         return result;
     }
     
+    /**
+    * @param first - multiplier
+    * @param second - multiplicand
+    * @return product
+    */
     public double mul(double first, double second) throws Exception{
         double result = first * second; 
 
@@ -62,6 +87,11 @@ public class Utilities {
         return result;
     }
     
+    /**
+    * @param first - multiplier
+    * @param second - multiplicand
+    * @return product
+    */
     public int mul(int first, int second) throws Exception{
         int result = first * second; 
 
@@ -81,6 +111,7 @@ public class Utilities {
     /**
     * @param first - dividend
     * @param second - divisor
+    * @result quotient
     */
     public double div(double first, double second) throws Exception{  
         if(second == 0.0){
@@ -140,6 +171,10 @@ public class Utilities {
         return result;
     }
     
+    /**
+    * @param first - power
+    * @param second - exponent
+    */
     public int exp(int first, int second) throws Exception{
         int result = 1;
         
@@ -167,6 +202,10 @@ public class Utilities {
         return result;
     }
     
+    /**
+    * @param first - power
+    * @param second - exponent
+    */
     public double exp(int first, double second) throws Exception{
         double result = 1;
         
