@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Calculator;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-/**
- *
- * @author pavb1
- */
 public class Display extends javax.swing.JFrame {
 
     /**
@@ -24,18 +15,24 @@ public class Display extends javax.swing.JFrame {
         this.setTitle("OAGUH Calculator");
     }
 
-    public int getOperatorPriority(char operator) {
+    private int getOperatorPriority(char operator) {
         switch (operator) {
-            case '!': return 1;
-            case '/': return 2;
-            case '*': return 2;
-            case '+': return 3;
-            case '-': return 3;
-            default: return 0;
+            case '!':
+                return 1;
+            case '/':
+                return 2;
+            case '*':
+                return 2;
+            case '+':
+                return 3;
+            case '-':
+                return 3;
+            default:
+                return 0;
         }
     }
 
-    public ArrayList<Integer> findFactorials(String equation) {
+    private ArrayList<Integer> findFactorials(String equation) {
         ArrayList<Integer> operatorsFactorial = new ArrayList<Integer>();
         for (int i = 0; i < equation.length(); i++) {
             char o = equation.charAt(i);
@@ -43,13 +40,14 @@ public class Display extends javax.swing.JFrame {
                 switch (this.getOperatorPriority(o)) {
                     case 1:
                         operatorsFactorial.add(i);
+                        System.out.println("Factorial, index:" + i + ",Number before:" + getStringNumberBeforeOper(equation, i));
                 }
             }
         }
         return operatorsFactorial;
     }
 
-    public ArrayList<Integer> findOperators(String equation) {
+    private ArrayList<Integer> findOperators(String equation) {
         ArrayList<Integer> operatorsPriorityTwo = new ArrayList<Integer>();
         ArrayList<Integer> operatorsPriorityThree = new ArrayList<Integer>();
         //To do: searching through string anf find all operators
@@ -60,7 +58,9 @@ public class Display extends javax.swing.JFrame {
                 switch (this.getOperatorPriority(o)) {
                     case 2:
                         operatorsPriorityTwo.add(i);
-                         break;
+                        System.out.println("Operator:'" + o + "', index:" + i + ",Number before:" + getStringNumberBeforeOper(equation, i)
+                                + ",Number after:" + getStringNumberAfterOper(equation, i));
+                        break;
                     case 3:
                         operatorsPriorityThree.add(i);
                         break;
@@ -71,7 +71,51 @@ public class Display extends javax.swing.JFrame {
         operatorsPriorityTwoThree.addAll(operatorsPriorityTwo);
         operatorsPriorityTwoThree.addAll(operatorsPriorityThree);
         return operatorsPriorityTwoThree;
-        
+
+    }
+
+    private boolean checkDoubleOperators(String equation) {
+        for (int i = 0; i < equation.length() - 1; i++) {
+            if (equation.charAt(i) == equation.charAt(i + 1)) {
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    public boolean checkInvalidChars(String equation) {
+        final String validChars = "0123456789+-*/!,";
+        for (int i = 0; i < equation.length(); i++) {
+            if (!validChars.contains(Character.toString(equation.charAt(i)))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private String getStringNumberBeforeOper(String equation, int operIndex) {
+        String number = "";
+        for (int i = operIndex-1; i >= 0; i--) {
+            if (getOperatorPriority(equation.charAt(i)) == 0) {
+                number = equation.charAt(i) + number;
+            } else {
+                return number;
+            }
+        }
+        return number;
+    }
+
+    private String getStringNumberAfterOper(String equation, int operIndex) {
+        String number = "";
+        for (int i = operIndex+1; i < equation.length(); i++) {
+            if (getOperatorPriority(equation.charAt(i)) == 0) {
+                number = number + equation.charAt(i);
+            } else {
+                return number;
+            }
+        }
+        return number;
     }
 
     /**
@@ -482,7 +526,9 @@ public class Display extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteAllActionPerformed
 
     private void btnDeleteLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteLastActionPerformed
-        tvDisplay.setText("" + tvDisplay.getText().substring(0, tvDisplay.getText().length() - 1));
+        if(tvDisplay.getText().length()!=0){
+            tvDisplay.setText("" + tvDisplay.getText().substring(0, tvDisplay.getText().length() - 1));
+        }
     }//GEN-LAST:event_btnDeleteLastActionPerformed
 
     private void btnFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiveActionPerformed
@@ -557,16 +603,13 @@ public class Display extends javax.swing.JFrame {
 
     private void btnEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqualsActionPerformed
         String equation = tvDisplay.getText();
-        /*
-        System.out.println("----FACTS------");
-        for(int a:findFactorials(equation)){
-            System.out.println("Factorial Index: "+a);
+        if (checkDoubleOperators(equation)) {
+            tvDisplay.setText("Error:Stacked operators");
+        } else if (checkInvalidChars(equation)) {
+            tvDisplay.setText("Error:Invalid characters");
         }
-        System.out.println("----OPERS------");
-        for(int a:findOperators(equation)){
-            System.out.println("Operator Index: "+a);
-        }
-        */
+        findFactorials(equation);
+        findOperators(equation);
 
 
     }//GEN-LAST:event_btnEqualsActionPerformed
