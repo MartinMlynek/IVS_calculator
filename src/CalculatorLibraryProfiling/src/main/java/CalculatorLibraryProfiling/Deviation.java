@@ -47,6 +47,23 @@ public class Deviation {
         }
        return sumResult;
     }
+    /**
+     * Square values of arrayList
+     * @param arr - ArrayList which is used to square values
+     * @return arraylist with squared values
+     * @throws Exception 
+     */
+    public ArrayList<Double> squareArrayLIst(ArrayList<Double> arr) throws Exception {
+        
+        ArrayList<Double> expTwo = new ArrayList<>();
+        
+        for (double i: arr)
+        {
+          expTwo.add(CalculatorUtils.Utilities.exp(i, 2));  
+        }
+        
+        return expTwo;
+    }
     
     /**
      * Calculate standard deviation
@@ -56,14 +73,13 @@ public class Deviation {
     public double standardDeviation(ArrayList<Double> arr) throws Exception {
         double size = arr.size();
         double sizeMinusOne = CalculatorUtils.Utilities.sub(size, 1);
-        
-        double sum = this.sum(arr);
-        double sumExp = CalculatorUtils.Utilities.exp(sum, 2);
+        ArrayList<Double> expTwo = this.squareArrayLIst(arr);
+        double sum = this.sum(expTwo);
         
         double average = this.average(arr);
         double averageExp = CalculatorUtils.Utilities.exp(average, 2);
         
-        double bracketSub = CalculatorUtils.Utilities.sub(sumExp, averageExp);
+        double bracketSub = CalculatorUtils.Utilities.sub(sum, averageExp);
         
         double underSqrtResult = CalculatorUtils.Utilities.div(bracketSub, sizeMinusOne);
         

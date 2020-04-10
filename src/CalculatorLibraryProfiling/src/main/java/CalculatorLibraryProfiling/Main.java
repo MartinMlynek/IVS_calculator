@@ -7,6 +7,7 @@ package CalculatorLibraryProfiling;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
@@ -33,6 +34,7 @@ public class Main {
         
         Deviation d = new Deviation();
         double output = d.standardDeviation(inputValues);
+        TimeUnit.SECONDS.sleep(1);
         System.out.println(output);
         
     }
