@@ -7,13 +7,13 @@ import CalculatorUtils.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Display extends javax.swing.JFrame {
+public class Power extends javax.swing.JFrame {
 
     /**
      * @author Pavel Bobčík, xbobci03
      * @author tomalatomas, xtomal02
      */
-    public Display() {
+    public Power() {
         initComponents();
         this.setTitle("OAGUH Calculator");
     }
@@ -775,11 +775,7 @@ public class Display extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEqualsActionPerformed
 
     private void btnRootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRootActionPerformed
-        //Root root = new Root();
-        //root.setLocation(this.getLocation());        
-        //root.setVisible(true);
-        //this.setVisible(false);
-
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnRootActionPerformed
 
     private void btnDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDotActionPerformed

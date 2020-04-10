@@ -87,3 +87,5 @@ src/CalculatorUtils/src/main/java/CalculatorUtils/Display.java
 /src/Calculator/CalculatorUtils/build/
 /src/Calculator/src/CalculatorUtils/.gradle/
 /src/Calculator/src/CalculatorUtils/build/
+/src/Calculator/libs/CalculatorUtils/.gradle/
+/src/Calculator/libs/CalculatorUtils/build/
