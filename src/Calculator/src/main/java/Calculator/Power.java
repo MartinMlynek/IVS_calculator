@@ -18,200 +18,9 @@ public class Power extends javax.swing.JFrame {
         this.setTitle("OAGUH Calculator");
     }
 
-    private int getOperatorPriority(char operator) {
-        switch (operator) {
-            case '!':
-                return 1;
-            case '/':
-                return 2;
-            case '*':
-                return 2;
-            case '+':
-                return 3;
-            case '$':
-                return 3;
-            default:
-                return 0;
-        }
-    }
-
-    private String solveFactorials(String equation) {
-        for (int i = 0; i < equation.length(); i++) {
-            char o = equation.charAt(i);
-            if (this.getOperatorPriority(o) != 0) {
-                switch (this.getOperatorPriority(o)) {
-                    case 1:
-                        equation = solveOperator(equation, i);
-                }
-            }
-        }
-        return equation;
-    }
-
-    private String solveOperators(String equation) {
-        for (int i = 0; i < equation.length(); i++) {
-            char o = equation.charAt(i);
-            if (this.getOperatorPriority(o) != 0) {
-                switch (this.getOperatorPriority(o)) {
-                    case 2:
-                        equation = solveOperator(equation, i);
-                }
-            }
-        }
-
-        for (int i = 0; i < equation.length(); i++) {
-            char o = equation.charAt(i);
-            if (this.getOperatorPriority(o) != 0) {
-                switch (this.getOperatorPriority(o)) {
-                    case 3:
-                        equation = solveOperator(equation, i);
-                }
-            }
-        }
-        return equation;
-
-    }
-
-    private boolean checkDoubleOperators(String equation) {
-        for (int i = 0; i < equation.length() - 1; i++) {
-            if (equation.charAt(i) == equation.charAt(i + 1)) {
-                return true;
-            }
-        }
-        return false;
-
-    }
-
-    public boolean checkInvalidChars(String equation) {
-        final String validChars = "0123456789+-*/!.$";
-        for (int i = 0; i < equation.length(); i++) {
-            if (!validChars.contains(Character.toString(equation.charAt(i)))) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private String getStringNumberBeforeOper(String equation, int operIndex) {
-        String number = "";
-        for (int i = operIndex - 1; i >= 0; i--) {
-            if (getOperatorPriority(equation.charAt(i)) == 0) {
-                number = equation.charAt(i) + number;
-            } else {
-                return number;
-            }
-        }
-        return number;
-    }
-
-    private String getStringNumberAfterOper(String equation, int operIndex) {
-        String number = "";
-        for (int i = operIndex + 1; i < equation.length(); i++) {
-            if (getOperatorPriority(equation.charAt(i)) == 0) {
-                number = number + equation.charAt(i);
-            } else {
-                return number;
-            }
-        }
-        return number;
-    }
-
-    private String calculateOperator(String equation, int operIndex) throws Exception {
-        //Method check the operator, calls the appropriate library method and returns the number in String
-        String numberBef = getStringNumberBeforeOper(equation, operIndex);
-        String numberAft = getStringNumberAfterOper(equation, operIndex);
-        switch (equation.charAt(operIndex)) {
-            case '!':
-                if (numberBef.contains(Character.toString('.'))) {
-
-                    return "" + CalculatorUtils.Utilities.fact((int) Double.parseDouble(numberBef));
-                } else {
-                    return "" + CalculatorUtils.Utilities.fact(Integer.parseInt(numberBef));
-                }
-            case '/':
-                if (numberBef.contains(Character.toString('.')) || numberAft.contains(Character.toString('.'))) {
-                    return "" + CalculatorUtils.Utilities.div(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
-                } else {
-                    return "" + CalculatorUtils.Utilities.div(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
-                }
-
-            case '*':
-                if (numberBef.contains(Character.toString('.')) || numberAft.contains(Character.toString('.'))) {
-                    return "" + CalculatorUtils.Utilities.mul(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
-                } else {
-                    return "" + CalculatorUtils.Utilities.mul(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
-                }
-
-            case '+':
-                if (numberBef.contains(Character.toString('.')) || numberAft.contains(Character.toString('.'))) {
-                    return "" + CalculatorUtils.Utilities.add(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
-                } else {
-                    return "" + CalculatorUtils.Utilities.add(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
-                }
-
-            case '$':
-                if (numberBef.contains(Character.toString('.')) || numberAft.contains(Character.toString('.'))) {
-                    return "" + CalculatorUtils.Utilities.sub(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
-                } else {
-                    return "" + CalculatorUtils.Utilities.sub(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
-                }
-            default:
-                return "";
-        }
-
-    }
-
-    private String solveOperator(String equation, int operIndex) {
-        //Method replaces the operator and its arguments with a result
-        String subEquation = "";
-        //System.out.println("operator:"+operIndex+",----------Equation:"+equation);
-        //System.out.println("operator:"+operIndex+",subEquation:"+subEquation);
-
-        if (equation.charAt(operIndex) == '!') {
-            subEquation = getStringNumberBeforeOper(equation, operIndex) + equation.charAt(operIndex);
-        } else {
-            subEquation = getStringNumberBeforeOper(equation, operIndex) + equation.charAt(operIndex) + getStringNumberAfterOper(equation, operIndex);
-        }
-        String solvedSubEquation;
-        try {
-            solvedSubEquation = calculateOperator(equation, operIndex);
-        //    System.out.println("operator:"+operIndex+",solvedSubEquation:"+solvedSubEquation);
-            equation = equation.replace(subEquation, solvedSubEquation);
-        //    System.out.println("operator:"+operIndex+",Equation after:"+subEquation);
-            return equation;
-        } catch (Exception ex) {
-            return "Error";
-        }
-    }
-
-    private boolean findOperator(String equation) {
-        for (int i = 0; i < equation.length(); i++) {
-            char o = equation.charAt(i);
-            if (this.getOperatorPriority(o) == 3 || this.getOperatorPriority(o) == 2) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean checkNegativeEquation(String equation) {
-        if (equation.charAt(0) == '-') {
-            return true;
-        }
-        return false;
-    }
-
-    private void checkInvalidEquation(String equation) {
-         if (checkDoubleOperators(equation)) {
-            tvDisplayPower.setText("Error:Stacked operators");
-        } else if (checkInvalidChars(equation)) {
-            tvDisplayPower.setText("Error:Invalid characters");
-        }
-    }
     
-     private String replaceMinuses(String equation) {
-        equation = equation.replace('-', '$'); //Replaces every minus to prevent confusion between negative number and operator
-        return equation;
+     public void setEquation(String equation){
+        this.tvDisplayPower.setText(equation);
     }
 
     /**
@@ -522,6 +331,7 @@ public class Power extends javax.swing.JFrame {
         btnDot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnDot.setForeground(new java.awt.Color(240, 240, 240));
         btnDot.setText(".");
+        btnDot.setEnabled(false);
         btnDot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDotActionPerformed(evt);
@@ -641,6 +451,7 @@ public class Power extends javax.swing.JFrame {
         tvDisplayExponent.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tvDisplayExponent.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("^");
 
@@ -701,37 +512,34 @@ public class Power extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteAllActionPerformed
-        tvDisplayPower.setText("");
+        tvDisplayExponent.setText("");
     }//GEN-LAST:event_btnDeleteAllActionPerformed
 
     private void btnDeleteLastaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteLastaActionPerformed
-        if (tvDisplayPower.getText().length() != 0) {
-            tvDisplayPower.setText("" + tvDisplayPower.getText().substring(0, tvDisplayPower.getText().length() - 1));
+        if (tvDisplayExponent.getText().length() != 0) {
+            tvDisplayExponent.setText("" + tvDisplayExponent.getText().substring(0, tvDisplayExponent.getText().length() - 1));
         }
     }//GEN-LAST:event_btnDeleteLastaActionPerformed
 
     private void btnFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiveActionPerformed
-        tvDisplayPower.setText(tvDisplayPower.getText() + "5");
+        tvDisplayExponent.setText(tvDisplayExponent.getText() + "5");
     }//GEN-LAST:event_btnFiveActionPerformed
 
     private void btnEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEightActionPerformed
-        tvDisplayPower.setText(tvDisplayPower.getText() + "8");
+        tvDisplayExponent.setText(tvDisplayExponent.getText() + "8");
     }//GEN-LAST:event_btnEightActionPerformed
 
     private void btnFactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFactActionPerformed
-        tvDisplayPower.setText(tvDisplayPower.getText() + "!");
     }//GEN-LAST:event_btnFactActionPerformed
 
     private void btnPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlusActionPerformed
-        tvDisplayPower.setText(tvDisplayPower.getText() + "+");
     }//GEN-LAST:event_btnPlusActionPerformed
 
     private void btnZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZeroActionPerformed
-        tvDisplayPower.setText(tvDisplayPower.getText() + "0");
+        tvDisplayExponent.setText(tvDisplayExponent.getText() + "0");
     }//GEN-LAST:event_btnZeroActionPerformed
 
     private void btnMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinusActionPerformed
-        tvDisplayPower.setText(tvDisplayPower.getText() + "-");
     }//GEN-LAST:event_btnMinusActionPerformed
 
     private void btnDeleteLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteLastActionPerformed
@@ -739,40 +547,38 @@ public class Power extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteLastActionPerformed
 
     private void btnOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOneActionPerformed
-        tvDisplayPower.setText(tvDisplayPower.getText() + "1");
+        tvDisplayExponent.setText(tvDisplayExponent.getText() + "1");
     }//GEN-LAST:event_btnOneActionPerformed
 
     private void btnTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTwoActionPerformed
-        tvDisplayPower.setText(tvDisplayPower.getText() + "2");
+        tvDisplayExponent.setText(tvDisplayExponent.getText() + "2");
     }//GEN-LAST:event_btnTwoActionPerformed
 
     private void btnThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThreeActionPerformed
-        tvDisplayPower.setText(tvDisplayPower.getText() + "3");
+        tvDisplayExponent.setText(tvDisplayExponent.getText() + "3");
     }//GEN-LAST:event_btnThreeActionPerformed
 
     private void btnFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFourActionPerformed
-        tvDisplayPower.setText(tvDisplayPower.getText() + "4");
+        tvDisplayExponent.setText(tvDisplayExponent.getText() + "4");
     }//GEN-LAST:event_btnFourActionPerformed
 
     private void btnSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSixActionPerformed
-        tvDisplayPower.setText(tvDisplayPower.getText() + "6");
+        tvDisplayExponent.setText(tvDisplayExponent.getText() + "6");
     }//GEN-LAST:event_btnSixActionPerformed
 
     private void btnSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSevenActionPerformed
-        tvDisplayPower.setText(tvDisplayPower.getText() + "7");
+        tvDisplayExponent.setText(tvDisplayExponent.getText() + "7");
     }//GEN-LAST:event_btnSevenActionPerformed
 
     private void btnNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNineActionPerformed
-        tvDisplayPower.setText(tvDisplayPower.getText() + "9");
+        tvDisplayExponent.setText(tvDisplayExponent.getText() + "9");
     }//GEN-LAST:event_btnNineActionPerformed
 
     private void btnTimesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimesActionPerformed
-        tvDisplayPower.setText(tvDisplayPower.getText() + "*");
 
     }//GEN-LAST:event_btnTimesActionPerformed
 
     private void btnDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivisionActionPerformed
-        tvDisplayPower.setText(tvDisplayPower.getText() + "/");
 
     }//GEN-LAST:event_btnDivisionActionPerformed
 
@@ -781,34 +587,15 @@ public class Power extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPowerActionPerformed
 
     private void btnEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqualsActionPerformed
-        String equation = tvDisplayPower.getText();
-        if (equation == "") {
-            tvDisplayPower.setText("No equation to be solved");
-        }
         
-        if (checkNegativeEquation(equation)) {
-            equation = "0" + equation;
-        }
-        equation=replaceMinuses(equation);
-        checkInvalidEquation(equation);
-        equation = solveFactorials(equation);
-        
-        while (findOperator(equation)) {
-            equation = solveOperators(equation);
-        }
-        tvDisplayPower.setText(equation);
     }//GEN-LAST:event_btnEqualsActionPerformed
 
     private void btnRootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRootActionPerformed
-        //Root root = new Root();
-        //root.setLocation(this.getLocation());        
-        //root.setVisible(true);
-        //this.setVisible(false);
+
 
     }//GEN-LAST:event_btnRootActionPerformed
 
     private void btnDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDotActionPerformed
-        tvDisplayPower.setText(tvDisplayPower.getText() + ".");
     }//GEN-LAST:event_btnDotActionPerformed
 
     /**

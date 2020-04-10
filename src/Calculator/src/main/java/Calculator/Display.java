@@ -18,6 +18,9 @@ public class Display extends javax.swing.JFrame {
         this.setTitle("OAGUH Calculator");
     }
 
+    public void setEquation(String equation){
+        this.tvDisplay.setText(equation);
+    }
     private int getOperatorPriority(char operator) {
         switch (operator) {
             case '!':
@@ -752,15 +755,21 @@ public class Display extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDivisionActionPerformed
 
     private void btnPowerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPowerActionPerformed
-        // TODO add your handling code here:
+        btnEqualsActionPerformed(evt);
+        if(!checkInvalidChars(tvDisplay.getText())){
+        Power pwr = new Power();
+        pwr.setLocation(this.getLocation());
+        pwr.setEquation(tvDisplay.getText());
+        pwr.setVisible(true);
+        this.dispose();
+        }
     }//GEN-LAST:event_btnPowerActionPerformed
 
     private void btnEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqualsActionPerformed
         String equation = tvDisplay.getText();
-        if (equation == "") {
+        if (equation.equalsIgnoreCase("")) {
             tvDisplay.setText("No equation to be solved");
-        }
-        
+        } else{
         if (checkNegativeEquation(equation)) {
             equation = "0" + equation;
         }
@@ -772,14 +781,18 @@ public class Display extends javax.swing.JFrame {
             equation = solveOperators(equation);
         }
         tvDisplay.setText(equation);
+        }
     }//GEN-LAST:event_btnEqualsActionPerformed
 
     private void btnRootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRootActionPerformed
-        //Root root = new Root();
-        //root.setLocation(this.getLocation());        
-        //root.setVisible(true);
-        //this.setVisible(false);
-
+        btnEqualsActionPerformed(evt);
+        if(!checkInvalidChars(tvDisplay.getText())){
+        Root root = new Root();
+        root.setLocation(this.getLocation());
+        root.setEquation(tvDisplay.getText());
+        root.setVisible(true);
+        this.dispose();
+        }
     }//GEN-LAST:event_btnRootActionPerformed
 
     private void btnDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDotActionPerformed
