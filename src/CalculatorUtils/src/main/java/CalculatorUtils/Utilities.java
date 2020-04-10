@@ -13,7 +13,7 @@ public class Utilities {
     * @param second - addend
     * @return sum
     */
-    public double add(double first, double second) throws Exception{
+    public static double add(double first, double second) throws Exception{
         double result = first + second; 
 
         if(result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY){
@@ -28,7 +28,7 @@ public class Utilities {
     * @param second - addend
     * @return sum
     */
-    public int add(int first, int second) throws Exception{
+    public static int add(int first, int second) throws Exception{
         int result = first + second; 
 
         if(first > 0 && second > 0 && result < 0){
@@ -45,7 +45,7 @@ public class Utilities {
     * @param second - subtrahend
     * @return difference
     */
-    public double sub(double first, double second) throws Exception{
+    public static double sub(double first, double second) throws Exception{
         double result = first - second; 
 
         if(result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY){
@@ -60,7 +60,7 @@ public class Utilities {
     * @param second - subtrahend
     * @return difference
     */
-    public int sub(int first, int second) throws Exception{
+    public static int sub(int first, int second) throws Exception{
         int result = first - second; 
 
         if(first > 0 && second < 0 && result < 0){
@@ -77,7 +77,7 @@ public class Utilities {
     * @param second - multiplicand
     * @return product
     */
-    public double mul(double first, double second) throws Exception{
+    public static double mul(double first, double second) throws Exception{
         double result = first * second; 
 
         if(result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY){
@@ -92,7 +92,7 @@ public class Utilities {
     * @param second - multiplicand
     * @return product
     */
-    public int mul(int first, int second) throws Exception{
+    public static int mul(int first, int second) throws Exception{
         int result = first * second; 
 
         if(first > 0 && second > 0 && result < 0){
@@ -113,7 +113,7 @@ public class Utilities {
     * @param second - divisor
     * @result quotient
     */
-    public double div(double first, double second) throws Exception{  
+    public static double div(double first, double second) throws Exception{  
         if(second == 0.0){
             throw new Exception("Dividing by zero value");
         }
@@ -127,7 +127,7 @@ public class Utilities {
         return result;
     }
     
-    public int fact(int first) throws Exception{
+    public static int fact(int first) throws Exception{
         if(first < 0){
             throw new Exception("Value under zero");
         }else if(first > 12){
@@ -147,7 +147,7 @@ public class Utilities {
     * @param first - power
     * @param second - exponent
     */
-    public double exp(double first, int second) throws Exception{
+    public static double exp(double first, int second) throws Exception{
         double result = 1;
         
         if(second == 0){
@@ -175,7 +175,7 @@ public class Utilities {
     * @param first - power
     * @param second - exponent
     */
-    public int exp(int first, int second) throws Exception{
+    public static int exp(int first, int second) throws Exception{
         int result = 1;
         
         if(second == 0){
@@ -206,7 +206,7 @@ public class Utilities {
     * @param first - power
     * @param second - exponent
     */
-    public double exp(int first, double second) throws Exception{
+    public static double exp(int first, double second) throws Exception{
         double result = 1;
         
         if(second != 0.0){
@@ -224,7 +224,7 @@ public class Utilities {
     * @param first - root
     * @param second - index of the root
     */
-    public double radical(double first, int second) throws Exception{
+    public static double radical(double first, int second) throws Exception{
         
         if(second == 0){
             throw new Exception("Zero root number");
@@ -238,7 +238,7 @@ public class Utilities {
         return result;
     }
     
-    public double abs(double first){
+    public static double abs(double first){
         if(first < 0){
             return -(first);
         }
@@ -246,7 +246,7 @@ public class Utilities {
         return first;
     }
     
-    public int abs(int first){
+    public static int abs(int first){
         if(first < 0){
             return -(first);
         }
