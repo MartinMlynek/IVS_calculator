@@ -7,8 +7,13 @@ mainClassName = 'Calculator.Display'
 
 repositories {
     jcenter()
+    flatDir {
+       dirs 'libs'
+   }
 }
 
 dependencies {
     testImplementation     'junit:junit:4.13'
+    implementation files('libs/CalculatorUtils.jar')
+    compile fileTree(dir: 'libs',include: 'CalculatorUtils.jar')
 }

@@ -3,6 +3,10 @@ package Calculator;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import CalculatorUtils.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 public class Display extends javax.swing.JFrame {
 
@@ -32,45 +36,43 @@ public class Display extends javax.swing.JFrame {
         }
     }
 
-    private ArrayList<Integer> findFactorials(String equation) {
-        ArrayList<Integer> operatorsFactorial = new ArrayList<Integer>();
+    private String solveFactorials(String equation) {
         for (int i = 0; i < equation.length(); i++) {
             char o = equation.charAt(i);
             if (this.getOperatorPriority(o) != 0) {
                 switch (this.getOperatorPriority(o)) {
                     case 1:
-                        operatorsFactorial.add(i);
-                        System.out.println("Factorial, index:" + i + ",Number before:" + getStringNumberBeforeOper(equation, i));
+                        equation=solveOperator(equation, i);
                 }
             }
         }
-        return operatorsFactorial;
+        return equation;
     }
 
-    private ArrayList<Integer> findOperators(String equation) {
-        ArrayList<Integer> operatorsPriorityTwo = new ArrayList<Integer>();
-        ArrayList<Integer> operatorsPriorityThree = new ArrayList<Integer>();
+    private String solveOperators(String equation) {
         for (int i = 0; i < equation.length(); i++) {
             char o = equation.charAt(i);
             if (this.getOperatorPriority(o) != 0) {
                 switch (this.getOperatorPriority(o)) {
                     case 2:
-                        operatorsPriorityTwo.add(i);
-                        //System.out.println("Operator:'" + o + "', index:" + i + ",Number before:" + getStringNumberBeforeOper(equation, i)
-                          //      + ",Number after:" + getStringNumberAfterOper(equation, i));
-                        break;
-                    case 3:
-                        operatorsPriorityThree.add(i);
-                        break;
+                        equation=solveOperator(equation, i);
                 }
             }
         }
-        ArrayList<Integer> operatorsPriorityTwoThree = new ArrayList<>();
-        operatorsPriorityTwoThree.addAll(operatorsPriorityTwo);
-        operatorsPriorityTwoThree.addAll(operatorsPriorityThree);
-        return operatorsPriorityTwoThree;
+        
+        for (int i = 0; i < equation.length(); i++) {
+            char o = equation.charAt(i);
+            if (this.getOperatorPriority(o) != 0) {
+                switch (this.getOperatorPriority(o)) {
+                    case 3:
+                        equation=solveOperator(equation, i);
+                }
+            }
+        }
+        return equation;
 
     }
+    
 
     private boolean checkDoubleOperators(String equation) {
         for (int i = 0; i < equation.length() - 1; i++) {
@@ -116,43 +118,44 @@ public class Display extends javax.swing.JFrame {
         return number;
     }
     
-    private String solveOperator(String equation, int operIndex){
+    private String calculateOperator(String equation, int operIndex) throws Exception{
                //Method check the operator, calls the appropriate library method and returns the number in String
         String numberBef = getStringNumberBeforeOper(equation, operIndex);
         String numberAft = getStringNumberAfterOper(equation, operIndex);
         switch (equation.charAt(operIndex)) {
             case '!':
                 if (numberBef.contains(Character.toString(','))) {
-                    return "" + fact(Double.parseDouble(numberBef));
+                    
+                    return "" + CalculatorUtils.Utilities.fact((int) Double.parseDouble(numberBef));
                 } else {
-                    return "" + fact(Integer.parseInt(numberBef));
+                    return "" + CalculatorUtils.Utilities.fact(Integer.parseInt(numberBef));
                 }
             case '/':
                 if (numberBef.contains(Character.toString(',')) || numberAft.contains(Character.toString(','))) {
-                    return "" + div(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
+                    return "" + CalculatorUtils.Utilities.div(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
                 } else {
-                    return "" + div(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
+                    return "" + CalculatorUtils.Utilities.div(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
                 }
 
             case '*':
                 if (numberBef.contains(Character.toString(',')) || numberAft.contains(Character.toString(','))) {
-                    return "" + mul(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
+                    return "" + CalculatorUtils.Utilities.mul(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
                 } else {
-                    return "" + mul(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
+                    return "" + CalculatorUtils.Utilities.mul(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
                 }
 
             case '+':
                 if (numberBef.contains(Character.toString(',')) || numberAft.contains(Character.toString(','))) {
-                    return "" + add(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
+                    return "" + CalculatorUtils.Utilities.add(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
                 } else {
-                    return "" + add(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
+                    return "" + CalculatorUtils.Utilities.add(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
                 }
 
             case '-':
                 if (numberBef.contains(Character.toString(',')) || numberAft.contains(Character.toString(','))) {
-                    return "" + sub(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
+                    return "" + CalculatorUtils.Utilities.sub(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
                 } else {
-                    return "" + sub(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
+                    return "" + CalculatorUtils.Utilities.sub(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
                 }
             default:
                 return "";
@@ -160,7 +163,7 @@ public class Display extends javax.swing.JFrame {
        
     }
     
-    private void replaceOperator(String equation, int operIndex, String number){
+    private String solveOperator(String equation, int operIndex){
         //Method replaces the operator and its arguments with a result
         String subEquation="";
         if (equation.charAt(operIndex) == '!') {
@@ -168,10 +171,27 @@ public class Display extends javax.swing.JFrame {
         } else {
             subEquation=getStringNumberBeforeOper(equation, operIndex)+equation.charAt(operIndex)+getStringNumberAfterOper(equation, operIndex);
         }
-        String solvedSubEquation=solveOperator(equation, operIndex);
-        
-        equation.replace(subEquation, solvedSubEquation);
+        String solvedSubEquation;
+        try {
+            solvedSubEquation = calculateOperator(equation, operIndex);
+            equation=equation.replace(subEquation, solvedSubEquation);
+            return equation;
+        } catch (Exception ex) {
+            return "Error";
+        }   
     }
+    
+    private boolean findOperator(String equation){
+         for (int i = 0; i < equation.length(); i++) {
+            char o = equation.charAt(i);
+            if (this.getOperatorPriority(o)==3||this.getOperatorPriority(o)==2) {
+                    return true;
+                }
+            }
+        return false;    
+    }
+        
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -497,7 +517,7 @@ public class Display extends javax.swing.JFrame {
         btnRoot.setText("?");
         btnRoot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRootaActionPerformed(evt);
+                btnRootActionPerformed(evt);
             }
         });
 
@@ -715,12 +735,20 @@ public class Display extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPowerActionPerformed
 
     private void btnEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqualsActionPerformed
-        // TODO add your handling code here:
+        String equation = tvDisplay.getText();
+        if (checkDoubleOperators(equation)) {
+            tvDisplay.setText("Error:Stacked operators");
+        } else if (checkInvalidChars(equation)) {
+            tvDisplay.setText("Error:Invalid characters");
+        }
+        equation=solveFactorials(equation);
+        while(findOperator(equation)){equation=solveOperators(equation);}
+        tvDisplay.setText(equation);
     }//GEN-LAST:event_btnEqualsActionPerformed
 
-    private void btnRootaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRootaActionPerformed
+    private void btnRootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRootActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRootaActionPerformed
+    }//GEN-LAST:event_btnRootActionPerformed
 
     private void btnDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDotActionPerformed
         tvDisplay.setText(tvDisplay.getText() + ",");

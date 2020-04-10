@@ -83,3 +83,7 @@ src/CalculatorUtils/nbproject/project.properties
 src/CalculatorUtils/settings.gradle
 src/CalculatorUtils/src/main/java/CalculatorUtils/Display.form
 src/CalculatorUtils/src/main/java/CalculatorUtils/Display.java
+/src/Calculator/CalculatorUtils/.gradle/
+/src/Calculator/CalculatorUtils/build/
+/src/Calculator/src/CalculatorUtils/.gradle/
+/src/Calculator/src/CalculatorUtils/build/

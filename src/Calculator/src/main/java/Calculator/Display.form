@@ -569,7 +569,7 @@
                 <Property name="text" type="java.lang.String" value="&#x221a;"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRootaActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRootActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
