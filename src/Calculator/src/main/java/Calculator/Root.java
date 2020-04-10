@@ -1,11 +1,8 @@
 package Calculator;
 
-import java.util.ArrayList;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-import CalculatorUtils.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 
 public class Root extends javax.swing.JFrame {
 
@@ -350,7 +347,7 @@ public class Root extends javax.swing.JFrame {
         btnRoot.setBackground(new java.awt.Color(0, 0, 0));
         btnRoot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnRoot.setForeground(new java.awt.Color(240, 240, 240));
-        btnRoot.setText("√");
+        btnRoot.setText("root");
         btnRoot.setEnabled(false);
         btnRoot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -460,7 +457,7 @@ public class Root extends javax.swing.JFrame {
         });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("√");
+        jLabel1.setText("root");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -597,14 +594,33 @@ public class Root extends javax.swing.JFrame {
 
     private void btnEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqualsActionPerformed
         String root = tvDisplayRoot.getText();
-        String index = tvDisplayRoot.getText();
+        String index = tvDisplayIndex.getText();
+        String result="";
 
         if (index.equalsIgnoreCase("")) {
-            System.out.print("Nic");
             tvDisplayIndex.setText("No index");
         } else{
-        
+            if (root.contains(Character.toString('.'))) {
+                try {
+                    result="" + CalculatorUtils.Utilities.radical(Double.parseDouble(root), Integer.parseInt(index));
+                } catch (Exception ex) {
+                   result="Error";
+                }
+                } else {
+                try {
+                    result="" + CalculatorUtils.Utilities.radical(Integer.parseInt(root), Integer.parseInt(index));
+                } catch (Exception ex) {
+                    result="Error";
+                }
+                }
         }
+        
+        Display dsp = new Display();
+        dsp.setLocation(this.getLocation());
+        dsp.setEquation(result);
+        dsp.setVisible(true);
+        this.dispose();
+        
     }//GEN-LAST:event_btnEqualsActionPerformed
 
     private void btnRootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRootActionPerformed

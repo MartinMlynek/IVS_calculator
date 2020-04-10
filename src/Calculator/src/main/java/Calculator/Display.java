@@ -1,12 +1,5 @@
 package Calculator;
 
-import java.util.ArrayList;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-import CalculatorUtils.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class Display extends javax.swing.JFrame {
 
     /**
@@ -538,7 +531,7 @@ public class Display extends javax.swing.JFrame {
         btnRoot.setBackground(new java.awt.Color(0, 0, 0));
         btnRoot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnRoot.setForeground(new java.awt.Color(240, 240, 240));
-        btnRoot.setText("âˆš");
+        btnRoot.setText("â?š");
         btnRoot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRootActionPerformed(evt);

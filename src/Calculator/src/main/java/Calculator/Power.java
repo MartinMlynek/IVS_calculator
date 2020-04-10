@@ -1,11 +1,5 @@
 package Calculator;
 
-import java.util.ArrayList;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-import CalculatorUtils.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Power extends javax.swing.JFrame {
 
@@ -352,7 +346,7 @@ public class Power extends javax.swing.JFrame {
         btnRoot.setBackground(new java.awt.Color(175, 175, 175));
         btnRoot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnRoot.setForeground(new java.awt.Color(240, 240, 240));
-        btnRoot.setText("âˆš");
+        btnRoot.setText("â?š");
         btnRoot.setEnabled(false);
         btnRoot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -587,6 +581,33 @@ public class Power extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPowerActionPerformed
 
     private void btnEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqualsActionPerformed
+        String power = tvDisplayPower.getText();
+        String exponent = tvDisplayExponent.getText();
+        String result="";
+
+        if (exponent.equalsIgnoreCase("")) {
+            tvDisplayExponent.setText("No index");
+        } else{
+            if (power.contains(Character.toString('.'))) {
+                try {
+                    result="" + CalculatorUtils.Utilities.exp(Double.parseDouble(power), Integer.parseInt(exponent));
+                } catch (Exception ex) {
+                   result="Error";
+                }
+                } else {
+                try {
+                    result="" + CalculatorUtils.Utilities.exp(Integer.parseInt(power), Integer.parseInt(exponent));
+                } catch (Exception ex) {
+                    result="Error";
+                }
+                }
+        }
+        
+        Display dsp = new Display();
+        dsp.setLocation(this.getLocation());
+        dsp.setEquation(result);
+        dsp.setVisible(true);
+        this.dispose();
         
     }//GEN-LAST:event_btnEqualsActionPerformed
 
