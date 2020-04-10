@@ -203,9 +203,9 @@ public class Root extends javax.swing.JFrame {
 
     private void checkInvalidEquation(String equation) {
          if (checkDoubleOperators(equation)) {
-            tvDisplay.setText("Error:Stacked operators");
+            tvDisplayRoot.setText("Error:Stacked operators");
         } else if (checkInvalidChars(equation)) {
-            tvDisplay.setText("Error:Invalid characters");
+            tvDisplayRoot.setText("Error:Invalid characters");
         }
     }
     
@@ -247,11 +247,13 @@ public class Root extends javax.swing.JFrame {
         btnDot = new javax.swing.JButton();
         btnPower = new javax.swing.JButton();
         btnRoot = new javax.swing.JButton();
-        tvDisplay = new javax.swing.JTextField();
+        tvDisplayRoot = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
         btnEquals = new javax.swing.JButton();
         btnDeleteLast = new javax.swing.JButton();
         btnFact = new javax.swing.JButton();
+        tvDisplayIndex = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -374,6 +376,7 @@ public class Root extends javax.swing.JFrame {
         btnDivision.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnDivision.setForeground(new java.awt.Color(240, 240, 240));
         btnDivision.setText("/");
+        btnDivision.setEnabled(false);
         btnDivision.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDivisionActionPerformed(evt);
@@ -384,6 +387,7 @@ public class Root extends javax.swing.JFrame {
         btnTimes.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnTimes.setForeground(new java.awt.Color(240, 240, 240));
         btnTimes.setText("*");
+        btnTimes.setEnabled(false);
         btnTimes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTimesActionPerformed(evt);
@@ -455,6 +459,7 @@ public class Root extends javax.swing.JFrame {
         btnPlus.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnPlus.setForeground(new java.awt.Color(240, 240, 240));
         btnPlus.setText("+");
+        btnPlus.setEnabled(false);
         btnPlus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPlusActionPerformed(evt);
@@ -465,6 +470,7 @@ public class Root extends javax.swing.JFrame {
         btnMinus.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnMinus.setForeground(new java.awt.Color(240, 240, 240));
         btnMinus.setText("-");
+        btnMinus.setEnabled(false);
         btnMinus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMinusActionPerformed(evt);
@@ -526,6 +532,7 @@ public class Root extends javax.swing.JFrame {
         btnPower.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnPower.setForeground(new java.awt.Color(240, 240, 240));
         btnPower.setText("^");
+        btnPower.setEnabled(false);
         btnPower.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPowerActionPerformed(evt);
@@ -535,7 +542,8 @@ public class Root extends javax.swing.JFrame {
         btnRoot.setBackground(new java.awt.Color(0, 0, 0));
         btnRoot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnRoot.setForeground(new java.awt.Color(240, 240, 240));
-        btnRoot.setText("root");
+        btnRoot.setText("√");
+        btnRoot.setEnabled(false);
         btnRoot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRootActionPerformed(evt);
@@ -568,9 +576,14 @@ public class Root extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        tvDisplay.setEditable(false);
-        tvDisplay.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tvDisplay.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        tvDisplayRoot.setEditable(false);
+        tvDisplayRoot.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tvDisplayRoot.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        tvDisplayRoot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tvDisplayRootActionPerformed(evt);
+            }
+        });
 
         jPanel7.setBackground(new java.awt.Color(200, 200, 200));
 
@@ -588,6 +601,7 @@ public class Root extends javax.swing.JFrame {
         btnDeleteLast.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnDeleteLast.setForeground(new java.awt.Color(240, 240, 240));
         btnDeleteLast.setText("ABS");
+        btnDeleteLast.setEnabled(false);
         btnDeleteLast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteLastActionPerformed(evt);
@@ -598,6 +612,7 @@ public class Root extends javax.swing.JFrame {
         btnFact.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnFact.setForeground(new java.awt.Color(240, 240, 240));
         btnFact.setText("!");
+        btnFact.setEnabled(false);
         btnFact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFactActionPerformed(evt);
@@ -627,6 +642,18 @@ public class Root extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        tvDisplayIndex.setEditable(false);
+        tvDisplayIndex.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tvDisplayIndex.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        tvDisplayIndex.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tvDisplayIndexActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("√");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -635,19 +662,27 @@ public class Root extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tvDisplay, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(tvDisplayRoot, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tvDisplayIndex, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tvDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tvDisplayRoot, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tvDisplayIndex, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -676,37 +711,37 @@ public class Root extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteAllActionPerformed
-        tvDisplay.setText("");
+        tvDisplayRoot.setText("");
     }//GEN-LAST:event_btnDeleteAllActionPerformed
 
     private void btnDeleteLastaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteLastaActionPerformed
-        if (tvDisplay.getText().length() != 0) {
-            tvDisplay.setText("" + tvDisplay.getText().substring(0, tvDisplay.getText().length() - 1));
+        if (tvDisplayRoot.getText().length() != 0) {
+            tvDisplayRoot.setText("" + tvDisplayRoot.getText().substring(0, tvDisplayRoot.getText().length() - 1));
         }
     }//GEN-LAST:event_btnDeleteLastaActionPerformed
 
     private void btnFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiveActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + "5");
+        tvDisplayRoot.setText(tvDisplayRoot.getText() + "5");
     }//GEN-LAST:event_btnFiveActionPerformed
 
     private void btnEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEightActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + "8");
+        tvDisplayRoot.setText(tvDisplayRoot.getText() + "8");
     }//GEN-LAST:event_btnEightActionPerformed
 
     private void btnFactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFactActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + "!");
+        tvDisplayRoot.setText(tvDisplayRoot.getText() + "!");
     }//GEN-LAST:event_btnFactActionPerformed
 
     private void btnPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlusActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + "+");
+        tvDisplayRoot.setText(tvDisplayRoot.getText() + "+");
     }//GEN-LAST:event_btnPlusActionPerformed
 
     private void btnZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZeroActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + "0");
+        tvDisplayRoot.setText(tvDisplayRoot.getText() + "0");
     }//GEN-LAST:event_btnZeroActionPerformed
 
     private void btnMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinusActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + "-");
+        tvDisplayRoot.setText(tvDisplayRoot.getText() + "-");
     }//GEN-LAST:event_btnMinusActionPerformed
 
     private void btnDeleteLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteLastActionPerformed
@@ -714,40 +749,40 @@ public class Root extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteLastActionPerformed
 
     private void btnOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOneActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + "1");
+        tvDisplayRoot.setText(tvDisplayRoot.getText() + "1");
     }//GEN-LAST:event_btnOneActionPerformed
 
     private void btnTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTwoActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + "2");
+        tvDisplayRoot.setText(tvDisplayRoot.getText() + "2");
     }//GEN-LAST:event_btnTwoActionPerformed
 
     private void btnThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThreeActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + "3");
+        tvDisplayRoot.setText(tvDisplayRoot.getText() + "3");
     }//GEN-LAST:event_btnThreeActionPerformed
 
     private void btnFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFourActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + "4");
+        tvDisplayRoot.setText(tvDisplayRoot.getText() + "4");
     }//GEN-LAST:event_btnFourActionPerformed
 
     private void btnSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSixActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + "6");
+        tvDisplayRoot.setText(tvDisplayRoot.getText() + "6");
     }//GEN-LAST:event_btnSixActionPerformed
 
     private void btnSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSevenActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + "7");
+        tvDisplayRoot.setText(tvDisplayRoot.getText() + "7");
     }//GEN-LAST:event_btnSevenActionPerformed
 
     private void btnNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNineActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + "9");
+        tvDisplayRoot.setText(tvDisplayRoot.getText() + "9");
     }//GEN-LAST:event_btnNineActionPerformed
 
     private void btnTimesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimesActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + "*");
+        tvDisplayRoot.setText(tvDisplayRoot.getText() + "*");
 
     }//GEN-LAST:event_btnTimesActionPerformed
 
     private void btnDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivisionActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + "/");
+        tvDisplayRoot.setText(tvDisplayRoot.getText() + "/");
 
     }//GEN-LAST:event_btnDivisionActionPerformed
 
@@ -756,9 +791,9 @@ public class Root extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPowerActionPerformed
 
     private void btnEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqualsActionPerformed
-        String equation = tvDisplay.getText();
+        String equation = tvDisplayRoot.getText();
         if (equation == "") {
-            tvDisplay.setText("No equation to be solved");
+            tvDisplayRoot.setText("No equation to be solved");
         }
         
         if (checkNegativeEquation(equation)) {
@@ -771,7 +806,7 @@ public class Root extends javax.swing.JFrame {
         while (findOperator(equation)) {
             equation = solveOperators(equation);
         }
-        tvDisplay.setText(equation);
+        tvDisplayRoot.setText(equation);
     }//GEN-LAST:event_btnEqualsActionPerformed
 
     private void btnRootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRootActionPerformed
@@ -783,8 +818,16 @@ public class Root extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRootActionPerformed
 
     private void btnDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDotActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + ".");
+        tvDisplayRoot.setText(tvDisplayRoot.getText() + ".");
     }//GEN-LAST:event_btnDotActionPerformed
+
+    private void tvDisplayRootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tvDisplayRootActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tvDisplayRootActionPerformed
+
+    private void tvDisplayIndexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tvDisplayIndexActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tvDisplayIndexActionPerformed
 
     /**
      * @param args the command line arguments
@@ -845,13 +888,15 @@ public class Root extends javax.swing.JFrame {
     private javax.swing.JButton btnTimes;
     private javax.swing.JButton btnTwo;
     private javax.swing.JButton btnZero;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JTextField tvDisplay;
+    private javax.swing.JTextField tvDisplayIndex;
+    private javax.swing.JTextField tvDisplayRoot;
     // End of variables declaration//GEN-END:variables
 
    
