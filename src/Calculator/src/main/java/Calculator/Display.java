@@ -7,7 +7,6 @@ import CalculatorUtils.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 public class Display extends javax.swing.JFrame {
 
     /**
@@ -29,7 +28,7 @@ public class Display extends javax.swing.JFrame {
                 return 2;
             case '+':
                 return 3;
-            case '-':
+            case '$':
                 return 3;
             default:
                 return 0;
@@ -42,7 +41,7 @@ public class Display extends javax.swing.JFrame {
             if (this.getOperatorPriority(o) != 0) {
                 switch (this.getOperatorPriority(o)) {
                     case 1:
-                        equation=solveOperator(equation, i);
+                        equation = solveOperator(equation, i);
                 }
             }
         }
@@ -55,24 +54,23 @@ public class Display extends javax.swing.JFrame {
             if (this.getOperatorPriority(o) != 0) {
                 switch (this.getOperatorPriority(o)) {
                     case 2:
-                        equation=solveOperator(equation, i);
+                        equation = solveOperator(equation, i);
                 }
             }
         }
-        
+
         for (int i = 0; i < equation.length(); i++) {
             char o = equation.charAt(i);
             if (this.getOperatorPriority(o) != 0) {
                 switch (this.getOperatorPriority(o)) {
                     case 3:
-                        equation=solveOperator(equation, i);
+                        equation = solveOperator(equation, i);
                 }
             }
         }
         return equation;
 
     }
-    
 
     private boolean checkDoubleOperators(String equation) {
         for (int i = 0; i < equation.length() - 1; i++) {
@@ -85,7 +83,7 @@ public class Display extends javax.swing.JFrame {
     }
 
     public boolean checkInvalidChars(String equation) {
-        final String validChars = "0123456789+-*/!,";
+        final String validChars = "0123456789+-*/!.$";
         for (int i = 0; i < equation.length(); i++) {
             if (!validChars.contains(Character.toString(equation.charAt(i)))) {
                 return true;
@@ -96,7 +94,7 @@ public class Display extends javax.swing.JFrame {
 
     private String getStringNumberBeforeOper(String equation, int operIndex) {
         String number = "";
-        for (int i = operIndex-1; i >= 0; i--) {
+        for (int i = operIndex - 1; i >= 0; i--) {
             if (getOperatorPriority(equation.charAt(i)) == 0) {
                 number = equation.charAt(i) + number;
             } else {
@@ -108,7 +106,7 @@ public class Display extends javax.swing.JFrame {
 
     private String getStringNumberAfterOper(String equation, int operIndex) {
         String number = "";
-        for (int i = operIndex+1; i < equation.length(); i++) {
+        for (int i = operIndex + 1; i < equation.length(); i++) {
             if (getOperatorPriority(equation.charAt(i)) == 0) {
                 number = number + equation.charAt(i);
             } else {
@@ -117,42 +115,42 @@ public class Display extends javax.swing.JFrame {
         }
         return number;
     }
-    
-    private String calculateOperator(String equation, int operIndex) throws Exception{
-               //Method check the operator, calls the appropriate library method and returns the number in String
+
+    private String calculateOperator(String equation, int operIndex) throws Exception {
+        //Method check the operator, calls the appropriate library method and returns the number in String
         String numberBef = getStringNumberBeforeOper(equation, operIndex);
         String numberAft = getStringNumberAfterOper(equation, operIndex);
         switch (equation.charAt(operIndex)) {
             case '!':
-                if (numberBef.contains(Character.toString(','))) {
-                    
+                if (numberBef.contains(Character.toString('.'))) {
+
                     return "" + CalculatorUtils.Utilities.fact((int) Double.parseDouble(numberBef));
                 } else {
                     return "" + CalculatorUtils.Utilities.fact(Integer.parseInt(numberBef));
                 }
             case '/':
-                if (numberBef.contains(Character.toString(',')) || numberAft.contains(Character.toString(','))) {
+                if (numberBef.contains(Character.toString('.')) || numberAft.contains(Character.toString('.'))) {
                     return "" + CalculatorUtils.Utilities.div(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
                 } else {
                     return "" + CalculatorUtils.Utilities.div(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
                 }
 
             case '*':
-                if (numberBef.contains(Character.toString(',')) || numberAft.contains(Character.toString(','))) {
+                if (numberBef.contains(Character.toString('.')) || numberAft.contains(Character.toString('.'))) {
                     return "" + CalculatorUtils.Utilities.mul(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
                 } else {
                     return "" + CalculatorUtils.Utilities.mul(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
                 }
 
             case '+':
-                if (numberBef.contains(Character.toString(',')) || numberAft.contains(Character.toString(','))) {
+                if (numberBef.contains(Character.toString('.')) || numberAft.contains(Character.toString('.'))) {
                     return "" + CalculatorUtils.Utilities.add(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
                 } else {
                     return "" + CalculatorUtils.Utilities.add(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
                 }
 
-            case '-':
-                if (numberBef.contains(Character.toString(',')) || numberAft.contains(Character.toString(','))) {
+            case '$':
+                if (numberBef.contains(Character.toString('.')) || numberAft.contains(Character.toString('.'))) {
                     return "" + CalculatorUtils.Utilities.sub(Double.parseDouble(numberBef), Double.parseDouble(numberAft));
                 } else {
                     return "" + CalculatorUtils.Utilities.sub(Integer.parseInt(numberBef), Integer.parseInt(numberAft));
@@ -160,38 +158,61 @@ public class Display extends javax.swing.JFrame {
             default:
                 return "";
         }
-       
+
     }
-    
-    private String solveOperator(String equation, int operIndex){
+
+    private String solveOperator(String equation, int operIndex) {
         //Method replaces the operator and its arguments with a result
-        String subEquation="";
+        String subEquation = "";
+        System.out.println("operator:"+operIndex+",----------Equation:"+equation);
+        System.out.println("operator:"+operIndex+",subEquation:"+subEquation);
+
         if (equation.charAt(operIndex) == '!') {
-            subEquation=getStringNumberBeforeOper(equation, operIndex)+equation.charAt(operIndex);
+            subEquation = getStringNumberBeforeOper(equation, operIndex) + equation.charAt(operIndex);
         } else {
-            subEquation=getStringNumberBeforeOper(equation, operIndex)+equation.charAt(operIndex)+getStringNumberAfterOper(equation, operIndex);
+            subEquation = getStringNumberBeforeOper(equation, operIndex) + equation.charAt(operIndex) + getStringNumberAfterOper(equation, operIndex);
         }
         String solvedSubEquation;
         try {
             solvedSubEquation = calculateOperator(equation, operIndex);
-            equation=equation.replace(subEquation, solvedSubEquation);
+            System.out.println("operator:"+operIndex+",solvedSubEquation:"+solvedSubEquation);
+            equation = equation.replace(subEquation, solvedSubEquation);
+            System.out.println("operator:"+operIndex+",Equation after:"+subEquation);
             return equation;
         } catch (Exception ex) {
             return "Error";
-        }   
+        }
     }
-    
-    private boolean findOperator(String equation){
-         for (int i = 0; i < equation.length(); i++) {
+
+    private boolean findOperator(String equation) {
+        for (int i = 0; i < equation.length(); i++) {
             char o = equation.charAt(i);
-            if (this.getOperatorPriority(o)==3||this.getOperatorPriority(o)==2) {
-                    return true;
-                }
+            if (this.getOperatorPriority(o) == 3 || this.getOperatorPriority(o) == 2) {
+                return true;
             }
-        return false;    
+        }
+        return false;
     }
-        
+
+    private boolean checkNegativeEquation(String equation) {
+        if (equation.charAt(0) == '-') {
+            return true;
+        }
+        return false;
+    }
+
+    private void checkInvalidEquation(String equation) {
+         if (checkDoubleOperators(equation)) {
+            tvDisplay.setText("Error:Stacked operators");
+        } else if (checkInvalidChars(equation)) {
+            tvDisplay.setText("Error:Invalid characters");
+        }
+    }
     
+     private String replaceMinuses(String equation) {
+        equation = equation.replace('-', '$'); //Replaces every minus to prevent confusion between negative number and operator
+        return equation;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -494,7 +515,7 @@ public class Display extends javax.swing.JFrame {
         btnDot.setBackground(new java.awt.Color(0, 0, 0));
         btnDot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnDot.setForeground(new java.awt.Color(240, 240, 240));
-        btnDot.setText(",");
+        btnDot.setText(".");
         btnDot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDotActionPerformed(evt);
@@ -514,7 +535,7 @@ public class Display extends javax.swing.JFrame {
         btnRoot.setBackground(new java.awt.Color(0, 0, 0));
         btnRoot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnRoot.setForeground(new java.awt.Color(240, 240, 240));
-        btnRoot.setText("?");
+        btnRoot.setText("root");
         btnRoot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRootActionPerformed(evt);
@@ -530,10 +551,10 @@ public class Display extends javax.swing.JFrame {
                 .addComponent(btnDot, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnZero, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
-                .addComponent(btnPower, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnRoot, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRoot, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnPower, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -659,7 +680,7 @@ public class Display extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteAllActionPerformed
 
     private void btnDeleteLastaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteLastaActionPerformed
-        if(tvDisplay.getText().length()!=0){
+        if (tvDisplay.getText().length() != 0) {
             tvDisplay.setText("" + tvDisplay.getText().substring(0, tvDisplay.getText().length() - 1));
         }
     }//GEN-LAST:event_btnDeleteLastaActionPerformed
@@ -736,13 +757,20 @@ public class Display extends javax.swing.JFrame {
 
     private void btnEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqualsActionPerformed
         String equation = tvDisplay.getText();
-        if (checkDoubleOperators(equation)) {
-            tvDisplay.setText("Error:Stacked operators");
-        } else if (checkInvalidChars(equation)) {
-            tvDisplay.setText("Error:Invalid characters");
+        if (equation == "") {
+            tvDisplay.setText("No equation to be solved");
         }
-        equation=solveFactorials(equation);
-        while(findOperator(equation)){equation=solveOperators(equation);}
+        
+        if (checkNegativeEquation(equation)) {
+            equation = "0" + equation;
+        }
+        equation=replaceMinuses(equation);
+        checkInvalidEquation(equation);
+        equation = solveFactorials(equation);
+        
+        while (findOperator(equation)) {
+            equation = solveOperators(equation);
+        }
         tvDisplay.setText(equation);
     }//GEN-LAST:event_btnEqualsActionPerformed
 
@@ -751,7 +779,7 @@ public class Display extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRootActionPerformed
 
     private void btnDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDotActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + ",");
+        tvDisplay.setText(tvDisplay.getText() + ".");
     }//GEN-LAST:event_btnDotActionPerformed
 
     /**
@@ -820,4 +848,7 @@ public class Display extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JTextField tvDisplay;
     // End of variables declaration//GEN-END:variables
+
+   
+
 }
