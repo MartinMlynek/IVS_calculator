@@ -10,10 +10,21 @@ public class Display extends javax.swing.JFrame {
         initComponents();
         this.setTitle("OAGUH Calculator");
     }
-
+    /**
+    *@name setEquation
+    *@brief Sets equation into the display of the calculator
+    *@param equation
+    *@return void
+    */
     public void setEquation(String equation){
         this.tvDisplay.setText(equation);
     }
+    /**
+    *@name getOperatorPriority
+    *@brief Returns the priority of operator in form of number
+    *@param operator
+    *@return priority
+    */
     private int getOperatorPriority(char operator) {
         switch (operator) {
             case '!':
@@ -30,7 +41,13 @@ public class Display extends javax.swing.JFrame {
                 return 0;
         }
     }
-
+    
+     /**
+    *@name solveFactorials
+    *@brief Finds every factorial in equation and calls method solveOperator. Return equation with solved factorials.
+    *@param equation
+    *@return equation
+    */
     private String solveFactorials(String equation) {
         for (int i = 0; i < equation.length(); i++) {
             char o = equation.charAt(i);
@@ -43,7 +60,12 @@ public class Display extends javax.swing.JFrame {
         }
         return equation;
     }
-
+     /**
+    *@name solveOperators
+    *@brief Finds every operator in equation and calls method solveOperator. Return equation with solved operators.
+    *@param equation
+    *@return equation
+    */
     private String solveOperators(String equation) {
         for (int i = 0; i < equation.length(); i++) {
             char o = equation.charAt(i);
@@ -67,7 +89,12 @@ public class Display extends javax.swing.JFrame {
         return equation;
 
     }
-
+    /**
+    *@name checkDoubleOperators
+    *@brief Checks equation for operators next to each other. Returns true if there are any.
+    *@param equation
+    *@return boolean
+    */
     private boolean checkDoubleOperators(String equation) {
         for (int i = 0; i < equation.length() - 1; i++) {
             if (equation.charAt(i) == equation.charAt(i + 1)) {
@@ -77,7 +104,12 @@ public class Display extends javax.swing.JFrame {
         return false;
 
     }
-
+    /**
+    *@name checkInvalidChars
+    *@brief Checks equation for invalid characters specified in method. Returns true if there is any.
+    *@param equation
+    *@return boolean
+    */
     public boolean checkInvalidChars(String equation) {
         final String validChars = "0123456789+-*/!.$";
         for (int i = 0; i < equation.length(); i++) {
@@ -88,6 +120,12 @@ public class Display extends javax.swing.JFrame {
         return false;
     }
 
+    /**
+    *@name getStringNumberBeforeOper
+    *@param equation
+    *@param operIndex index of the operator in the equation
+    *@return number number before the operator stored in String
+    */
     private String getStringNumberBeforeOper(String equation, int operIndex) {
         String number = "";
         for (int i = operIndex - 1; i >= 0; i--) {
@@ -99,7 +137,12 @@ public class Display extends javax.swing.JFrame {
         }
         return number;
     }
-
+     /**
+    *@name getStringNumberAfterOper
+    *@param equation
+    *@param operIndex index of the operator in the equation
+    *@return number number after the operator stored in String
+    */
     private String getStringNumberAfterOper(String equation, int operIndex) {
         String number = "";
         for (int i = operIndex + 1; i < equation.length(); i++) {
@@ -111,7 +154,14 @@ public class Display extends javax.swing.JFrame {
         }
         return number;
     }
-
+    
+     /**
+    *@name calculateOperator
+    *@brief Calls appropriate library method 
+    *@param equation
+    *@param operIndex index of the operator in the equation
+    *@return solvedOperator solved subequation
+    */
     private String calculateOperator(String equation, int operIndex) throws Exception {
         //Method check the operator, calls the appropriate library method and returns the number in String
         String numberBef = getStringNumberBeforeOper(equation, operIndex);
@@ -156,7 +206,13 @@ public class Display extends javax.swing.JFrame {
         }
 
     }
-
+     /**
+    *@name solveOperator
+    *@brief Method gets number for the operator, solves subequation and replaces the subequation with result
+    *@param equation
+    *@param operIndex
+    *@return equation Equation with solved subEquation 
+    */
     private String solveOperator(String equation, int operIndex) {
         //Method replaces the operator and its arguments with a result
         String subEquation = "";
@@ -179,7 +235,12 @@ public class Display extends javax.swing.JFrame {
             return "Error";
         }
     }
-
+     /**
+    *@name findOperator
+    *@brief Checks if equation contains any operator
+    *@param equation
+    *@return boolean True if equation contains any operator
+    */
     private boolean findOperator(String equation) {
         for (int i = 0; i < equation.length(); i++) {
             char o = equation.charAt(i);
@@ -189,14 +250,24 @@ public class Display extends javax.swing.JFrame {
         }
         return false;
     }
-
+     /**
+    *@name checkNegativeEquation
+    *@brief Checks if equation starts with minus
+    *@param equation
+    *@return boolean returns true if equation starts with minus
+    */
     private boolean checkNegativeEquation(String equation) {
         if (equation.charAt(0) == '-') {
             return true;
         }
         return false;
     }
-
+     /**
+    *@name checkInvalidEquation
+    *@brief Sets error message into the display if error occurs
+    *@param String equation
+    *@return void
+    */
     private void checkInvalidEquation(String equation) {
          if (checkDoubleOperators(equation)) {
             tvDisplay.setText("Error:Stacked operators");
@@ -204,7 +275,12 @@ public class Display extends javax.swing.JFrame {
             tvDisplay.setText("Error:Invalid characters");
         }
     }
-    
+     /**
+    *@name replaceMinuses
+    *@brief Replaces all the minuses with another symbol to prevent confusion between operator and negative numbers.
+    *@param equation
+    *@return equation modified equation
+    */
      private String replaceMinuses(String equation) {
         equation = equation.replace('-', '$'); //Replaces every minus to prevent confusion between negative number and operator
         return equation;

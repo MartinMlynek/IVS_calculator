@@ -12,7 +12,12 @@ public class Power extends javax.swing.JFrame {
         this.setTitle("OAGUH Calculator");
     }
 
-    
+      /**
+    *@name setEquation
+    *@brief Sets equation into the display of the calculator
+    *@param equation
+    *@return void
+    */
      public void setEquation(String equation){
         this.tvDisplayPower.setText(equation);
     }

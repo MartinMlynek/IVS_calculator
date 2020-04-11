@@ -14,7 +14,12 @@ public class Root extends javax.swing.JFrame {
         initComponents();
         this.setTitle("OAGUH Calculator");
     }
-
+      /**
+    *@name setEquation
+    *@brief Sets equation into the display of the calculator
+    *@param equation
+    *@return void
+    */
      public void setEquation(String equation){
         this.tvDisplayRoot.setText(equation);
     }
