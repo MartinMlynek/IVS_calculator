@@ -351,7 +351,7 @@ public class Power extends javax.swing.JFrame {
         btnRoot.setBackground(new java.awt.Color(175, 175, 175));
         btnRoot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnRoot.setForeground(new java.awt.Color(240, 240, 240));
-        btnRoot.setText("â?š");
+        btnRoot.setText("âˆš");
         btnRoot.setEnabled(false);
         btnRoot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -352,7 +352,7 @@ public class Root extends javax.swing.JFrame {
         btnRoot.setBackground(new java.awt.Color(0, 0, 0));
         btnRoot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnRoot.setForeground(new java.awt.Color(240, 240, 240));
-        btnRoot.setText("root");
+        btnRoot.setText("√");
         btnRoot.setEnabled(false);
         btnRoot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -462,7 +462,7 @@ public class Root extends javax.swing.JFrame {
         });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("root");
+        jLabel1.setText("√");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
