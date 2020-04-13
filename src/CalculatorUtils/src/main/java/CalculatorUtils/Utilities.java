@@ -8,6 +8,7 @@ import java.lang.Math;
  * @author Tomáš Daněk, xdanek23
  */
 public class Utilities {
+
     /**
     * @param first - addend
     * @param second - addend
@@ -23,6 +24,7 @@ public class Utilities {
         return result;
     }
     
+
     /**
     * @param first - addend
     * @param second - addend
@@ -40,6 +42,7 @@ public class Utilities {
         return result;
     }
     
+
     /**
     * @param first - minuend
     * @param second - subtrahend
@@ -55,6 +58,7 @@ public class Utilities {
         return result;
     }
     
+
     /**
     * @param first - minuend
     * @param second - subtrahend
@@ -72,6 +76,7 @@ public class Utilities {
         return result;
     }
     
+
     /**
     * @param first - multiplier
     * @param second - multiplicand
@@ -87,6 +92,7 @@ public class Utilities {
         return result;
     }
     
+
     /**
     * @param first - multiplier
     * @param second - multiplicand
@@ -171,6 +177,7 @@ public class Utilities {
         return result;
     }
     
+
     /**
     * @param first - power
     * @param second - exponent
@@ -202,6 +209,7 @@ public class Utilities {
         return result;
     }
     
+
     /**
     * @param first - power
     * @param second - exponent
