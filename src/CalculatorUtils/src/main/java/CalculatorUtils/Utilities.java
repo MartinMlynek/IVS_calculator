@@ -8,6 +8,12 @@ import java.lang.Math;
  * @author Tomáš Daněk, xdanek23
  */
 public class Utilities {
+
+    /**
+    * @param first - addend
+    * @param second - addend
+    * @return sum
+    */
     public static double add(double first, double second) throws Exception{
         double result = first + second; 
 
@@ -18,6 +24,12 @@ public class Utilities {
         return result;
     }
     
+
+    /**
+    * @param first - addend
+    * @param second - addend
+    * @return sum
+    */
     public static int add(int first, int second) throws Exception{
         int result = first + second; 
 
@@ -30,6 +42,12 @@ public class Utilities {
         return result;
     }
     
+
+    /**
+    * @param first - minuend
+    * @param second - subtrahend
+    * @return difference
+    */
     public static double sub(double first, double second) throws Exception{
         double result = first - second; 
 
@@ -40,6 +58,12 @@ public class Utilities {
         return result;
     }
     
+
+    /**
+    * @param first - minuend
+    * @param second - subtrahend
+    * @return difference
+    */
     public static int sub(int first, int second) throws Exception{
         int result = first - second; 
 
@@ -52,6 +76,12 @@ public class Utilities {
         return result;
     }
     
+
+    /**
+    * @param first - multiplier
+    * @param second - multiplicand
+    * @return product
+    */
     public static double mul(double first, double second) throws Exception{
         double result = first * second; 
 
@@ -62,6 +92,12 @@ public class Utilities {
         return result;
     }
     
+
+    /**
+    * @param first - multiplier
+    * @param second - multiplicand
+    * @return product
+    */
     public static int mul(int first, int second) throws Exception{
         int result = first * second; 
 
@@ -81,6 +117,7 @@ public class Utilities {
     /**
     * @param first - dividend
     * @param second - divisor
+    * @result quotient
     */
     public static double div(double first, double second) throws Exception{  
         if(second == 0.0){
@@ -140,6 +177,11 @@ public class Utilities {
         return result;
     }
     
+
+    /**
+    * @param first - power
+    * @param second - exponent
+    */
     public static int exp(int first, int second) throws Exception{
         int result = 1;
         
@@ -167,6 +209,11 @@ public class Utilities {
         return result;
     }
     
+
+    /**
+    * @param first - power
+    * @param second - exponent
+    */
     public static double exp(int first, double second) throws Exception{
         double result = 1;
         
@@ -193,7 +240,8 @@ public class Utilities {
             throw new Exception("Negative value");
         }
 
-        double result = Math.pow(first, ((double) 1 / second));
+        double toRound = Math.pow(first, ((double) 1 / second));
+        double result = (double)Math.round(toRound * 1000d) / 1000d;
         
         return result;
     }
@@ -206,7 +254,7 @@ public class Utilities {
         return first;
     }
     
-    public int abs(int first){
+    public static int abs(int first){
         if(first < 0){
             return -(first);
         }
