@@ -117,7 +117,7 @@ public class Utilities {
     /**
     * @param first - dividend
     * @param second - divisor
-    * @result quotient
+    * @return quotient
     */
     public static double div(double first, double second) throws Exception{  
         if(second == 0.0){
