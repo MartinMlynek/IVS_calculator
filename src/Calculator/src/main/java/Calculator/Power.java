@@ -1,5 +1,10 @@
 package Calculator;
 
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.event.MenuEvent;
+import javax.swing.event.MenuListener;
+
 
 public class Power extends javax.swing.JFrame {
 
@@ -10,6 +15,30 @@ public class Power extends javax.swing.JFrame {
     public Power() {
         initComponents();
         this.setTitle("OAGUH Calculator");
+        
+        JMenuBar menuBar = new JMenuBar();
+        JMenu menuHelp = new JMenu("Nápověda");
+        JMenu menuBack = new JMenu("Zpět");
+        
+        menuBack.addMenuListener(new MenuListener() {
+            @Override
+            public void menuSelected(MenuEvent e) {
+                String power = tvDisplayPower.getText();
+                closePowerWindow(power);
+            }
+
+            @Override
+            public void menuDeselected(MenuEvent e) {
+            }
+
+            @Override
+            public void menuCanceled(MenuEvent e) {
+            }
+        });
+        
+        this.setJMenuBar(menuBar);
+        menuBar.add(menuHelp);
+        menuBar.add(menuBack);
     }
 
       /**
@@ -35,9 +64,9 @@ public class Power extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btnTwo = new javax.swing.JButton();
         btnThree = new javax.swing.JButton();
-        btnDeleteAll = new javax.swing.JButton();
         btnOne = new javax.swing.JButton();
-        btnDeleteLasta = new javax.swing.JButton();
+        btnRoot = new javax.swing.JButton();
+        btnPower = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         btnFive = new javax.swing.JButton();
         btnSix = new javax.swing.JButton();
@@ -53,15 +82,16 @@ public class Power extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         btnZero = new javax.swing.JButton();
         btnDot = new javax.swing.JButton();
-        btnPower = new javax.swing.JButton();
-        btnRoot = new javax.swing.JButton();
+        btnEquals = new javax.swing.JButton();
         tvDisplayPower = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
-        btnEquals = new javax.swing.JButton();
-        btnDeleteLast = new javax.swing.JButton();
-        btnFact = new javax.swing.JButton();
         tvDisplayExponent = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        btnDeleteAll = new javax.swing.JButton();
+        btnDeleteLast = new javax.swing.JButton();
+        btnABS = new javax.swing.JButton();
+        btnFact = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,16 +120,6 @@ public class Power extends javax.swing.JFrame {
             }
         });
 
-        btnDeleteAll.setBackground(new java.awt.Color(0, 0, 0));
-        btnDeleteAll.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnDeleteAll.setForeground(new java.awt.Color(230, 76, 0));
-        btnDeleteAll.setText("CE");
-        btnDeleteAll.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteAllActionPerformed(evt);
-            }
-        });
-
         btnOne.setBackground(new java.awt.Color(75, 75, 75));
         btnOne.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnOne.setForeground(new java.awt.Color(240, 240, 240));
@@ -110,13 +130,25 @@ public class Power extends javax.swing.JFrame {
             }
         });
 
-        btnDeleteLasta.setBackground(new java.awt.Color(0, 0, 0));
-        btnDeleteLasta.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnDeleteLasta.setForeground(new java.awt.Color(230, 76, 0));
-        btnDeleteLasta.setText("C");
-        btnDeleteLasta.addActionListener(new java.awt.event.ActionListener() {
+        btnRoot.setBackground(new java.awt.Color(175, 175, 175));
+        btnRoot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnRoot.setForeground(new java.awt.Color(240, 240, 240));
+        btnRoot.setText("√");
+        btnRoot.setEnabled(false);
+        btnRoot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteLastaActionPerformed(evt);
+                btnRootActionPerformed(evt);
+            }
+        });
+
+        btnPower.setBackground(new java.awt.Color(175, 175, 175));
+        btnPower.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnPower.setForeground(new java.awt.Color(240, 240, 240));
+        btnPower.setText("^");
+        btnPower.setEnabled(false);
+        btnPower.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPowerActionPerformed(evt);
             }
         });
 
@@ -125,16 +157,17 @@ public class Power extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(btnOne, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnThree, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDeleteLasta, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRoot, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDeleteAll, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnPower, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,8 +176,8 @@ public class Power extends javax.swing.JFrame {
                     .addComponent(btnOne, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnThree, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDeleteAll, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDeleteLasta, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnRoot, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPower, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -337,25 +370,13 @@ public class Power extends javax.swing.JFrame {
             }
         });
 
-        btnPower.setBackground(new java.awt.Color(175, 175, 175));
-        btnPower.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnPower.setForeground(new java.awt.Color(240, 240, 240));
-        btnPower.setText("^");
-        btnPower.setEnabled(false);
-        btnPower.addActionListener(new java.awt.event.ActionListener() {
+        btnEquals.setBackground(new java.awt.Color(0, 0, 0));
+        btnEquals.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnEquals.setForeground(new java.awt.Color(240, 240, 240));
+        btnEquals.setText("=");
+        btnEquals.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPowerActionPerformed(evt);
-            }
-        });
-
-        btnRoot.setBackground(new java.awt.Color(175, 175, 175));
-        btnRoot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnRoot.setForeground(new java.awt.Color(240, 240, 240));
-        btnRoot.setText("√");
-        btnRoot.setEnabled(false);
-        btnRoot.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRootActionPerformed(evt);
+                btnEqualsActionPerformed(evt);
             }
         });
 
@@ -367,11 +388,9 @@ public class Power extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnDot, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnZero, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
-                .addComponent(btnRoot, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnZero, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnPower, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEquals, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -380,8 +399,7 @@ public class Power extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDot, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnZero, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPower, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRoot, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnEquals, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -391,24 +409,56 @@ public class Power extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(200, 200, 200));
 
-        btnEquals.setBackground(new java.awt.Color(0, 0, 0));
-        btnEquals.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnEquals.setForeground(new java.awt.Color(240, 240, 240));
-        btnEquals.setText("=");
-        btnEquals.addActionListener(new java.awt.event.ActionListener() {
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 311, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 37, Short.MAX_VALUE)
+        );
+
+        tvDisplayExponent.setEditable(false);
+        tvDisplayExponent.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tvDisplayExponent.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("^");
+
+        jPanel3.setBackground(new java.awt.Color(200, 200, 200));
+        jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        btnDeleteAll.setBackground(new java.awt.Color(0, 0, 0));
+        btnDeleteAll.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnDeleteAll.setForeground(new java.awt.Color(230, 76, 0));
+        btnDeleteAll.setText("CE");
+        btnDeleteAll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEqualsActionPerformed(evt);
+                btnDeleteAllActionPerformed(evt);
             }
         });
 
-        btnDeleteLast.setBackground(new java.awt.Color(175, 175, 175));
+        btnDeleteLast.setBackground(new java.awt.Color(0, 0, 0));
         btnDeleteLast.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnDeleteLast.setForeground(new java.awt.Color(240, 240, 240));
-        btnDeleteLast.setText("ABS");
-        btnDeleteLast.setEnabled(false);
+        btnDeleteLast.setForeground(new java.awt.Color(230, 76, 0));
+        btnDeleteLast.setText("C");
         btnDeleteLast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteLastActionPerformed(evt);
+            }
+        });
+
+        btnABS.setBackground(new java.awt.Color(175, 175, 175));
+        btnABS.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnABS.setForeground(new java.awt.Color(240, 240, 240));
+        btnABS.setText("ABS");
+        btnABS.setEnabled(false);
+        btnABS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnABSActionPerformed(evt);
             }
         });
 
@@ -423,56 +473,54 @@ public class Power extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnEquals, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnDeleteAll, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDeleteLast, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addComponent(btnABS, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnFact, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEquals, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDeleteLast, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnFact, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(btnDeleteAll, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnDeleteLast, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnABS, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnFact, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        tvDisplayExponent.setEditable(false);
-        tvDisplayExponent.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tvDisplayExponent.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("^");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(tvDisplayPower, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tvDisplayExponent, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(tvDisplayPower, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tvDisplayExponent, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -483,17 +531,19 @@ public class Power extends javax.swing.JFrame {
                     .addComponent(tvDisplayPower, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tvDisplayExponent, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -504,7 +554,7 @@ public class Power extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -514,11 +564,11 @@ public class Power extends javax.swing.JFrame {
         tvDisplayExponent.setText("");
     }//GEN-LAST:event_btnDeleteAllActionPerformed
 
-    private void btnDeleteLastaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteLastaActionPerformed
+    private void btnDeleteLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteLastActionPerformed
         if (tvDisplayExponent.getText().length() != 0) {
             tvDisplayExponent.setText("" + tvDisplayExponent.getText().substring(0, tvDisplayExponent.getText().length() - 1));
         }
-    }//GEN-LAST:event_btnDeleteLastaActionPerformed
+    }//GEN-LAST:event_btnDeleteLastActionPerformed
 
     private void btnFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiveActionPerformed
         tvDisplayExponent.setText(tvDisplayExponent.getText() + "5");
@@ -541,9 +591,9 @@ public class Power extends javax.swing.JFrame {
     private void btnMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinusActionPerformed
     }//GEN-LAST:event_btnMinusActionPerformed
 
-    private void btnDeleteLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteLastActionPerformed
+    private void btnABSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnABSActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnDeleteLastActionPerformed
+    }//GEN-LAST:event_btnABSActionPerformed
 
     private void btnOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOneActionPerformed
         tvDisplayExponent.setText(tvDisplayExponent.getText() + "1");
@@ -608,11 +658,7 @@ public class Power extends javax.swing.JFrame {
                 }
         }
         
-        Display dsp = new Display();
-        dsp.setLocation(this.getLocation());
-        dsp.setEquation(result);
-        dsp.setVisible(true);
-        this.dispose();
+        closePowerWindow(result);
         
     }//GEN-LAST:event_btnEqualsActionPerformed
 
@@ -663,9 +709,9 @@ public class Power extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnABS;
     private javax.swing.JButton btnDeleteAll;
     private javax.swing.JButton btnDeleteLast;
-    private javax.swing.JButton btnDeleteLasta;
     private javax.swing.JButton btnDivision;
     private javax.swing.JButton btnDot;
     private javax.swing.JButton btnEight;
@@ -688,6 +734,7 @@ public class Power extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -696,6 +743,12 @@ public class Power extends javax.swing.JFrame {
     private javax.swing.JTextField tvDisplayPower;
     // End of variables declaration//GEN-END:variables
 
-   
+    private void closePowerWindow(String result){
+    Display dsp = new Display();
+    dsp.setLocation(this.getLocation());
+    dsp.setEquation(result);
+    dsp.setVisible(true);
+    this.dispose();
+}
 
 }
