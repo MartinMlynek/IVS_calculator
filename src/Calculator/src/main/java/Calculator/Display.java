@@ -43,10 +43,14 @@ public class Display extends javax.swing.JFrame {
         menuBar.add(menuHelp);
     }
     /**
-    *@name setEquation
-    *@brief Sets equation into the display of the calculator
-    *@param equation
-    *@return void
+    * \~english @name setEquation
+    * \~english @brief Sets equation into the display of the calculator
+    * \~english @param equation
+    * \~english @return void
+    * \~czech @name setEquation
+    * \~czech @brief Nastaví rovnici do displeje kalkulaèky
+    * \~czech @param rovnice 
+    * \~czech @return void
     */
     public void setEquation(String equation){
         this.tvDisplay.setText(equation);
@@ -75,10 +79,14 @@ public class Display extends javax.swing.JFrame {
     }
     
      /**
-    *@name solveFactorials
-    *@brief Finds every factorial in equation and calls method solveOperator. Return equation with solved factorials.
-    *@param equation
-    *@return equation
+    * \~english @name solveFactorials
+    * \~english @brief Finds every factorial in equation and calls method solveOperator. 
+    * \~english @param equation
+    * \~english @return equation Returns equation with solved factorials.
+    * \~czech @name solveFactorials
+    * \~czech @brief Najde každý faktoriál a spustí metodu solveOperator. 
+    * \~czech @param rovnice 
+    * \~czech @return void Vrátí rovnici s vypoèítanými faktoriály.
     */
     private String solveFactorials(String equation) {
         for (int i = 0; i < equation.length(); i++) {
@@ -93,10 +101,14 @@ public class Display extends javax.swing.JFrame {
         return equation;
     }
      /**
-    *@name solveOperators
-    *@brief Finds every operator in equation and calls method solveOperator. Return equation with solved operators.
-    *@param equation
-    *@return equation
+    * \~english @name solveOperators
+    * \~english @brief Finds every operator in equation and calls method solveOperator. 
+    * \~english @param equation
+    * \~english @return equation Return equation with solved operators.
+    * \~czech *@name solveOperators
+    * \~czech @brief Najde každý operátor a zavolá metodu solveOperator.
+    * \~czech @param equation
+    * \~czech @return equation Vrátí rovnici s vypoèítanými operátory.
     */
     private String solveOperators(String equation) {
         for (int i = 0; i < equation.length(); i++) {
@@ -123,7 +135,8 @@ public class Display extends javax.swing.JFrame {
     }
     /**
     *@name checkDoubleOperators
-    *@brief Checks equation for operators next to each other. Returns true if there are any.
+    * \~english @brief Checks equation for operators next to each other.
+    * \~czech @brief Zjistí, jestli jsou v rovnici dva operátory vedle sebe. 
     *@param equation
     *@return boolean
     */
@@ -138,7 +151,8 @@ public class Display extends javax.swing.JFrame {
     }
     /**
     *@name checkInvalidChars
-    *@brief Checks equation for invalid characters specified in method. Returns true if there is any.
+    * \~english @brief Checks equation for invalid characters specified in method.
+    * \~english @brief Zjistí, jestli jsou v rovnici nepovolené znaky
     *@param equation
     *@return boolean
     */
@@ -155,8 +169,10 @@ public class Display extends javax.swing.JFrame {
     /**
     *@name getStringNumberBeforeOper
     *@param equation
-    *@param operIndex index of the operator in the equation
-    *@return number number before the operator stored in String
+    * \~english @param operIndex index of the operator in the equation
+    * \~czech @param operIndex index operátoru v rovnici
+    * \~english @return number number before the operator stored in String
+    * \~czech @return number èíslo pøed operátorem 
     */
     private String getStringNumberBeforeOper(String equation, int operIndex) {
         String number = "";
@@ -172,8 +188,11 @@ public class Display extends javax.swing.JFrame {
      /**
     *@name getStringNumberAfterOper
     *@param equation
-    *@param operIndex index of the operator in the equation
-    *@return number number after the operator stored in String
+    * \~english @param operIndex index of the operator in the equation
+    * \~czech @param operIndex index operátoru v rovnici
+    * \~english @return number number after the operator stored in String
+    * \~czech @return number èíslo za operátorem 
+
     */
     private String getStringNumberAfterOper(String equation, int operIndex) {
         String number = "";
@@ -189,10 +208,13 @@ public class Display extends javax.swing.JFrame {
     
      /**
     *@name calculateOperator
-    *@brief Calls appropriate library method 
+    * \~english @brief Calls appropriate library method CalculatorUtils 
+    * \~czech @brief Volá správnou metodu z knihovny CalculatorUtils
     *@param equation
-    *@param operIndex index of the operator in the equation
-    *@return solvedOperator solved subequation
+    * \~english @param operIndex index of the operator in the equation
+    * \~czech @param operIndex index operátoru v rovnici
+    * \~english @return solvedOperator solved subequation
+    * \~czech @return solvedOperator Výsledek operátoru
     */
     private String calculateOperator(String equation, int operIndex) throws Exception {
         //Method check the operator, calls the appropriate library method and returns the number in String
@@ -240,11 +262,13 @@ public class Display extends javax.swing.JFrame {
     }
      /**
     *@name solveOperator
-    *@brief Method gets number for the operator, solves subequation and replaces the subequation with result
+    * \~english @brief Method gets number for the operator, solves subequation and replaces the subequation with result
+    * \~czech @brief Metoda zjistí èísla pro výpoèet operátoru, vypoèítá subrovnici a nahradí subrovnici výsledkem
     *@param equation
     *@param operIndex
-    *@return equation Equation with solved subEquation 
-    */
+    * \~english @return equation Equation with solved subEquation 
+    * \~czech @return equation Rovnice s vypoèítaným operátorem
+    */ 
     private String solveOperator(String equation, int operIndex) {
         //Method replaces the operator and its arguments with a result
         String subEquation = "";
@@ -269,9 +293,11 @@ public class Display extends javax.swing.JFrame {
     }
      /**
     *@name findOperator
-    *@brief Checks if equation contains any operator
+    * \~english @brief Checks if equation contains any operator
+    * \~czech @brief Zjistí, jestli rovnice obsahuje operátor
     *@param equation
-    *@return boolean True if equation contains any operator
+    * \~english @return boolean True if equation contains any operator
+    * \~czech @return boolean  navrátí true pokud rovnice obsahuje nìjaký operátor
     */
     private boolean findOperator(String equation) {
         for (int i = 0; i < equation.length(); i++) {
@@ -284,9 +310,12 @@ public class Display extends javax.swing.JFrame {
     }
      /**
     *@name checkNegativeEquation
-    *@brief Checks if equation starts with minus
+    * \~english @brief Checks if equation starts with minus
+    * \~czech @brief Zjistí, jestli rovnice zaèíná mínusem
     *@param equation
-    *@return boolean returns true if equation starts with minus
+    * \~english  @return boolean returns true if equation starts with minus
+    * \~czech  @return boolean navrátí true pokud rovnice zaèíná mínusem
+
     */
     private boolean checkNegativeEquation(String equation) {
         if (equation.charAt(0) == '-') {
@@ -296,8 +325,9 @@ public class Display extends javax.swing.JFrame {
     }
      /**
     *@name checkInvalidEquation
-    *@brief Sets error message into the display if error occurs
-    *@param String equation
+    * \~english @brief Sets error message into the display if error occurs
+    * \~czech @brief Do displeje kalkulaèky nastaví chybové hlášení, pokud nìjaké nastane
+    *@param equation
     *@return void
     */
     private void checkInvalidEquation(String equation) {
@@ -309,9 +339,11 @@ public class Display extends javax.swing.JFrame {
     }
      /**
     *@name replaceMinuses
-    *@brief Replaces all the minuses with another symbol to prevent confusion between operator and negative numbers.
+    * \~english @brief Replaces all the minuses with another symbol to prevent confusion between operator and negative numbers.
+    * \~czech @brief  Nahradí všechny operátory mínus jiným znakem, aby nedošlo k zámìnì operátoru a negativního èísla
     *@param equation
-    *@return equation modified equation
+    *@ \~english return equation modified equation
+    *@ \~czech return equation upravená rovnice
     */
      private String replaceMinuses(String equation) {
         equation = equation.replace('-', '$'); //Replaces every minus to prevent confusion between negative number and operator
@@ -367,7 +399,7 @@ public class Display extends javax.swing.JFrame {
         btnRoot.setBackground(new java.awt.Color(0, 0, 0));
         btnRoot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnRoot.setForeground(new java.awt.Color(240, 240, 240));
-        btnRoot.setText("âˆš");
+        btnRoot.setText("â?š");
         btnRoot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRootActionPerformed(evt);
@@ -1013,10 +1045,10 @@ public class Display extends javax.swing.JFrame {
                 + "hodnotu k umocnÄ›nÃ­.\n\n"
                 + "Po kliknutÃ­ na tlaÄÃ­tko \"^\" dojde k otevÅ™enÃ­ novÃ©ho\n"
                 + "okna pro vÃ½bÄ›r exponentu.";
-        String rootFunction = "Odmocnina \"âˆš\"";
+        String rootFunction = "Odmocnina \"â?š\"";
         String rootHelp = "Funkce vyÅ¾aduje ÄÃ­selnÃ½ vstup reprezentujÃ­cÃ­\n"
                 + "hodnotu pod odmocninou.\n\n"
-                + "Po kliknutÃ­ na tlaÄÃ­tko \"âˆš\" dojde k otevÅ™enÃ­ novÃ©ho\n"
+                + "Po kliknutÃ­ na tlaÄÃ­tko \"â?š\" dojde k otevÅ™enÃ­ novÃ©ho\n"
                 + "okna pro vÃ½bÄ›r odmocniny.";
         String factFunction = "FaktoriÃ¡l \"!\"";
         String factHelp = "Funkce vyÅ¾aduje ÄÃ­selnÃ½ vstup reprezentujÃ­cÃ­\n"
