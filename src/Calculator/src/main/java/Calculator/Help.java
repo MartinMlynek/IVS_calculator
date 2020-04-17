@@ -21,6 +21,7 @@ public class Help extends javax.swing.JFrame {
     
     public Help() {
         initComponents();
+        this.setTitle("OAGUH Calculator: Nápověda");
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); /** Zajistí, že se nezavře celá aplikace, ale pouze nápověda. */
     }
 
@@ -115,7 +116,6 @@ public class Help extends javax.swing.JFrame {
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         if(this.position != (this.sizeOfArray-2)){
             this.position += 2;
-            System.out.println(this.position);
         } else{
             this.position = 0;
         }
@@ -184,7 +184,6 @@ public class Help extends javax.swing.JFrame {
     public void setHelp(ArrayList<String> help, int size){
         this.helpArray = help;
         this.sizeOfArray = size;
-        System.out.println(this.helpArray.get(1));
     }
     
     /**
