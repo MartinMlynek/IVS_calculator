@@ -9,21 +9,19 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
- *
- * @author pavelbobcik
+ * @brief Okno slouží k zobrazení nápovědy přímo v aplikaci
+ * 
+ * @author Pavel Bobčík, xbobci03
  */
 public class Help extends javax.swing.JFrame {
 
-    /**
-     * @author Pavel Bobčík, xbobci03
-     */
-    ArrayList<String> helpArray = new ArrayList<>();
-    int sizeOfArray = 0;
-    int position = 0;
+    ArrayList<String> helpArray = new ArrayList<>(); //Globální pole, pro uložení získané nápovědy
+    int sizeOfArray = 0; 
+    int position = 0; //Globální proměnná pro uchování pozice zobrazené nápovědy při listování
     
     public Help() {
         initComponents();
-        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); /** Zajistí, že se nezavře celá aplikace, ale pouze nápověda. */
     }
 
     /**
@@ -177,12 +175,23 @@ public class Help extends javax.swing.JFrame {
     private javax.swing.JTextArea tvHelp;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * @brief Metoda slouží k předání obsahu pole s nápovědou
+     * 
+     * @param help Pole obsahující nápovědu
+     * @param size Velikost pole
+     */
     public void setHelp(ArrayList<String> help, int size){
         this.helpArray = help;
         this.sizeOfArray = size;
         System.out.println(this.helpArray.get(1));
     }
     
+    /**
+     * @brief Metoda slouží k zobrazení nápovědy
+     * 
+     * @param position Index pomocí kterého vybereme z pole správný titulek a popis.
+     */
     public void showHelp(int position){
         this.tvFunction.setText(this.helpArray.get(position));
         this.tvHelp.setText(this.helpArray.get(position+1));

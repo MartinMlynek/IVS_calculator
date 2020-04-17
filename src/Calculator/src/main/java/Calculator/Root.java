@@ -2,6 +2,7 @@ package Calculator;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JMenu;
@@ -23,6 +24,26 @@ public class Root extends javax.swing.JFrame {
         JMenuBar menuBar = new JMenuBar();
         JMenu menuHelp = new JMenu("Nápověda");
         JMenu menuBack = new JMenu("Zpět");
+        
+        menuHelp.addMenuListener(new MenuListener() {
+            @Override
+            public void menuSelected(MenuEvent e) {
+                int sizeOfArray = getHelpArray().size();
+                int indexOfFirst = 0;
+                Help help = new Help();
+                help.setHelp(getHelpArray(), sizeOfArray);
+                help.showHelp(indexOfFirst);
+                help.setVisible(true);
+            }
+
+            @Override
+            public void menuDeselected(MenuEvent e) {
+            }
+
+            @Override
+            public void menuCanceled(MenuEvent e) {
+            }
+        });
         
         menuBack.addMenuListener(new MenuListener() {
             @Override
@@ -762,12 +783,40 @@ public class Root extends javax.swing.JFrame {
     private javax.swing.JTextField tvDisplayRoot;
     // End of variables declaration//GEN-END:variables
 
-private void closeRootWindow(String result){
-    Display dsp = new Display();
-    dsp.setLocation(this.getLocation());
-    dsp.setEquation(result);
-    dsp.setVisible(true);
-    this.dispose();
-}
+    /**
+     * @brief Metoda slouží k zavření aktuálního okna a otevření okna kalkulačky
+     * 
+     * @param result Výsledek výpočtu, jenž bude předán
+     */
+    private void closeRootWindow(String result){
+        Display dsp = new Display();
+        dsp.setLocation(this.getLocation());
+        dsp.setEquation(result);
+        dsp.setVisible(true);
+        this.dispose();
+    }
+
+    /**
+    * @brief Metoda vytvoří pole textového řetězce s nápovědu
+    * 
+    * @return Vrací pole s nápovědou 
+    */
+    private ArrayList<String> getHelpArray(){
+        String winTitle = "Rozložení oken";
+        String winHelp = "Levé okno zobrazuje index odmocniny.\n\n"
+                + "Do pravého okna vložíme číslo pod odmocninou.";
+        String menuTitle= "Menu tlačítko \"Zpět\"";
+        String menuHelp = "Tlačítko slouží k návratu zpět do kalkulačky,\n"
+                + "aniž by se provedl výpočet.\n\n"
+                + "Zachová se nám původní hodnota.";
+        
+        ArrayList<String> help = new ArrayList<>();
+        help.add(winTitle);
+        help.add(winHelp);
+        help.add(menuTitle);
+        help.add(menuHelp);
+        
+        return help;
+    }
 
 }

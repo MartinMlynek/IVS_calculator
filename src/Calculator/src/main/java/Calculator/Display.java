@@ -1,7 +1,10 @@
 package Calculator;
 
+import java.util.ArrayList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.event.MenuEvent;
+import javax.swing.event.MenuListener;
 
 public class Display extends javax.swing.JFrame {
 
@@ -15,6 +18,26 @@ public class Display extends javax.swing.JFrame {
         
         JMenuBar menuBar = new JMenuBar();
         JMenu menuHelp = new JMenu("Nápověda");
+        
+        menuHelp.addMenuListener(new MenuListener() {
+            @Override
+            public void menuSelected(MenuEvent e) {
+                int sizeOfArray = getHelpArray().size();
+                int indexOfFirst = 0;
+                Help help = new Help();
+                help.setHelp(getHelpArray(), sizeOfArray);
+                help.showHelp(indexOfFirst);
+                help.setVisible(true);
+            }
+
+            @Override
+            public void menuDeselected(MenuEvent e) {
+            }
+
+            @Override
+            public void menuCanceled(MenuEvent e) {
+            }
+        });
         
         this.setJMenuBar(menuBar);
         menuBar.add(menuHelp);
@@ -964,6 +987,62 @@ public class Display extends javax.swing.JFrame {
     private javax.swing.JTextField tvDisplay;
     // End of variables declaration//GEN-END:variables
 
-   
-
+   /**
+    * @brief Metoda vytvoří pole textového řetězce s nápovědu
+    * 
+    * @return Vrací pole s nápovědou 
+    */
+    private ArrayList<String> getHelpArray(){
+        String addFunction = "Sčítání \"+\"";
+        String addHelp = "Funkce vyžaduje minimálně dva číselné vstupy\n"
+                + "oddělené zmanénkem \"+\".";
+        String subFunction = "Odčítání \"-\"";
+        String subHelp = "Funkce vyžaduje minimálně dva číselné vstupy\n"
+                + "oddělené zmanénkem \"-\".\n\n"
+                + "Při vložení znaménka \"-\" následoveného číslem,\n"
+                + "lze získat záporné číslo.";
+        String mulFunction = "Násobení \"*\"";
+        String mulHelp = "Funkce vyžaduje minimálně dva číselné vstupy\n"
+                + "oddělené zmanénkem \"*\".";
+        String divFunction = "Dělení \"/\"";
+        String divHelp = "Funkce vyžaduje minimálně dva číselné vstupy\n"
+                + "oddělené zmanénkem \"/\".\n\n"
+                + "Dělení nulou bohužel umí pouze Chuck Norris.";
+        String powFunction = "Mocnina \"^\"";
+        String powHelp = "Funkce vyžaduje číselný vstup reprezentující\n"
+                + "hodnotu k umocnění.\n\n"
+                + "Po kliknutí na tlačítko \"^\" dojde k otevření nového\n"
+                + "okna pro výběr exponentu.";
+        String rootFunction = "Odmocnina \"√\"";
+        String rootHelp = "Funkce vyžaduje číselný vstup reprezentující\n"
+                + "hodnotu pod odmocninou.\n\n"
+                + "Po kliknutí na tlačítko \"√\" dojde k otevření nového\n"
+                + "okna pro výběr odmocniny.";
+        String factFunction = "Faktoriál \"!\"";
+        String factHelp = "Funkce vyžaduje číselný vstup reprezentující\n"
+                + "hodnotu faktoriálu následovanou znaménkem \"!\".";
+        String absFunction = "Absolutní hodnota (\"ABS\")";
+        String absHelp = "Funkce vyžaduje číselný vstup reprezentující\n"
+                + "hodnotu absolutní hodnoty.";
+        
+        ArrayList<String> help = new ArrayList<>();
+        help.add(addFunction);
+        help.add(addHelp);
+        help.add(subFunction);
+        help.add(subHelp);
+        help.add(mulFunction);
+        help.add(mulHelp);
+        help.add(divFunction);
+        help.add(divHelp);
+        help.add(powFunction);
+        help.add(powHelp);
+        help.add(rootFunction);
+        help.add(rootHelp);
+        help.add(factFunction);
+        help.add(factHelp);
+        help.add(absFunction);
+        help.add(absHelp);
+        
+        return help;
+    }
 }
