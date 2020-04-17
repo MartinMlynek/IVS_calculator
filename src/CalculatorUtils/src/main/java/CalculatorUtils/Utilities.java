@@ -129,6 +129,20 @@ public class Utilities {
         return result;
     }
     
+    public static double div(int first, int second) throws Exception{  
+        if(second == 0){
+            throw new Exception("Dividing by zero value");
+        }
+        
+        double result = first / second;
+        
+        if(result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY){
+            throw new Exception("Infinity value");
+        }
+        
+        return result;
+    }
+
     /**
     * @brief Metoda pro faktoriál
     *

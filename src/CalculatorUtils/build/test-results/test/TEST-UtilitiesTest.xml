@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="UtilitiesTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2020-04-17T17:36:39" hostname="DESKTOP-PDQA827" time="0.056">
+  <properties/>
+  <testcase name="testAbs()" classname="UtilitiesTest" time="0.035"/>
+  <testcase name="testAdd()" classname="UtilitiesTest" time="0.003"/>
+  <testcase name="testExp()" classname="UtilitiesTest" time="0.002"/>
+  <testcase name="testSub()" classname="UtilitiesTest" time="0.003"/>
+  <testcase name="testFact()" classname="UtilitiesTest" time="0.001"/>
+  <testcase name="testRadical()" classname="UtilitiesTest" time="0.002"/>
+  <testcase name="testDivide()" classname="UtilitiesTest" time="0.002"/>
+  <testcase name="testMultiply()" classname="UtilitiesTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
