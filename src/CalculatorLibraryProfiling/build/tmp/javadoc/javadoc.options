@@ -1,0 +1,8 @@
+-classpath 'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\build\\classes\\java\\main;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\build\\resources\\main;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\libs\\CalculatorUtils.jar'
+-d 'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\build\\docs\\javadoc'
+-doctitle 'CalculatorLibraryProfiling API'
+-notimestamp 
+-quiet 
+-windowtitle 'CalculatorLibraryProfiling API'
+'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\src\\main\\java\\CalculatorLibraryProfiling\\Deviation.java'
+'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\src\\main\\java\\CalculatorLibraryProfiling\\Main.java'

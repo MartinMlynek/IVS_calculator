@@ -1,0 +1,8 @@
+-classpath 'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorUtils\\build\\classes\\java\\main;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorUtils\\build\\resources\\main'
+-d 'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorUtils\\build\\docs\\javadoc'
+-doctitle 'CalculatorUtils API'
+-notimestamp 
+-quiet 
+-windowtitle 'CalculatorUtils API'
+'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorUtils\\src\\main\\java\\CalculatorUtils\\Display.java'
+'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorUtils\\src\\main\\java\\CalculatorUtils\\Utilities.java'
