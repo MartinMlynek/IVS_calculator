@@ -3,16 +3,19 @@ package CalculatorUtils;
 import java.lang.Math;
 
 /**
- *
+ * @brief Knihovna matematických funkci
  * @author Pavel Bobčík, xbobci03
  * @author Tomáš Daněk, xdanek23
  */
 public class Utilities {
 
-    /**
-    * @param first - addend
-    * @param second - addend
-    * @return sum
+   /**
+    * @brief Metoda pro sčítání
+    *
+    * @param first Očekává sčítanec
+    * @param second Očekává sčítanec
+    * @return Vrací součet
+    * @throw Vrací chybu při překročení velikosti datového typu
     */
     public static double add(double first, double second) throws Exception{
         double result = first + second; 
@@ -24,12 +27,6 @@ public class Utilities {
         return result;
     }
     
-
-    /**
-    * @param first - addend
-    * @param second - addend
-    * @return sum
-    */
     public static int add(int first, int second) throws Exception{
         int result = first + second; 
 
@@ -44,9 +41,12 @@ public class Utilities {
     
 
     /**
-    * @param first - minuend
-    * @param second - subtrahend
-    * @return difference
+    * @brief Metoda pro odčítání
+    *
+    * @param first Očekává menšenec
+    * @param second Očekává menšitel
+    * @return Vrací rozdíl
+    * @throw Vrací chybu při překročení velikosti datového typu
     */
     public static double sub(double first, double second) throws Exception{
         double result = first - second; 
@@ -59,11 +59,6 @@ public class Utilities {
     }
     
 
-    /**
-    * @param first - minuend
-    * @param second - subtrahend
-    * @return difference
-    */
     public static int sub(int first, int second) throws Exception{
         int result = first - second; 
 
@@ -78,9 +73,12 @@ public class Utilities {
     
 
     /**
-    * @param first - multiplier
-    * @param second - multiplicand
-    * @return product
+    * @brief Metoda pro násobení
+    *
+    * @param first Očekává činitel
+    * @param second Očekává činitel
+    * @return Vrací součin
+    * @throw Vrací chybu při překročení velikosti datového typu
     */
     public static double mul(double first, double second) throws Exception{
         double result = first * second; 
@@ -93,11 +91,6 @@ public class Utilities {
     }
     
 
-    /**
-    * @param first - multiplier
-    * @param second - multiplicand
-    * @return product
-    */
     public static int mul(int first, int second) throws Exception{
         int result = first * second; 
 
@@ -115,9 +108,12 @@ public class Utilities {
     }
     
     /**
-    * @param first - dividend
-    * @param second - divisor
-    * @result quotient
+    * @brief Metoda pro dělení
+    *
+    * @param first Očekává dělenec
+    * @param second Očekává dělitel
+    * @return Vrací podíl
+    * @throw Vrací chybu při překročení velikosti datového typu
     */
     public static double div(double first, double second) throws Exception{  
         if(second == 0.0){
@@ -133,6 +129,13 @@ public class Utilities {
         return result;
     }
     
+    /**
+    * @brief Metoda pro faktoriál
+    *
+    * @param first Očekává číslo pro výpočet faktoriálu
+    * @return Vrací výsledek výpočtu
+    * @throw Vrací chybu při překročení velikosti datového typu
+    */
     public static int fact(int first) throws Exception{
         if(first < 0){
             throw new Exception("Value under zero");
@@ -150,8 +153,12 @@ public class Utilities {
     
     
     /**
-    * @param first - power
-    * @param second - exponent
+    * @brief Metoda pro mocninu
+    *
+    * @param first Očekává číslo k umocnění
+    * @param second Očekává exponent mocniny
+    * @return Vrací výsledek výpočtu
+    * @throw Vrací chybu při překročení velikosti datového typu
     */
     public static double exp(double first, int second) throws Exception{
         double result = 1;
@@ -176,12 +183,7 @@ public class Utilities {
         
         return result;
     }
-    
 
-    /**
-    * @param first - power
-    * @param second - exponent
-    */
     public static int exp(int first, int second) throws Exception{
         int result = 1;
         
@@ -208,12 +210,7 @@ public class Utilities {
         
         return result;
     }
-    
 
-    /**
-    * @param first - power
-    * @param second - exponent
-    */
     public static double exp(int first, double second) throws Exception{
         double result = 1;
         
@@ -229,8 +226,12 @@ public class Utilities {
     }
     
     /**
-    * @param first - root
-    * @param second - index of the root
+    * @brief Metoda pro odmocninu
+    *
+    * @param first Očekává číslo pod odmocninou
+    * @param second Očekává index odmocniny
+    * @return Vrací výsledek výpočtu
+    * @throw Vrací chybu při překročení velikosti datového typu
     */
     public static double radical(double first, int second) throws Exception{
         
@@ -246,6 +247,13 @@ public class Utilities {
         return result;
     }
     
+    /**
+    * @brief Metoda pro absolutní hodnotu
+    *
+    * @param first Očekává číslo ke zpracování
+    * @return Vrací absolutní hodnotu
+    * @throw Vrací chybu při překročení velikosti datového typu
+    */
     public static double abs(double first){
         if(first < 0){
             return -(first);
