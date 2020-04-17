@@ -231,7 +231,7 @@ public class Utilities {
     * @param first Očekává číslo pod odmocninou
     * @param second Očekává index odmocniny
     * @return Vrací výsledek výpočtu
-    * @throw Vrací chybu při překročení velikosti datového typu
+    * @throw Vrací chybu při nulovém indexu nebo negativní hodnotě
     */
     public static double radical(double first, int second) throws Exception{
         
@@ -252,7 +252,6 @@ public class Utilities {
     *
     * @param first Očekává číslo ke zpracování
     * @return Vrací absolutní hodnotu
-    * @throw Vrací chybu při překročení velikosti datového typu
     */
     public static double abs(double first){
         if(first < 0){
