@@ -283,7 +283,7 @@ public class Display extends javax.swing.JFrame {
         return false;
     }
      /**
-    *@brief Sets error message into the display if error occurs
+    *Sets error message into the display if error occurs
     *@param equation
     *@return void
     */
@@ -295,7 +295,7 @@ public class Display extends javax.swing.JFrame {
         }
     }
      /**
-    *@brief Replaces all the minuses with another symbol to prevent confusion between operator and negative numbers.
+    *Replaces all the minuses with another symbol to prevent confusion between operator and negative numbers.
     *@param equation
     *@return equation modified equation
     */
