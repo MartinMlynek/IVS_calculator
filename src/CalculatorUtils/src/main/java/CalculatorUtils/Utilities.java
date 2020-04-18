@@ -10,7 +10,6 @@ import java.lang.Math;
  * @author Tomáš Daněk, xdanek23
  */
 public class Utilities {
-
    /**
     * \~czech @brief Metoda pro sčítání
     * \~english @brief Addition
@@ -46,7 +45,6 @@ public class Utilities {
         return result;
     }
     
-
     /**
     * \~czech @brief Metoda pro odčítání
     * \~english @brief Subtraction
@@ -70,7 +68,6 @@ public class Utilities {
         return result;
     }
     
-
     public static int sub(int first, int second) throws Exception{
         int result = first - second; 
 
@@ -97,6 +94,7 @@ public class Utilities {
     * \~czech @throw Vrací chybu při překročení velikosti datového typu
     * \~english @throw Overflow error
     */
+
     public static double mul(double first, double second) throws Exception{
         double result = first * second; 
 
@@ -107,7 +105,6 @@ public class Utilities {
         return result;
     }
     
-
     public static int mul(int first, int second) throws Exception{
         int result = first * second; 
 
@@ -176,6 +173,7 @@ public class Utilities {
     * \~czech @throw Vrací chybu při překročení velikosti datového typu a při záporné hodnotě
     * \~english @throw Overflow error and negative number
     */
+
     public static int fact(int first) throws Exception{
         if(first < 0){
             throw new Exception("Value under zero");
@@ -233,6 +231,7 @@ public class Utilities {
         return result;
     }
 
+
     public static int exp(int first, int second) throws Exception{
         int result = 1;
         
@@ -279,6 +278,7 @@ public class Utilities {
     }
    
     public static double exp(double first, double second) throws Exception{
+
         double result = 1;
         
         if(second != 0.0){
@@ -339,6 +339,7 @@ public class Utilities {
         } 
        
        if(first < 0){
+
             return -(first);
         }
         
@@ -351,6 +352,7 @@ public class Utilities {
             throw new Exception("Value overflow/underflow");
         }
        
+
         if(first < 0){
             return -(first);
         }

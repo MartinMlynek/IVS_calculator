@@ -27,4 +27,4 @@
 *.exe
 *.out
 *.app
-/src/CalculatorLibraryProfiling/build/
+/src/CalculatorLibraryProfiling/build

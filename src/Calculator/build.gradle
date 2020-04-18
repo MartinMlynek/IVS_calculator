@@ -1,0 +1,34 @@
+plugins {
+  id 'com.github.johnrengelman.shadow' version '5.2.0'
+  id 'java'
+  id 'jacoco'
+  id 'application'
+}
+
+compileJava { 
+  options.encoding = "UTF-8" 
+}
+
+mainClassName = 'Calculator.Display'
+
+repositories {
+    jcenter()
+    flatDir {
+       dirs 'libs'
+   }
+}
+
+dependencies {
+    testImplementation     'junit:junit:4.13'
+    implementation files('libs/CalculatorUtils.jar')
+    compile fileTree(dir: 'libs',include: 'CalculatorUtils.jar')
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': mainClassName
+        )
+    }
+}
+
