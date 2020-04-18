@@ -68,8 +68,7 @@ public class Root extends javax.swing.JFrame {
     }
       /**
     *@param equation
-    * \~english @brief Sets equation into the display of the calculator
-    * \~czech @brief Nastaví rovnici do displeje kalkulačky
+    *@brief Sets equation into the display of the calculator
     */
      public void setEquation(String equation){
         this.tvDisplayRoot.setText(equation);

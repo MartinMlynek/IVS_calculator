@@ -44,17 +44,14 @@ public class Display extends javax.swing.JFrame {
         menuBar.add(menuHelp);
     }
     /**
-    * \~english @brief Sets equation into the display of the calculator
-    * \~english @param equation
-    * \~czech @brief Nastaví rovnici do displeje kalkulačky
-    * \~czech @param rovnice 
+    * @brief Sets equation into the display of the calculator
+    * @param equation 
     */
     public void setEquation(String equation){
         this.tvDisplay.setText(equation);
     }
     /**
-    * \~english @brief Returns the priority of operator in form of number
-    * \~czech @brief Vrátí prioritu operátoru v čísle
+    *@brief Returns the priority of operator in form of number
     *@param operator
     *@return priority
     */
@@ -76,12 +73,9 @@ public class Display extends javax.swing.JFrame {
     }
     
      /**
-    * \~english @brief Finds every factorial in equation and calls method solveOperator. 
-    * \~english @param equation
-    * \~english @return equation Returns equation with solved factorials.
-    * \~czech @brief Najde každý faktoriál a spustí metodu solveOperator. 
-    * \~czech @param rovnice 
-    * \~czech @return void Vrátí rovnici s vypočítanými faktoriály.
+    * @brief Finds every factorial in equation and calls method solveOperator. 
+    * @param equation
+    * @return equation Returns equation with solved factorials.
     */
     private String solveFactorials(String equation) {
         for (int i = 0; i < equation.length(); i++) {
@@ -96,11 +90,9 @@ public class Display extends javax.swing.JFrame {
         return equation;
     }
      /**
-    * \~english @brief Finds every operator in equation and calls method solveOperator. 
+    *@brief Finds every operator in equation and calls method solveOperator. 
     *@param equation
-    * \~english @return equation Return equation with solved operators.
-    * \~czech @brief Najde každý operátor a zavolá metodu solveOperator.
-    * \~czech @return equation Vrátí rovnici s vypočítanými operátory.
+    *@return equation Return equation with solved operators.
     */
     private String solveOperators(String equation) {
         for (int i = 0; i < equation.length(); i++) {
@@ -126,8 +118,7 @@ public class Display extends javax.swing.JFrame {
 
     }
     /**
-    * \~english @brief Checks equation for operators next to each other.
-    * \~czech @brief Zjistí, jestli jsou v rovnici dva operátory vedle sebe. 
+    *@brief Checks equation for operators next to each other.
     *@param equation
     *@return boolean
     */
@@ -141,8 +132,7 @@ public class Display extends javax.swing.JFrame {
 
     }
     /**
-    * \~english @brief Checks equation for invalid characters specified in method.
-    * \~english @brief Zjistí, jestli jsou v rovnici nepovolené znaky
+    *@brief Checks equation for invalid characters specified in method.
     *@param equation
     *@return boolean
     */
@@ -158,10 +148,8 @@ public class Display extends javax.swing.JFrame {
 
     /**
     *@param equation
-    * \~english @param operIndex index of the operator in the equation
-    * \~czech @param operIndex index operátoru v rovnici
-    * \~english @return number number before the operator stored in String
-    * \~czech @return number Číslo před operátorem 
+    *@param operIndex index of the operator in the equation
+    *@return number number before the operator stored in String
     */
     private String getStringNumberBeforeOper(String equation, int operIndex) {
         String number = "";
@@ -176,11 +164,8 @@ public class Display extends javax.swing.JFrame {
     }
      /**
     *@param equation
-    * \~english @param operIndex index of the operator in the equation
-    * \~czech @param operIndex index operátoru v rovnici
-    * \~english @return number number after the operator stored in String
-    * \~czech @return number Číslo za operátorem 
-
+    *@param operIndex index of the operator in the equation
+    *@return number number after the operator stored in String
     */
     private String getStringNumberAfterOper(String equation, int operIndex) {
         String number = "";
@@ -195,13 +180,10 @@ public class Display extends javax.swing.JFrame {
     }
     
      /**
-    * \~english @brief Calls appropriate library method CalculatorUtils 
-    * \~czech @brief Volá správnou metodu z knihovny CalculatorUtils
+    *@brief Calls appropriate library method CalculatorUtils 
     *@param equation
-    * \~english @param operIndex index of the operator in the equation
-    * \~czech @param operIndex index operátoru v rovnici
-    * \~english @return solvedOperator solved subequation
-    * \~czech @return solvedOperator Výsledek operátoru
+    *@param operIndex index of the operator in the equation
+    *@return solvedOperator solved subequation
     */
     private String calculateOperator(String equation, int operIndex) throws Exception {
         //Method check the operator, calls the appropriate library method and returns the number in String
@@ -248,12 +230,10 @@ public class Display extends javax.swing.JFrame {
 
     }
      /**
-    * \~english @brief Method gets number for the operator, solves subequation and replaces the subequation with result
-    * \~czech @brief Metoda zjistí čísla pro výpočet operátoru, vypočítá subrovnici a nahradí subrovnici výsledkem
+    *@brief Method gets number for the operator, solves subequation and replaces the subequation with result
     *@param equation
     *@param operIndex
-    * \~english @return equation Equation with solved subEquation 
-    * \~czech @return equation Rovnice s vypočítaným operátorem
+    *@return equation Equation with solved subEquation 
     */ 
     private String solveOperator(String equation, int operIndex) {
         //Method replaces the operator and its arguments with a result
@@ -278,11 +258,9 @@ public class Display extends javax.swing.JFrame {
         }
     }
      /**
-    * \~english @brief Checks if equation contains any operator
-    * \~czech @brief Zjistí, jestli rovnice obsahuje operátor
+    *@brief Checks if equation contains any operator
     *@param equation
-    * \~english @return boolean True if equation contains any operator
-    * \~czech @return boolean  navrátí true pokud rovnice obsahuje nějaký operátor
+    *@return boolean True if equation contains any operator
     */
     private boolean findOperator(String equation) {
         for (int i = 0; i < equation.length(); i++) {
@@ -294,12 +272,9 @@ public class Display extends javax.swing.JFrame {
         return false;
     }
      /**
-    * \~english @brief Checks if equation starts with minus
-    * \~czech @brief Zjistí, jestli rovnice začne mínusem
+    *@brief Checks if equation starts with minus
     *@param equation
-    * \~english  @return boolean returns true if equation starts with minus
-    * \~czech  @return boolean navrátí true pokud rovnice začne mínusem
-
+    *@return boolean returns true if equation starts with minus
     */
     private boolean checkNegativeEquation(String equation) {
         if (equation.charAt(0) == '-') {
@@ -308,8 +283,7 @@ public class Display extends javax.swing.JFrame {
         return false;
     }
      /**
-    * \~english @brief Sets error message into the display if error occurs
-    * \~czech @brief Do displeje kalkulačky nastaví chybové hlášení, pokud nějaké nastane
+    *@brief Sets error message into the display if error occurs
     *@param equation
     *@return void
     */
@@ -321,11 +295,9 @@ public class Display extends javax.swing.JFrame {
         }
     }
      /**
-    * \~english @brief Replaces all the minuses with another symbol to prevent confusion between operator and negative numbers.
-    * \~czech @brief  Nahradí všechny operátory mínus jiným znakem, aby nedošlo k záměně operátoru a negativního čísla
+    *@brief Replaces all the minuses with another symbol to prevent confusion between operator and negative numbers.
     *@param equation
-    *@ \~english return equation modified equation
-    *@ \~czech return equation upravená rovnice
+    *@return equation modified equation
     */
      private String replaceMinuses(String equation) {
         equation = equation.replace('-', '$'); //Replaces every minus to prevent confusion between negative number and operator

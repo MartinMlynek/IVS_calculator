@@ -63,8 +63,7 @@ public class Power extends javax.swing.JFrame {
     }
 
       /**
-    * \~english @brief Sets equation into the display of the calculator
-    * \~czech @brief Nastaví rovnici do displeje kalkulačky
+    *@brief Sets equation into the display of the calculator
     *@param equation
     */
      public void setEquation(String equation){

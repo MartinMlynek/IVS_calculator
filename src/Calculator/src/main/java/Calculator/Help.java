@@ -9,8 +9,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
- * \~czech @brief Okno slouží k zobrazení nápovědy přímo v aplikaci
- * \~english @brief This window displays help
+ *@brief This window displays help
  * 
  * @author Pavel Bobčík, xbobci03
  */
@@ -177,13 +176,9 @@ public class Help extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     /**
-     * \~czech @brief Metoda slouží k předání obsahu pole s nápovědou
-     * \~english @brief Setter of string array, called from another class
-     * 
-     * \~czech @param help Pole obsahující nápovědu
-     * \~english @param help String array with help text
-     * \~czech @param size Velikost pole
-     * \~english @param size Size of array
+     *@brief Setter of string array, called from another class 
+     *@param help String array with help text
+     *@param size Size of array
      */
     public void setHelp(ArrayList<String> help, int size){
         this.helpArray = help;
@@ -191,11 +186,8 @@ public class Help extends javax.swing.JFrame {
     }
     
     /**
-     * \~czech @brief Metoda slouží k zobrazení nápovědy
-     * \~english brief This method displays help text
-     * 
-     * \~czech @param position Index pomocí kterého vybereme z pole správný titulek a popis.
-     * \~english @param position Index of help text in array
+     *@brief This method displays help text
+     *@param position Index of help text in array
      */
     public void showHelp(int position){
         this.tvFunction.setText(this.helpArray.get(position));
