@@ -133,6 +133,10 @@ public class Utilities {
     * \~english @return Quotient
     * \~czech @throw Vrací chybu při překročení velikosti datového typu a při dělení nulou
     * \~english @throw Overflow error and dividing by zero
+
+    * @param first - dividend
+    * @param second - divisor
+    * @return quotient
     */
     public static double div(double first, double second) throws Exception{  
         if(second == 0.0){
