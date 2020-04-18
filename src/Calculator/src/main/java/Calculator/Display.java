@@ -44,14 +44,14 @@ public class Display extends javax.swing.JFrame {
         menuBar.add(menuHelp);
     }
     /**
-    * @brief Sets equation into the display of the calculator
+    *Sets equation into the display of the calculator
     * @param equation 
     */
     public void setEquation(String equation){
         this.tvDisplay.setText(equation);
     }
     /**
-    *@brief Returns the priority of operator in form of number
+    *Returns the priority of operator in form of number
     *@param operator
     *@return priority
     */
@@ -73,7 +73,7 @@ public class Display extends javax.swing.JFrame {
     }
     
      /**
-    * @brief Finds every factorial in equation and calls method solveOperator. 
+    *Finds every factorial in equation and calls method solveOperator. 
     * @param equation
     * @return equation Returns equation with solved factorials.
     */
@@ -90,7 +90,7 @@ public class Display extends javax.swing.JFrame {
         return equation;
     }
      /**
-    *@brief Finds every operator in equation and calls method solveOperator. 
+    *Finds every operator in equation and calls method solveOperator. 
     *@param equation
     *@return equation Return equation with solved operators.
     */
@@ -118,7 +118,7 @@ public class Display extends javax.swing.JFrame {
 
     }
     /**
-    *@brief Checks equation for operators next to each other.
+    *Checks equation for operators next to each other.
     *@param equation
     *@return boolean
     */
@@ -132,7 +132,7 @@ public class Display extends javax.swing.JFrame {
 
     }
     /**
-    *@brief Checks equation for invalid characters specified in method.
+    *Checks equation for invalid characters specified in method.
     *@param equation
     *@return boolean
     */
@@ -180,7 +180,7 @@ public class Display extends javax.swing.JFrame {
     }
     
      /**
-    *@brief Calls appropriate library method CalculatorUtils 
+    *Calls appropriate library method CalculatorUtils 
     *@param equation
     *@param operIndex index of the operator in the equation
     *@return solvedOperator solved subequation
@@ -230,7 +230,7 @@ public class Display extends javax.swing.JFrame {
 
     }
      /**
-    *@brief Method gets number for the operator, solves subequation and replaces the subequation with result
+    * Method gets number for the operator, solves subequation and replaces the subequation with result
     *@param equation
     *@param operIndex
     *@return equation Equation with solved subEquation 
@@ -258,7 +258,7 @@ public class Display extends javax.swing.JFrame {
         }
     }
      /**
-    *@brief Checks if equation contains any operator
+    * Checks if equation contains any operator
     *@param equation
     *@return boolean True if equation contains any operator
     */
@@ -272,7 +272,7 @@ public class Display extends javax.swing.JFrame {
         return false;
     }
      /**
-    *@brief Checks if equation starts with minus
+    *Checks if equation starts with minus
     *@param equation
     *@return boolean returns true if equation starts with minus
     */
@@ -1012,11 +1012,9 @@ public class Display extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     
     /**
-    * \~czech @brief Metoda vytvoří pole textového řetězce s nápovědu
-    * \~english @brief The method creates an array of string
+    *The method creates an array of string
     * 
-    * \~czech @return Vrací pole s nápovědou 
-    * \~english @return The array of string with help text 
+    *@return The array of string with help text 
     */
     private ArrayList<String> getHelpArray(){
         String addFunction = "Sčítání \"+\"";
