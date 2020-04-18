@@ -784,9 +784,11 @@ public class Power extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     /**
-     * @brief Metoda slouží k zavření aktuálního okna a otevření okna kalkulačky
+     * \~czech @brief Metoda slouží k zavření aktuálního okna a otevření okna kalkulačky
+     * \~english @brief The method closes the current window and opens the main calculator window
      * 
-     * @param result Výsledek výpočtu, jenž bude předán
+     * \~czech @param result Výsledek výpočtu, jenž bude předán
+     * \~english @param result The result of a mathematical operation to return
      */
     private void closePowerWindow(String result){
         Display dsp = new Display();
@@ -797,9 +799,11 @@ public class Power extends javax.swing.JFrame {
     }
     
     /**
-    * @brief Metoda vytvoří pole textového řetězce s nápovědu
+    * \~czech @brief Metoda vytvoří pole textového řetězce s nápovědu
+    * \~english @brief The method creates an array of string
     * 
-    * @return Vrací pole s nápovědou 
+    * \~czech @return Vrací pole s nápovědou 
+    * \~english @return The array of string with help text 
     */
     private ArrayList<String> getHelpArray(){
         String winTitle = "Rozložení oken";

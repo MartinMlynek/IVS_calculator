@@ -1051,11 +1051,13 @@ public class Display extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTextField tvDisplay;
     // End of variables declaration//GEN-END:variables
-
-/**
-    * @brief Metoda vytvo�� pole textov�ho �et�zce s n�pov�du
+    
+    /**
+    * \~czech @brief Metoda vytvoří pole textového řetězce s nápovědu
+    * \~english @brief The method creates an array of string
     * 
-    * @return Vrac� pole s n�pov�dou 
+    * \~czech @return Vrací pole s nápovědou 
+    * \~english @return The array of string with help text 
     */
     private ArrayList<String> getHelpArray(){
         String addFunction = "Sčítání \"+\"";

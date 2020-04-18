@@ -9,20 +9,21 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
- * @brief Okno slouží k zobrazení nápovědy přímo v aplikaci
+ * \~czech @brief Okno slouží k zobrazení nápovědy přímo v aplikaci
+ * \~english @brief This window displays help
  * 
  * @author Pavel Bobčík, xbobci03
  */
 public class Help extends javax.swing.JFrame {
 
-    ArrayList<String> helpArray = new ArrayList<>(); //Globální pole, pro uložení získané nápovědy
+    ArrayList<String> helpArray = new ArrayList<>(); //Global array with help text
     int sizeOfArray = 0; 
-    int position = 0; //Globální proměnná pro uchování pozice zobrazené nápovědy při listování
+    int position = 0; //Global variable to hold the position of the index of array
     
     public Help() {
         initComponents();
         this.setTitle("OAGUH Calculator: Nápověda");
-        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); /** Zajistí, že se nezavře celá aplikace, ale pouze nápověda. */
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); //Will close only the help window, not entire application
     }
 
     /**
@@ -176,10 +177,13 @@ public class Help extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     /**
-     * @brief Metoda slouží k předání obsahu pole s nápovědou
+     * \~czech @brief Metoda slouží k předání obsahu pole s nápovědou
+     * \~english @brief Setter of string array, called from another class
      * 
-     * @param help Pole obsahující nápovědu
-     * @param size Velikost pole
+     * \~czech @param help Pole obsahující nápovědu
+     * \~english @param help String array with help text
+     * \~czech @param size Velikost pole
+     * \~english @param size Size of array
      */
     public void setHelp(ArrayList<String> help, int size){
         this.helpArray = help;
@@ -187,9 +191,11 @@ public class Help extends javax.swing.JFrame {
     }
     
     /**
-     * @brief Metoda slouží k zobrazení nápovědy
+     * \~czech @brief Metoda slouží k zobrazení nápovědy
+     * \~english brief This method displays help text
      * 
-     * @param position Index pomocí kterého vybereme z pole správný titulek a popis.
+     * \~czech @param position Index pomocí kterého vybereme z pole správný titulek a popis.
+     * \~english @param position Index of help text in array
      */
     public void showHelp(int position){
         this.tvFunction.setText(this.helpArray.get(position));
