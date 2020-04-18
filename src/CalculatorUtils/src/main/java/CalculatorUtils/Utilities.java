@@ -178,7 +178,9 @@ public class Utilities {
         double result = 1;
         
         if(second == 0){
-            if(first > 0){
+            if(first == 0.0){
+                throw new Exception("Math error");
+            }else if(first > 0){
                 return result;
             }else{
                 return -result;
@@ -202,7 +204,9 @@ public class Utilities {
         int result = 1;
         
         if(second == 0){
-            if(first > 0){
+            if(first == 0){
+                throw new Exception("Math error");
+            }else if(first > 0){
                 return result;
             }else{
                 return -result;
@@ -232,7 +236,25 @@ public class Utilities {
             throw new Exception("We don't do that here.");
         }
         
-        if(first > 0){
+        if(first == 0){
+                throw new Exception("Math error");
+        }else if(first > 0){
+            return result;
+        }else{
+            return -result;
+        }
+    }
+   
+    public static double exp(double first, double second) throws Exception{
+        double result = 1;
+        
+        if(second != 0.0){
+            throw new Exception("We don't do that here.");
+        }
+        
+        if(first == 0.0){
+                throw new Exception("Math error");
+        }else if(first > 0){
             return result;
         }else{
             return -result;
