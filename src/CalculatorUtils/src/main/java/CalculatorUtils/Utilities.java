@@ -219,7 +219,7 @@ public class Utilities {
                 return -result;
             }
         }else if(second < 0){
-            throw new Exception("Not supported");
+            throw new IllegalArgumentException("Not supported");
         }
         
         for(int i = second; i > 0; i--){
@@ -245,7 +245,7 @@ public class Utilities {
                 return -result;
             }
         }else if(second < 0){
-            throw new Exception("Not supported");
+            throw new IllegalArgumentException("Not supported");
         }
         
         int tmpPrevStep=first;
@@ -266,7 +266,7 @@ public class Utilities {
         double result = 1;
         
         if(second != 0.0){
-            throw new Exception("We don't do that here.");
+            throw new IllegalArgumentException("We don't do that here.");
         }
         
         if(first == 0){
@@ -282,7 +282,7 @@ public class Utilities {
         double result = 1;
         
         if(second != 0.0){
-            throw new Exception("We don't do that here.");
+            throw new IllegalArgumentException("We don't do that here.");
         }
         
         if(first == 0.0){

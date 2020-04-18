@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  *
  * @authors tomalatomas (xtomal02) 
- *          Martin Mlýnek (xmlyne06)
+ *          Martin MlÃ½nek (xmlyne06)
  */
 public class UtilitiesTest {
 
@@ -131,170 +131,167 @@ public class UtilitiesTest {
     @Test
     public void testDivide(){
         try{
-        //Equals
-        assertEquals(1, utils.div(42, 42));
-        assertEquals(42, utils.div(42, 1));
-        assertEquals(-1, utils.div(42, -42));
-        assertEquals(2, utils.div(42, 21));
-        assertEquals(10, utils.div(100, 10));
-        assertEquals(1, utils.div(2147483646, 2147483646));
-        assertEquals(1073741823, utils.div(2147483646, 2));
-        assertEquals(2, utils.div(1, 0.5), EPSILON);
-        assertEquals(-2, utils.div(1, -0.5), EPSILON);
-        assertEquals(1.54, utils.div(804.496, 522.4), EPSILON);
-        assertEquals(0.88, utils.div(459.712, 522.4), EPSILON);
+            //Equals
+            assertEquals(1, utils.div(42, 42));
+            assertEquals(42, utils.div(42, 1));
+            assertEquals(-1, utils.div(42, -42));
+            assertEquals(2, utils.div(42, 21));
+            assertEquals(10, utils.div(100, 10));
+            assertEquals(1, utils.div(2147483646, 2147483646));
+            assertEquals(1073741823, utils.div(2147483646, 2));
+            assertEquals(2, utils.div(1, 0.5), EPSILON);
+            assertEquals(-2, utils.div(1, -0.5), EPSILON);
+            assertEquals(1.54, utils.div(804.496, 522.4), EPSILON);
+            assertEquals(0.88, utils.div(459.712, 522.4), EPSILON);
 
-        //Doesnt equal
-        assertFalse(0 == utils.mul(1, 1));
-        assertFalse(1 == utils.mul(1, 0.5));
-        assertFalse(0 == utils.mul(1, 0.5));
-        assertFalse(-2 == utils.mul(-1, -0.5));
-        assertFalse(-2 == utils.mul(-1, -0.5));
+            //Doesnt equal
+            assertFalse(0 == utils.mul(1, 1));
+            assertFalse(1 == utils.mul(1, 0.5));
+            assertFalse(0 == utils.mul(1, 0.5));
+            assertFalse(-2 == utils.mul(-1, -0.5));
+            assertFalse(-2 == utils.mul(-1, -0.5));
         } catch (Exception ex) {
-        //Throws exception
-        assertThrows(ArithmeticException.class, () -> {
-            utils.div(1, 0);
-        });
-        assertThrows(ArithmeticException.class, () -> {
-            utils.div(42, 0);
-        });
-        assertThrows(ArithmeticException.class, () -> {
-            utils.div(0.5, 0);
-        });
+            //Throws exception
+            assertThrows(ArithmeticException.class, () -> {
+                utils.div(1, 0);
+            });
+            assertThrows(ArithmeticException.class, () -> {
+                utils.div(42, 0);
+            });
+            assertThrows(ArithmeticException.class, () -> {
+                utils.div(0.5, 0);
+            });
         }
     }
 
     @Test
     public void testFact(){
         try{
-        assertEquals(1, utils.fact(0));
-        assertEquals(1, utils.fact(1));
-        assertEquals(120, utils.fact(5));
-        assertEquals(3628800, utils.fact(10));
-        assertEquals(479001600, utils.fact(12));
-        
-        assertFalse(0 ==utils.fact(0));
-        //assertFalse(1 ==utils.fact(-1)); // mínusový faktoriál 
-        //assertFalse(120 ==utils.fact(-5)); // mínusový faktoriál 
+            assertEquals(1, utils.fact(0));
+            assertEquals(1, utils.fact(1));
+            assertEquals(120, utils.fact(5));
+            assertEquals(3628800, utils.fact(10));
+            assertEquals(479001600, utils.fact(12));
+
+            assertFalse(0 ==utils.fact(0));
         } catch (Exception ex) {
-        //Throws exception
-        assertThrows(IllegalArgumentException.class, () -> {
-            assertEquals(1, utils.fact(-1));
-        });
-        
-        assertThrows(IllegalArgumentException.class, () -> {
-            assertEquals(6, utils.fact(-3));
-        });
+            //Throws exception
+            assertThrows(IllegalArgumentException.class, () -> {
+                assertEquals(1, utils.fact(-1));
+            });
+
+            assertThrows(IllegalArgumentException.class, () -> {
+                assertEquals(6, utils.fact(-3));
+            });
         }
     }
     
     @Test
     public void testExp(){
         try{
-        //Eqauls
-        assertEquals(0, utils.exp(0,1));
-        assertEquals(1, utils.exp(1,0));
-        assertEquals(4, utils.exp(2,2));
-        assertEquals(16, utils.exp(4,2));
-        assertEquals(1, utils.exp(-1,2));
-        assertEquals(-1, utils.exp(-1,3));        
-        assertEquals(100000, utils.exp(10,5));
-        assertEquals(1, utils.exp(2,0));
-        assertEquals(1, utils.exp(10,0));
-        assertEquals(-1, utils.exp(-10,0));
-        assertEquals(3.375,utils.exp(1.5,3));
-        assertEquals(-3.375,utils.exp(-1.5,3));
-        assertEquals(1,utils.exp(1.5,0));
-        assertEquals(68.89,utils.exp(8.3,2), EPSILON);
-        assertEquals(68.89,utils.exp(-8.3,2), EPSILON);
+            //Eqauls
+            assertEquals(0, utils.exp(0,1));
+            assertEquals(1, utils.exp(1,0));
+            assertEquals(4, utils.exp(2,2));
+            assertEquals(16, utils.exp(4,2));
+            assertEquals(1, utils.exp(-1,2));
+            assertEquals(-1, utils.exp(-1,3));        
+            assertEquals(100000, utils.exp(10,5));
+            assertEquals(1, utils.exp(2,0));
+            assertEquals(1, utils.exp(10,0));
+            assertEquals(-1, utils.exp(-10,0));
+            assertEquals(3.375,utils.exp(1.5,3));
+            assertEquals(-3.375,utils.exp(-1.5,3));
+            assertEquals(1,utils.exp(1.5,0));
+            assertEquals(68.89,utils.exp(8.3,2), EPSILON);
+            assertEquals(68.89,utils.exp(-8.3,2), EPSILON);
 
-        //False
-        assertFalse(0==utils.exp(0,0));
-        assertFalse(1==utils.exp(-10,0));
-        assertFalse(0 ==utils.exp(10,0));
+            //False
+            assertFalse(0==utils.exp(0,0));
+            assertFalse(1==utils.exp(-10,0));
+            assertFalse(0 ==utils.exp(10,0));
         } catch (Exception ex) {
-        //Throws
-        assertThrows(IllegalArgumentException.class, () -> {
-            assertEquals(1,utils.exp(5,-1));
-        });
-        
-        assertThrows(IllegalArgumentException.class, () -> {
-            assertEquals(1,utils.exp(5.1,-2));
-        });
-        
-        assertThrows(IllegalArgumentException.class, () -> {
-            assertEquals(1,utils.exp(5,2.3));
-        });
+            //Throws
+            assertThrows(IllegalArgumentException.class, () -> {
+                assertEquals(1,utils.exp(5,-1));
+            });
+
+            assertThrows(IllegalArgumentException.class, () -> {
+                assertEquals(1,utils.exp(5.1,-2));
+            });
+
+            assertThrows(IllegalArgumentException.class, () -> {
+                assertEquals(1,utils.exp(5,2.3));
+            });
         }
     }
     
     @Test
     public void testRadical(){
         try{
-        //Equals
-        assertEquals(1, utils.radical(1, 2), EPSILON); 
-        assertEquals(utils.radical(1, 2),  utils.radical(1, 3), EPSILON);
-        assertEquals(0, utils.radical(0, 2), EPSILON);
-        assertEquals(0, utils.radical(0, 1), EPSILON);
-        assertEquals(4, utils.radical(16, 2), EPSILON);
-        assertEquals(2, utils.radical(4096, 12), EPSILON);
-        assertEquals(9, utils.radical(729, 3), EPSILON);
-        assertEquals(2345, utils.radical(2345, 1), EPSILON);
-        //assertEquals(-5, utils.radical(-125, 3), EPSILON); // - v pod odmocninou
-        //assertEquals(-7, utils.radical(-823543,7), EPSILON); // - v pod odmocninou
-        
-        
-        //False
-        assertFalse(-6 == utils.radical(25, 42));
-        assertFalse(0 == utils.radical(25, 2));
-        assertFalse(-4 == utils.radical(64, 3));
-        //assertFalse(-3 == utils.radical(-35, 5)); // - v pod odmocninou
+            //Equals
+            assertEquals(1, utils.radical(1, 2), EPSILON); 
+            assertEquals(utils.radical(1, 2),  utils.radical(1, 3), EPSILON);
+            assertEquals(0, utils.radical(0, 2), EPSILON);
+            assertEquals(0, utils.radical(0, 1), EPSILON);
+            assertEquals(4, utils.radical(16, 2), EPSILON);
+            assertEquals(2, utils.radical(4096, 12), EPSILON);
+            assertEquals(9, utils.radical(729, 3), EPSILON);
+            assertEquals(2345, utils.radical(2345, 1), EPSILON);
+
+
+            //False
+            assertFalse(-6 == utils.radical(25, 42));
+            assertFalse(0 == utils.radical(25, 2));
+            assertFalse(-4 == utils.radical(64, 3));
         } catch (Exception ex) {
             
         //Throws
-        assertThrows(ArithmeticException.class, () -> {
-            utils.radical(20, -5);
-        });
-        assertThrows(ArithmeticException.class, () -> {
-            utils.radical(1, -3);
-        });
-        assertThrows(ArithmeticException.class, () -> {
-            utils.radical(-4, 2);
-        });
-        assertThrows(ArithmeticException.class, () -> {
-            utils.radical(-625, 4);
-        });
+            assertThrows(ArithmeticException.class, () -> {
+                utils.radical(20, -5);
+            });
+            assertThrows(ArithmeticException.class, () -> {
+                utils.radical(1, -3);
+            });
+            assertThrows(ArithmeticException.class, () -> {
+                utils.radical(-4, 2);
+            });
+            assertThrows(ArithmeticException.class, () -> {
+                utils.radical(-625, 4);
+            });
         }
     }
     
     @Test
-    public void testAbs() {
-        //Equals
-        assertEquals(1, utils.abs(1));
-        assertEquals(5, utils.abs(5));
-        assertEquals(4, utils.abs(-4));
-        assertEquals(12, utils.abs(-12));
-        assertEquals(10, utils.abs(10));
-        assertEquals(250015564, utils.abs(250015564));
-        assertEquals(utils.abs(2335), utils.abs(-2335));
-        assertEquals(0, utils.abs(0));
-        assertEquals(135.54, utils.abs(135.54));
-        assertEquals(0.000002, utils.abs(0.000002));
-        
-        //Not equals
-        assertNotEquals(1203, utils.abs(1202.5));
-        assertNotEquals(-33, utils.abs(-33));
-        assertNotEquals(-656, utils.abs(123));
-        
-        //True
-        assertTrue(2 == utils.abs(2));
-        assertTrue(utils.abs(-2445.2345) == utils.abs(2445.2345));
-        assertTrue(25322.15454 == utils.abs(-25322.15454));
-    }
-    
-    
-    public void testRoot() {
-    
+    public void testAbs(){
+        try{
+            //Equals
+            assertEquals(1, utils.abs(1));
+            assertEquals(5, utils.abs(5));
+            assertEquals(4, utils.abs(-4));
+            assertEquals(12, utils.abs(-12));
+            assertEquals(10, utils.abs(10));
+            assertEquals(250015564, utils.abs(250015564));
+            assertEquals(utils.abs(2335), utils.abs(-2335));
+            assertEquals(0, utils.abs(0));
+            assertEquals(135.54, utils.abs(135.54));
+            assertEquals(0.000002, utils.abs(0.000002));
+
+            //Not equals
+            assertNotEquals(1203, utils.abs(1202.5));
+            assertNotEquals(-33, utils.abs(-33));
+            assertNotEquals(-656, utils.abs(123));
+
+            //True
+            assertTrue(2 == utils.abs(2));
+            assertTrue(utils.abs(-2445.2345) == utils.abs(2445.2345));
+            assertTrue(25322.15454 == utils.abs(-25322.15454));
+        }catch (Exception ex){
+            //Throws
+            assertThrows(ArithmeticException.class, () -> {
+            assertEquals(1,utils.abs(888888888));
+            });
+        }
     }
 
 }
