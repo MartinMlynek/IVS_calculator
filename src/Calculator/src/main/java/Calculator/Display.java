@@ -47,7 +47,7 @@ public class Display extends javax.swing.JFrame {
     *@name setEquation
     * \~english @brief Sets equation into the display of the calculator
     * \~english @param equation
-    * \~czech @brief Nastaví rovnici do displeje kalkulaèky
+    * \~czech @brief Nastavï¿½ rovnici do displeje kalkulaï¿½ky
     * \~czech @param rovnice 
     */
     public void setEquation(String equation){
@@ -81,9 +81,9 @@ public class Display extends javax.swing.JFrame {
     * \~english @brief Finds every factorial in equation and calls method solveOperator. 
     * \~english @param equation
     * \~english @return equation Returns equation with solved factorials.
-    * \~czech @brief Najde kadı faktoriál a spustí metodu solveOperator. 
+    * \~czech @brief Najde kaï¿½dï¿½ faktoriï¿½l a spustï¿½ metodu solveOperator. 
     * \~czech @param rovnice 
-    * \~czech @return void Vrátí rovnici s vypoèítanımi faktoriály.
+    * \~czech @return void Vrï¿½tï¿½ rovnici s vypoï¿½ï¿½tanï¿½mi faktoriï¿½ly.
     */
     private String solveFactorials(String equation) {
         for (int i = 0; i < equation.length(); i++) {
@@ -102,8 +102,8 @@ public class Display extends javax.swing.JFrame {
     * \~english @brief Finds every operator in equation and calls method solveOperator. 
     *@param equation
     * \~english @return equation Return equation with solved operators.
-    * \~czech @brief Najde kadı operátor a zavolá metodu solveOperator.
-    * \~czech @return equation Vrátí rovnici s vypoèítanımi operátory.
+    * \~czech @brief Najde kaï¿½dï¿½ operï¿½tor a zavolï¿½ metodu solveOperator.
+    * \~czech @return equation Vrï¿½tï¿½ rovnici s vypoï¿½ï¿½tanï¿½mi operï¿½tory.
     */
     private String solveOperators(String equation) {
         for (int i = 0; i < equation.length(); i++) {
@@ -131,7 +131,7 @@ public class Display extends javax.swing.JFrame {
     /**
     *@name checkDoubleOperators
     * \~english @brief Checks equation for operators next to each other.
-    * \~czech @brief Zjistí, jestli jsou v rovnici dva operátory vedle sebe. 
+    * \~czech @brief Zjistï¿½, jestli jsou v rovnici dva operï¿½tory vedle sebe. 
     *@param equation
     *@return boolean
     */
@@ -147,7 +147,7 @@ public class Display extends javax.swing.JFrame {
     /**
     *@name checkInvalidChars
     * \~english @brief Checks equation for invalid characters specified in method.
-    * \~english @brief Zjistí, jestli jsou v rovnici nepovolené znaky
+    * \~english @brief Zjistï¿½, jestli jsou v rovnici nepovolenï¿½ znaky
     *@param equation
     *@return boolean
     */
@@ -165,9 +165,9 @@ public class Display extends javax.swing.JFrame {
     *@name getStringNumberBeforeOper
     *@param equation
     * \~english @param operIndex index of the operator in the equation
-    * \~czech @param operIndex index operátoru v rovnici
+    * \~czech @param operIndex index operï¿½toru v rovnici
     * \~english @return number number before the operator stored in String
-    * \~czech @return number èíslo pøed operátorem 
+    * \~czech @return number ï¿½ï¿½slo pï¿½ed operï¿½torem 
     */
     private String getStringNumberBeforeOper(String equation, int operIndex) {
         String number = "";
@@ -184,9 +184,9 @@ public class Display extends javax.swing.JFrame {
     *@name getStringNumberAfterOper
     *@param equation
     * \~english @param operIndex index of the operator in the equation
-    * \~czech @param operIndex index operátoru v rovnici
+    * \~czech @param operIndex index operï¿½toru v rovnici
     * \~english @return number number after the operator stored in String
-    * \~czech @return number èíslo za operátorem 
+    * \~czech @return number ï¿½ï¿½slo za operï¿½torem 
 
     */
     private String getStringNumberAfterOper(String equation, int operIndex) {
@@ -204,12 +204,12 @@ public class Display extends javax.swing.JFrame {
      /**
     *@name calculateOperator
     * \~english @brief Calls appropriate library method CalculatorUtils 
-    * \~czech @brief Volá správnou metodu z knihovny CalculatorUtils
+    * \~czech @brief Volï¿½ sprï¿½vnou metodu z knihovny CalculatorUtils
     *@param equation
     * \~english @param operIndex index of the operator in the equation
-    * \~czech @param operIndex index operátoru v rovnici
+    * \~czech @param operIndex index operï¿½toru v rovnici
     * \~english @return solvedOperator solved subequation
-    * \~czech @return solvedOperator Vısledek operátoru
+    * \~czech @return solvedOperator Vï¿½sledek operï¿½toru
     */
     private String calculateOperator(String equation, int operIndex) throws Exception {
         //Method check the operator, calls the appropriate library method and returns the number in String
@@ -258,11 +258,11 @@ public class Display extends javax.swing.JFrame {
      /**
     *@name solveOperator
     * \~english @brief Method gets number for the operator, solves subequation and replaces the subequation with result
-    * \~czech @brief Metoda zjistí èísla pro vıpoèet operátoru, vypoèítá subrovnici a nahradí subrovnici vısledkem
+    * \~czech @brief Metoda zjistï¿½ ï¿½ï¿½sla pro vï¿½poï¿½et operï¿½toru, vypoï¿½ï¿½tï¿½ subrovnici a nahradï¿½ subrovnici vï¿½sledkem
     *@param equation
     *@param operIndex
     * \~english @return equation Equation with solved subEquation 
-    * \~czech @return equation Rovnice s vypoèítanım operátorem
+    * \~czech @return equation Rovnice s vypoï¿½ï¿½tanï¿½m operï¿½torem
     */ 
     private String solveOperator(String equation, int operIndex) {
         //Method replaces the operator and its arguments with a result
@@ -289,10 +289,10 @@ public class Display extends javax.swing.JFrame {
      /**
     *@name findOperator
     * \~english @brief Checks if equation contains any operator
-    * \~czech @brief Zjistí, jestli rovnice obsahuje operátor
+    * \~czech @brief Zjistï¿½, jestli rovnice obsahuje operï¿½tor
     *@param equation
     * \~english @return boolean True if equation contains any operator
-    * \~czech @return boolean  navrátí true pokud rovnice obsahuje nìjakı operátor
+    * \~czech @return boolean  navrï¿½tï¿½ true pokud rovnice obsahuje nï¿½jakï¿½ operï¿½tor
     */
     private boolean findOperator(String equation) {
         for (int i = 0; i < equation.length(); i++) {
@@ -306,10 +306,10 @@ public class Display extends javax.swing.JFrame {
      /**
     *@name checkNegativeEquation
     * \~english @brief Checks if equation starts with minus
-    * \~czech @brief Zjistí, jestli rovnice zaèíná mínusem
+    * \~czech @brief Zjistï¿½, jestli rovnice zaï¿½ï¿½nï¿½ mï¿½nusem
     *@param equation
     * \~english  @return boolean returns true if equation starts with minus
-    * \~czech  @return boolean navrátí true pokud rovnice zaèíná mínusem
+    * \~czech  @return boolean navrï¿½tï¿½ true pokud rovnice zaï¿½ï¿½nï¿½ mï¿½nusem
 
     */
     private boolean checkNegativeEquation(String equation) {
@@ -321,7 +321,7 @@ public class Display extends javax.swing.JFrame {
      /**
     *@name checkInvalidEquation
     * \~english @brief Sets error message into the display if error occurs
-    * \~czech @brief Do displeje kalkulaèky nastaví chybové hlášení, pokud nìjaké nastane
+    * \~czech @brief Do displeje kalkulaï¿½ky nastavï¿½ chybovï¿½ hlï¿½enï¿½, pokud nï¿½jakï¿½ nastane
     *@param equation
     *@return void
     */
@@ -335,10 +335,10 @@ public class Display extends javax.swing.JFrame {
      /**
     *@name replaceMinuses
     * \~english @brief Replaces all the minuses with another symbol to prevent confusion between operator and negative numbers.
-    * \~czech @brief  Nahradí všechny operátory mínus jinım znakem, aby nedošlo k zámìnì operátoru a negativního èísla
+    * \~czech @brief  Nahradï¿½ vï¿½echny operï¿½tory mï¿½nus jinï¿½m znakem, aby nedoï¿½lo k zï¿½mï¿½nï¿½ operï¿½toru a negativnï¿½ho ï¿½ï¿½sla
     *@param equation
     *@ \~english return equation modified equation
-    *@ \~czech return equation upravená rovnice
+    *@ \~czech return equation upravenï¿½ rovnice
     */
      private String replaceMinuses(String equation) {
         equation = equation.replace('-', '$'); //Replaces every minus to prevent confusion between negative number and operator
@@ -394,7 +394,7 @@ public class Display extends javax.swing.JFrame {
         btnRoot.setBackground(new java.awt.Color(0, 0, 0));
         btnRoot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnRoot.setForeground(new java.awt.Color(240, 240, 240));
-        btnRoot.setText("â?š");
+        btnRoot.setText("âˆš");
         btnRoot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRootActionPerformed(evt);
@@ -1019,13 +1019,7 @@ public class Display extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnABS;
     private javax.swing.JButton btnDeleteAll;
-    private javax.swing.JButton btnDeleteAll1;
-    private javax.swing.JButton btnDeleteAll2;
-    private javax.swing.JButton btnDeleteAll3;
     private javax.swing.JButton btnDeleteLast;
-    private javax.swing.JButton btnDeleteLasta1;
-    private javax.swing.JButton btnDeleteLasta2;
-    private javax.swing.JButton btnDeleteLasta3;
     private javax.swing.JButton btnDivision;
     private javax.swing.JButton btnDot;
     private javax.swing.JButton btnEight;
@@ -1036,74 +1030,62 @@ public class Display extends javax.swing.JFrame {
     private javax.swing.JButton btnMinus;
     private javax.swing.JButton btnNine;
     private javax.swing.JButton btnOne;
-    private javax.swing.JButton btnOne1;
-    private javax.swing.JButton btnOne2;
-    private javax.swing.JButton btnOne3;
     private javax.swing.JButton btnPlus;
     private javax.swing.JButton btnPower;
     private javax.swing.JButton btnRoot;
     private javax.swing.JButton btnSeven;
     private javax.swing.JButton btnSix;
     private javax.swing.JButton btnThree;
-    private javax.swing.JButton btnThree1;
-    private javax.swing.JButton btnThree2;
-    private javax.swing.JButton btnThree3;
     private javax.swing.JButton btnTimes;
     private javax.swing.JButton btnTwo;
-    private javax.swing.JButton btnTwo1;
-    private javax.swing.JButton btnTwo2;
-    private javax.swing.JButton btnTwo3;
     private javax.swing.JButton btnZero;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField tvDisplay;
     // End of variables declaration//GEN-END:variables
 
 /**
-    * @brief Metoda vytvoøí pole textového øetìzce s nápovìdu
+    * @brief Metoda vytvoï¿½ï¿½ pole textovï¿½ho ï¿½etï¿½zce s nï¿½povï¿½du
     * 
-    * @return Vrací pole s nápovìdou 
+    * @return Vracï¿½ pole s nï¿½povï¿½dou 
     */
     private ArrayList<String> getHelpArray(){
-        String addFunction = "Sèítání \"+\"";
-        String addHelp = "Funkce vyaduje minimálnì dva èíselné vstupy\n"
-                + "oddìlené zmanénkem \"+\".";
-        String subFunction = "Odèítání \"-\"";
-        String subHelp = "Funkce vyaduje minimálnì dva èíselné vstupy\n"
-                + "oddìlené zmanénkem \"-\".\n\n"
-                + "Pøi vloení znaménka \"-\" následoveného èíslem,\n"
-                + "lze získat záporné èíslo.";
-        String mulFunction = "Násobení \"*\"";
-        String mulHelp = "Funkce vyaduje minimálnì dva èíselné vstupy\n"
-                + "oddìlené zmanénkem \"*\".";
-        String divFunction = "Dìlení \"/\"";
-        String divHelp = "Funkce vyaduje minimálnì dva èíselné vstupy\n"
-                + "oddìlené zmanénkem \"/\".\n\n"
-                + "Dìlení nulou bohuel umí pouze Chuck Norris.";
+        String addFunction = "SÄÃ­tÃ¡nÃ­ \"+\"";
+        String addHelp = "Funkce vyÅ¾aduje minimÃ¡lnÄ› dva ÄÃ­selnÃ© vstupy\n"
+                + "oddÄ›lenÃ© zmanÃ©nkem \"+\".";
+        String subFunction = "OdÄÃ­tÃ¡nÃ­ \"-\"";
+        String subHelp = "Funkce vyÅ¾aduje minimÃ¡lnÄ› dva ÄÃ­selnÃ© vstupy\n"
+                + "oddÄ›lenÃ© zmanÃ©nkem \"-\".\n\n"
+                + "PÅ™i vloÅ¾enÃ­ znamÃ©nka \"-\" nÃ¡sledovenÃ©ho ÄÃ­slem,\n"
+                + "lze zÃ­skat zÃ¡pornÃ© ÄÃ­slo.";
+        String mulFunction = "NÃ¡sobenÃ­ \"*\"";
+        String mulHelp = "Funkce vyÅ¾aduje minimÃ¡lnÄ› dva ÄÃ­selnÃ© vstupy\n"
+                + "oddÄ›lenÃ© zmanÃ©nkem \"*\".";
+        String divFunction = "DÄ›lenÃ­ \"/\"";
+        String divHelp = "Funkce vyÅ¾aduje minimÃ¡lnÄ› dva ÄÃ­selnÃ© vstupy\n"
+                + "oddÄ›lenÃ© zmanÃ©nkem \"/\".\n\n"
+                + "DÄ›lenÃ­ nulou bohuÅ¾el umÃ­ pouze Chuck Norris.";
         String powFunction = "Mocnina \"^\"";
-        String powHelp = "Funkce vyaduje èíselnı vstup reprezentující\n"
-                + "hodnotu k umocnìní.\n\n"
-                + "Po kliknutí na tlaèítko \"^\" dojde k otevøení nového\n"
-                + "okna pro vıbìr exponentu.";
-        String rootFunction = "Odmocnina \"?\"";
-        String rootHelp = "Funkce vyaduje èíselnı vstup reprezentující\n"
+        String powHelp = "Funkce vyÅ¾aduje ÄÃ­selnÃ½ vstup reprezentujÃ­cÃ­\n"
+                + "hodnotu k umocnÄ›nÃ­.\n\n"
+                + "Po kliknutÃ­ na tlaÄÃ­tko \"^\" dojde k otevÅ™enÃ­ novÃ©ho\n"
+                + "okna pro vÃ½bÄ›r exponentu.";
+        String rootFunction = "Odmocnina \"âˆš\"";
+        String rootHelp = "Funkce vyÅ¾aduje ÄÃ­selnÃ½ vstup reprezentujÃ­cÃ­\n"
                 + "hodnotu pod odmocninou.\n\n"
-                + "Po kliknutí na tlaèítko \"?\" dojde k otevøení nového\n"
-                + "okna pro vıbìr odmocniny.";
-        String factFunction = "Faktoriál \"!\"";
-        String factHelp = "Funkce vyaduje èíselnı vstup reprezentující\n"
-                + "hodnotu faktoriálu následovanou znaménkem \"!\".";
-        String absFunction = "Absolutní hodnota (\"ABS\")";
-        String absHelp = "Funkce vyaduje èíselnı vstup reprezentující\n"
-                + "hodnotu absolutní hodnoty.";
-
+                + "Po kliknutÃ­ na tlaÄÃ­tko \"âˆš\" dojde k otevÅ™enÃ­ novÃ©ho\n"
+                + "okna pro vÃ½bÄ›r odmocniny.";
+        String factFunction = "FaktoriÃ¡l \"!\"";
+        String factHelp = "Funkce vyÅ¾aduje ÄÃ­selnÃ½ vstup reprezentujÃ­cÃ­\n"
+                + "hodnotu faktoriÃ¡lu nÃ¡sledovanou znamÃ©nkem \"!\".";
+        String absFunction = "AbsolutnÃ­ hodnota (\"ABS\")";
+        String absHelp = "Funkce vyÅ¾aduje ÄÃ­selnÃ½ vstup reprezentujÃ­cÃ­\n"
+                + "hodnotu absolutnÃ­ hodnoty.";
+        
         ArrayList<String> help = new ArrayList<>();
         help.add(addFunction);
         help.add(addHelp);

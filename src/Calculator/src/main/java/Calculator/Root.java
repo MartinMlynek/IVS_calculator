@@ -71,7 +71,7 @@ public class Root extends javax.swing.JFrame {
     *@brief Sets equation into the display of the calculator
     *@param equation
     * \~english @brief Sets equation into the display of the calculator
-    * \~czech @brief Nastaví rovnici do displeje kalkulaèky
+    * \~czech @brief Nastavï¿½ rovnici do displeje kalkulaï¿½ky
     *@return void
     */
      public void setEquation(String equation){
@@ -129,7 +129,7 @@ public class Root extends javax.swing.JFrame {
         btnRoot.setBackground(new java.awt.Color(0, 0, 0));
         btnRoot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnRoot.setForeground(new java.awt.Color(240, 240, 240));
-        btnRoot.setText("â?š");
+        btnRoot.setText("âˆš");
         btnRoot.setEnabled(false);
         btnRoot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -461,7 +461,7 @@ public class Root extends javax.swing.JFrame {
         });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("â?š");
+        jLabel1.setText("âˆš");
 
         jPanel8.setBackground(new java.awt.Color(200, 200, 200));
         jPanel8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -748,9 +748,7 @@ public class Root extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnABS;
     private javax.swing.JButton btnDeleteAll;
-    private javax.swing.JButton btnDeleteAll1;
     private javax.swing.JButton btnDeleteLast;
-    private javax.swing.JButton btnDeleteLasta1;
     private javax.swing.JButton btnDivision;
     private javax.swing.JButton btnDot;
     private javax.swing.JButton btnEight;
@@ -761,22 +759,18 @@ public class Root extends javax.swing.JFrame {
     private javax.swing.JButton btnMinus;
     private javax.swing.JButton btnNine;
     private javax.swing.JButton btnOne;
-    private javax.swing.JButton btnOne1;
     private javax.swing.JButton btnPlus;
     private javax.swing.JButton btnPower;
     private javax.swing.JButton btnRoot;
     private javax.swing.JButton btnSeven;
     private javax.swing.JButton btnSix;
     private javax.swing.JButton btnThree;
-    private javax.swing.JButton btnThree1;
     private javax.swing.JButton btnTimes;
     private javax.swing.JButton btnTwo;
-    private javax.swing.JButton btnTwo1;
     private javax.swing.JButton btnZero;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;

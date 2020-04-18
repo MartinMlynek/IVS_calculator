@@ -65,7 +65,7 @@ public class Power extends javax.swing.JFrame {
       /**
     *@name setEquation
     * \~english @brief Sets equation into the display of the calculator
-    * \~czech @brief Nastav� rovnici do displeje kalkula�ky
+    * \~czech @brief Nastav� rovnici do displeje kalkula�ky
     *@param equation
     *@return void
     */
@@ -125,7 +125,7 @@ public class Power extends javax.swing.JFrame {
         btnRoot.setBackground(new java.awt.Color(175, 175, 175));
         btnRoot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnRoot.setForeground(new java.awt.Color(240, 240, 240));
-        btnRoot.setText("�?�");
+        btnRoot.setText("√");
         btnRoot.setEnabled(false);
         btnRoot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -803,7 +803,7 @@ public class Power extends javax.swing.JFrame {
     */
     private ArrayList<String> getHelpArray(){
         String winTitle = "Rozložení oken";
-        String winHelp = "Levé okno obsahuje číslo, jenž umoc�?ujeme.\n\n"
+        String winHelp = "Levé okno obsahuje číslo, jenž umocňujeme.\n\n"
                 + "Do pravého okna se zobrazí zvolený exponent.";
         String menuTitle= "Menu tlačítko \"Zpět\"";
         String menuHelp = "Tlačítko slouží k návratu zpět do kalkulačky,\n"
