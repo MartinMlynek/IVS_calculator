@@ -43,14 +43,11 @@ public class Display extends javax.swing.JFrame {
         menuBar.add(menuHelp);
     }
     /**
-    * \~english @name setEquation
+    *@name setEquation
     * \~english @brief Sets equation into the display of the calculator
     * \~english @param equation
-    * \~english @return void
-    * \~czech @name setEquation
     * \~czech @brief NastavÌ rovnici do displeje kalkulaËky
     * \~czech @param rovnice 
-    * \~czech @return void
     */
     public void setEquation(String equation){
         this.tvDisplay.setText(equation);
@@ -79,11 +76,10 @@ public class Display extends javax.swing.JFrame {
     }
     
      /**
-    * \~english @name solveFactorials
+    *name solveFactorials
     * \~english @brief Finds every factorial in equation and calls method solveOperator. 
     * \~english @param equation
     * \~english @return equation Returns equation with solved factorials.
-    * \~czech @name solveFactorials
     * \~czech @brief Najde kaûd˝ faktori·l a spustÌ metodu solveOperator. 
     * \~czech @param rovnice 
     * \~czech @return void Vr·tÌ rovnici s vypoËÌtan˝mi faktori·ly.
@@ -101,13 +97,11 @@ public class Display extends javax.swing.JFrame {
         return equation;
     }
      /**
-    * \~english @name solveOperators
+    *@name solveOperators
     * \~english @brief Finds every operator in equation and calls method solveOperator. 
-    * \~english @param equation
+    *@param equation
     * \~english @return equation Return equation with solved operators.
-    * \~czech *@name solveOperators
     * \~czech @brief Najde kaûd˝ oper·tor a zavol· metodu solveOperator.
-    * \~czech @param equation
     * \~czech @return equation Vr·tÌ rovnici s vypoËÌtan˝mi oper·tory.
     */
     private String solveOperators(String equation) {
@@ -824,68 +818,116 @@ public class Display extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteLastActionPerformed
 
     private void btnFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiveActionPerformed
+        if (checkInvalidChars(tvDisplay.getText())) {
+            tvDisplay.setText("");
+        }
         tvDisplay.setText(tvDisplay.getText() + "5");
     }//GEN-LAST:event_btnFiveActionPerformed
 
     private void btnEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEightActionPerformed
+        if (checkInvalidChars(tvDisplay.getText())) {
+            tvDisplay.setText("");
+        }
         tvDisplay.setText(tvDisplay.getText() + "8");
     }//GEN-LAST:event_btnEightActionPerformed
 
     private void btnFactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFactActionPerformed
+        if (checkInvalidChars(tvDisplay.getText())) {
+            tvDisplay.setText("");
+        }
         tvDisplay.setText(tvDisplay.getText() + "!");
     }//GEN-LAST:event_btnFactActionPerformed
 
     private void btnPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlusActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + "+");
+         if (checkInvalidChars(tvDisplay.getText())) {
+            tvDisplay.setText("");
+        }tvDisplay.setText(tvDisplay.getText() + "+");
     }//GEN-LAST:event_btnPlusActionPerformed
 
     private void btnZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZeroActionPerformed
+         if (checkInvalidChars(tvDisplay.getText())) {
+            tvDisplay.setText("");
+        }
         tvDisplay.setText(tvDisplay.getText() + "0");
     }//GEN-LAST:event_btnZeroActionPerformed
 
     private void btnMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinusActionPerformed
+         if (checkInvalidChars(tvDisplay.getText())) {
+            tvDisplay.setText("");
+        }
         tvDisplay.setText(tvDisplay.getText() + "-");
     }//GEN-LAST:event_btnMinusActionPerformed
 
     private void btnABSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnABSActionPerformed
         btnEqualsActionPerformed(evt);
-            tvDisplay.setText(""+CalculatorUtils.Utilities.abs(Integer.parseInt(tvDisplay.getText())));
+        if (tvDisplay.getText().contains(Character.toString('.'))) {
+            tvDisplay.setText("" + CalculatorUtils.Utilities.abs(Double.parseDouble(tvDisplay.getText())));
+
+        } else {
+            tvDisplay.setText("" + CalculatorUtils.Utilities.abs(Integer.parseInt(tvDisplay.getText())));
+        }
     }//GEN-LAST:event_btnABSActionPerformed
 
     private void btnOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOneActionPerformed
+         if (checkInvalidChars(tvDisplay.getText())) {
+            tvDisplay.setText("");
+        }
         tvDisplay.setText(tvDisplay.getText() + "1");
     }//GEN-LAST:event_btnOneActionPerformed
 
     private void btnTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTwoActionPerformed
+         if (checkInvalidChars(tvDisplay.getText())) {
+            tvDisplay.setText("");
+        }
         tvDisplay.setText(tvDisplay.getText() + "2");
     }//GEN-LAST:event_btnTwoActionPerformed
 
     private void btnThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThreeActionPerformed
+         if (checkInvalidChars(tvDisplay.getText())) {
+            tvDisplay.setText("");
+        }
         tvDisplay.setText(tvDisplay.getText() + "3");
     }//GEN-LAST:event_btnThreeActionPerformed
 
     private void btnFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFourActionPerformed
+         if (checkInvalidChars(tvDisplay.getText())) {
+            tvDisplay.setText("");
+        }
         tvDisplay.setText(tvDisplay.getText() + "4");
     }//GEN-LAST:event_btnFourActionPerformed
 
     private void btnSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSixActionPerformed
+         if (checkInvalidChars(tvDisplay.getText())) {
+            tvDisplay.setText("");
+        }
         tvDisplay.setText(tvDisplay.getText() + "6");
     }//GEN-LAST:event_btnSixActionPerformed
 
     private void btnSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSevenActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + "7");
+         if (checkInvalidChars(tvDisplay.getText())) {
+            tvDisplay.setText("");
+        }
+         tvDisplay.setText(tvDisplay.getText() + "7");
     }//GEN-LAST:event_btnSevenActionPerformed
 
     private void btnNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNineActionPerformed
+         if (checkInvalidChars(tvDisplay.getText())) {
+            tvDisplay.setText("");
+        }
         tvDisplay.setText(tvDisplay.getText() + "9");
     }//GEN-LAST:event_btnNineActionPerformed
 
     private void btnTimesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimesActionPerformed
+         if (checkInvalidChars(tvDisplay.getText())) {
+            tvDisplay.setText("");
+        }
         tvDisplay.setText(tvDisplay.getText() + "*");
-
     }//GEN-LAST:event_btnTimesActionPerformed
 
     private void btnDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivisionActionPerformed
+        if (checkInvalidChars(tvDisplay.getText())) {
+            tvDisplay.setText("");
+        } 
         tvDisplay.setText(tvDisplay.getText() + "/");
 
     }//GEN-LAST:event_btnDivisionActionPerformed
@@ -932,7 +974,10 @@ public class Display extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRootActionPerformed
 
     private void btnDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDotActionPerformed
-        tvDisplay.setText(tvDisplay.getText() + ".");
+         if (checkInvalidChars(tvDisplay.getText())) {
+            tvDisplay.setText("");
+        }
+         tvDisplay.setText(tvDisplay.getText() + ".");
     }//GEN-LAST:event_btnDotActionPerformed
 
     /**
@@ -1020,44 +1065,44 @@ public class Display extends javax.swing.JFrame {
     private javax.swing.JTextField tvDisplay;
     // End of variables declaration//GEN-END:variables
 
-   /**
-    * @brief Metoda vytvo≈ô√≠ pole textov√©ho ≈ôetƒõzce s n√°povƒõdu
+  /**
+    * @brief Metoda vytvo¯Ì pole textovÈho ¯etÏzce s n·povÏdu
     * 
-    * @return Vrac√≠ pole s n√°povƒõdou 
+    * @return VracÌ pole s n·povÏdou 
     */
     private ArrayList<String> getHelpArray(){
-        String addFunction = "Sƒç√≠t√°n√≠ \"+\"";
-        String addHelp = "Funkce vy≈æaduje minim√°lnƒõ dva ƒç√≠seln√© vstupy\n"
-                + "oddƒõlen√© zman√©nkem \"+\".";
-        String subFunction = "Odƒç√≠t√°n√≠ \"-\"";
-        String subHelp = "Funkce vy≈æaduje minim√°lnƒõ dva ƒç√≠seln√© vstupy\n"
-                + "oddƒõlen√© zman√©nkem \"-\".\n\n"
-                + "P≈ôi vlo≈æen√≠ znam√©nka \"-\" n√°sledoven√©ho ƒç√≠slem,\n"
-                + "lze z√≠skat z√°porn√© ƒç√≠slo.";
-        String mulFunction = "N√°soben√≠ \"*\"";
-        String mulHelp = "Funkce vy≈æaduje minim√°lnƒõ dva ƒç√≠seln√© vstupy\n"
-                + "oddƒõlen√© zman√©nkem \"*\".";
-        String divFunction = "Dƒõlen√≠ \"/\"";
-        String divHelp = "Funkce vy≈æaduje minim√°lnƒõ dva ƒç√≠seln√© vstupy\n"
-                + "oddƒõlen√© zman√©nkem \"/\".\n\n"
-                + "Dƒõlen√≠ nulou bohu≈æel um√≠ pouze Chuck Norris.";
+        String addFunction = "SËÌt·nÌ \"+\"";
+        String addHelp = "Funkce vyûaduje minim·lnÏ dva ËÌselnÈ vstupy\n"
+                + "oddÏlenÈ zmanÈnkem \"+\".";
+        String subFunction = "OdËÌt·nÌ \"-\"";
+        String subHelp = "Funkce vyûaduje minim·lnÏ dva ËÌselnÈ vstupy\n"
+                + "oddÏlenÈ zmanÈnkem \"-\".\n\n"
+                + "P¯i vloûenÌ znamÈnka \"-\" n·sledovenÈho ËÌslem,\n"
+                + "lze zÌskat z·pornÈ ËÌslo.";
+        String mulFunction = "N·sobenÌ \"*\"";
+        String mulHelp = "Funkce vyûaduje minim·lnÏ dva ËÌselnÈ vstupy\n"
+                + "oddÏlenÈ zmanÈnkem \"*\".";
+        String divFunction = "DÏlenÌ \"/\"";
+        String divHelp = "Funkce vyûaduje minim·lnÏ dva ËÌselnÈ vstupy\n"
+                + "oddÏlenÈ zmanÈnkem \"/\".\n\n"
+                + "DÏlenÌ nulou bohuûel umÌ pouze Chuck Norris.";
         String powFunction = "Mocnina \"^\"";
-        String powHelp = "Funkce vy≈æaduje ƒç√≠seln√Ω vstup reprezentuj√≠c√≠\n"
-                + "hodnotu k umocnƒõn√≠.\n\n"
-                + "Po kliknut√≠ na tlaƒç√≠tko \"^\" dojde k otev≈ôen√≠ nov√©ho\n"
-                + "okna pro v√Ωbƒõr exponentu.";
-        String rootFunction = "Odmocnina \"‚?ö\"";
-        String rootHelp = "Funkce vy≈æaduje ƒç√≠seln√Ω vstup reprezentuj√≠c√≠\n"
+        String powHelp = "Funkce vyûaduje ËÌseln˝ vstup reprezentujÌcÌ\n"
+                + "hodnotu k umocnÏnÌ.\n\n"
+                + "Po kliknutÌ na tlaËÌtko \"^\" dojde k otev¯enÌ novÈho\n"
+                + "okna pro v˝bÏr exponentu.";
+        String rootFunction = "Odmocnina \"?\"";
+        String rootHelp = "Funkce vyûaduje ËÌseln˝ vstup reprezentujÌcÌ\n"
                 + "hodnotu pod odmocninou.\n\n"
-                + "Po kliknut√≠ na tlaƒç√≠tko \"‚?ö\" dojde k otev≈ôen√≠ nov√©ho\n"
-                + "okna pro v√Ωbƒõr odmocniny.";
-        String factFunction = "Faktori√°l \"!\"";
-        String factHelp = "Funkce vy≈æaduje ƒç√≠seln√Ω vstup reprezentuj√≠c√≠\n"
-                + "hodnotu faktori√°lu n√°sledovanou znam√©nkem \"!\".";
-        String absFunction = "Absolutn√≠ hodnota (\"ABS\")";
-        String absHelp = "Funkce vy≈æaduje ƒç√≠seln√Ω vstup reprezentuj√≠c√≠\n"
-                + "hodnotu absolutn√≠ hodnoty.";
-        
+                + "Po kliknutÌ na tlaËÌtko \"?\" dojde k otev¯enÌ novÈho\n"
+                + "okna pro v˝bÏr odmocniny.";
+        String factFunction = "Faktori·l \"!\"";
+        String factHelp = "Funkce vyûaduje ËÌseln˝ vstup reprezentujÌcÌ\n"
+                + "hodnotu faktori·lu n·sledovanou znamÈnkem \"!\".";
+        String absFunction = "AbsolutnÌ hodnota (\"ABS\")";
+        String absHelp = "Funkce vyûaduje ËÌseln˝ vstup reprezentujÌcÌ\n"
+                + "hodnotu absolutnÌ hodnoty.";
+
         ArrayList<String> help = new ArrayList<>();
         help.add(addFunction);
         help.add(addHelp);
@@ -1075,7 +1120,7 @@ public class Display extends javax.swing.JFrame {
         help.add(factHelp);
         help.add(absFunction);
         help.add(absHelp);
-        
+
         return help;
     }
 }
