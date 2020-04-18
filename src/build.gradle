@@ -9,7 +9,7 @@ allprojects {
     repositories {
         jcenter() 
     }
-	
+
 tasks.withType(Javadoc) {
     options.encoding = 'UTF-8'
 }
@@ -17,12 +17,16 @@ tasks.withType(Javadoc) {
 
 }
 
+
 buildscript {
-    repositories { jcenter() }
+
+    repositories { 
+	jcenter()
+	}
 
     dependencies {
         classpath 'com.netflix.nebula:gradle-aggregate-javadocs-plugin:2.2.+'
-		classpath "com.bmuschko:gradle-izpack-plugin:3.0"
+		izpack 'org.codehaus.izpack:izpack-ant:5.1.3'
     }
 	
 	
@@ -36,3 +40,14 @@ subprojects {
 	
 	
 }
+
+izpack {
+    baseDir = file("$buildDir/izpack")
+    installFile = file('installer/izpack/installer.xml')
+    outputFile = file("$buildDir/distributions/griffon-${version}-installer.jar")
+    compression = 'deflate'
+    compressionLevel = 9
+    appProperties = ['app.group': 'Griffon', 'app.name': 'griffon', 'app.title': 'Griffon',
+                     'app.version': version, 'app.subpath': "Griffon-$version"]
+}
+
