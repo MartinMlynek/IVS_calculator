@@ -861,11 +861,15 @@ public class Display extends javax.swing.JFrame {
 
     private void btnABSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnABSActionPerformed
         btnEqualsActionPerformed(evt);
-        if (tvDisplay.getText().contains(Character.toString('.'))) {
-            tvDisplay.setText("" + CalculatorUtils.Utilities.abs(Double.parseDouble(tvDisplay.getText())));
+        try{
+            if (tvDisplay.getText().contains(Character.toString('.'))) {
+                tvDisplay.setText("" + CalculatorUtils.Utilities.abs(Double.parseDouble(tvDisplay.getText())));
 
-        } else {
-            tvDisplay.setText("" + CalculatorUtils.Utilities.abs(Integer.parseInt(tvDisplay.getText())));
+            } else {
+                tvDisplay.setText("" + CalculatorUtils.Utilities.abs(Integer.parseInt(tvDisplay.getText())));
+            }
+        } catch (Exception ex) {
+            tvDisplay.setText("Error");
         }
     }//GEN-LAST:event_btnABSActionPerformed
 
