@@ -9,8 +9,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
- *@brief This window displays help
- * 
+ * This window displays help
  * @author Pavel Bobčík, xbobci03
  */
 public class Help extends javax.swing.JFrame {
@@ -176,7 +175,7 @@ public class Help extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     /**
-     *@brief Setter of string array, called from another class 
+     *Setter of string array, called from another class 
      *@param help String array with help text
      *@param size Size of array
      */
@@ -186,7 +185,7 @@ public class Help extends javax.swing.JFrame {
     }
     
     /**
-     *@brief This method displays help text
+     *This method displays help text
      *@param position Index of help text in array
      */
     public void showHelp(int position){
