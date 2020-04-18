@@ -848,7 +848,8 @@ public class Display extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMinusActionPerformed
 
     private void btnABSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnABSActionPerformed
-        // TODO add your handling code here:
+        btnEqualsActionPerformed(evt);
+            tvDisplay.setText(""+CalculatorUtils.Utilities.abs(Integer.parseInt(tvDisplay.getText())));
     }//GEN-LAST:event_btnABSActionPerformed
 
     private void btnOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOneActionPerformed

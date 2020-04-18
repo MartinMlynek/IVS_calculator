@@ -17,6 +17,7 @@ public class Root extends javax.swing.JFrame {
      * @author Pavel Bobƒç√≠k, xbobci03
      * @author tomalatomas, xtomal02
      */
+    
     public Root() {
         initComponents();
         this.setTitle("OAGUH Calculator");
@@ -69,6 +70,8 @@ public class Root extends javax.swing.JFrame {
     *@name setEquation
     *@brief Sets equation into the display of the calculator
     *@param equation
+    * \~english @brief Sets equation into the display of the calculator
+    * \~czech @brief NastavÌ rovnici do displeje kalkulaËky
     *@return void
     */
      public void setEquation(String equation){
@@ -126,7 +129,7 @@ public class Root extends javax.swing.JFrame {
         btnRoot.setBackground(new java.awt.Color(0, 0, 0));
         btnRoot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnRoot.setForeground(new java.awt.Color(240, 240, 240));
-        btnRoot.setText("‚àö");
+        btnRoot.setText("‚?ö");
         btnRoot.setEnabled(false);
         btnRoot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -458,7 +461,7 @@ public class Root extends javax.swing.JFrame {
         });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("‚àö");
+        jLabel1.setText("‚?ö");
 
         jPanel8.setBackground(new java.awt.Color(200, 200, 200));
         jPanel8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
