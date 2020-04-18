@@ -71,7 +71,7 @@ public class Root extends javax.swing.JFrame {
     *@brief Sets equation into the display of the calculator
     *@param equation
     * \~english @brief Sets equation into the display of the calculator
-    * \~czech @brief Nastav� rovnici do displeje kalkula�ky
+    * \~czech @brief Nastaví rovnici do displeje kalkulačky
     *@return void
     */
      public void setEquation(String equation){
