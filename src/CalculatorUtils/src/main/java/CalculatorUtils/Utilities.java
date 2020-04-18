@@ -291,7 +291,7 @@ public class Utilities {
     * @return Vrací absolutní hodnotu
     * @throw Vrací chybu při překročení velikosti datového typu
     */
-    public static double abs(double first){
+    public static double abs(double first) throws Exception{
        
        if(first == Double.POSITIVE_INFINITY || first == Double.NEGATIVE_INFINITY){
             throw new Exception("Infinity value");
@@ -304,7 +304,7 @@ public class Utilities {
         return first;
     }
     
-    public static int abs(int first){
+    public static int abs(int first) throws Exception{
        
        if(first > Integer.MAX_VALUE || first < Integer.MIN_VALUE){
             throw new Exception("Value overflow/underflow");
