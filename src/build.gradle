@@ -10,7 +10,9 @@ allprojects {
         jcenter() 
     }
 	
-	
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8'
+}
 
 }
 
@@ -25,6 +27,7 @@ buildscript {
 apply plugin: 'nebula-aggregate-javadocs'
 
 subprojects {
+	
 	apply plugin: 'java'
 	
 }

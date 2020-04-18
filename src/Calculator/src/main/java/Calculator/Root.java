@@ -67,12 +67,9 @@ public class Root extends javax.swing.JFrame {
         menuBar.add(menuBack);
     }
       /**
-    *@name setEquation
-    *@brief Sets equation into the display of the calculator
     *@param equation
     * \~english @brief Sets equation into the display of the calculator
     * \~czech @brief Nastaví rovnici do displeje kalkulačky
-    *@return void
     */
      public void setEquation(String equation){
         this.tvDisplayRoot.setText(equation);

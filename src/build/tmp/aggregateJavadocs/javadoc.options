@@ -1,8 +1,12 @@
--classpath 'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\Calculator\\build\\classes\\java\\main;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\Calculator\\build\\resources\\main;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\build\\classes\\java\\main;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\build\\resources\\main;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\libs\\CalculatorUtils.jar;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorUtils\\build\\classes\\java\\main;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorUtils\\build\\resources\\main'
+-classpath 'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\Calculator\\build\\classes\\java\\main;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\Calculator\\build\\resources\\main;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\Calculator\\libs\\CalculatorUtils.jar;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\build\\classes\\java\\main;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\build\\resources\\main;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\libs\\CalculatorUtils.jar;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorUtils\\build\\classes\\java\\main;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorUtils\\build\\resources\\main'
 -d 'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\build\\docs\\javadoc'
+-encoding 'UTF-8'
 -notimestamp 
 -quiet 
+'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\Calculator\\src\\main\\java\\Calculator\\Display.java'
+'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\Calculator\\src\\main\\java\\Calculator\\Help.java'
+'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\Calculator\\src\\main\\java\\Calculator\\Power.java'
+'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\Calculator\\src\\main\\java\\Calculator\\Root.java'
 'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\src\\main\\java\\CalculatorLibraryProfiling\\Deviation.java'
 'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\src\\main\\java\\CalculatorLibraryProfiling\\Main.java'
-'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorUtils\\src\\main\\java\\CalculatorUtils\\Display.java'
 'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorUtils\\src\\main\\java\\CalculatorUtils\\Utilities.java'

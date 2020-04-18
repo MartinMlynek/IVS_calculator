@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  *
- * @author Martin Mlınek (xmlyne06)
+ * @author Martin MlÃ½nek (xmlyne06)
  */
 public class Main {
 

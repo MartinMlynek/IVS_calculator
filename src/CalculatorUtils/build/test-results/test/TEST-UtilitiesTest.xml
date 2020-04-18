@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="UtilitiesTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2020-04-18T18:05:01" hostname="Pavel-MacBook-Pro.local" time="0.055">
+<testsuite name="UtilitiesTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2020-04-18T19:07:03" hostname="MARTIN-PC" time="0.036">
   <properties/>
-  <testcase name="testAbs()" classname="UtilitiesTest" time="0.032"/>
-  <testcase name="testAdd()" classname="UtilitiesTest" time="0.002"/>
-  <testcase name="testExp()" classname="UtilitiesTest" time="0.003"/>
+  <testcase name="testAbs()" classname="UtilitiesTest" time="0.024"/>
+  <testcase name="testAdd()" classname="UtilitiesTest" time="0.001"/>
+  <testcase name="testExp()" classname="UtilitiesTest" time="0.002"/>
   <testcase name="testSub()" classname="UtilitiesTest" time="0.001"/>
-  <testcase name="testFact()" classname="UtilitiesTest" time="0.003"/>
+  <testcase name="testFact()" classname="UtilitiesTest" time="0.001"/>
   <testcase name="testRadical()" classname="UtilitiesTest" time="0.001"/>
-  <testcase name="testDivide()" classname="UtilitiesTest" time="0.003"/>
-  <testcase name="testMultiply()" classname="UtilitiesTest" time="0.001"/>
+  <testcase name="testDivide()" classname="UtilitiesTest" time="0.001"/>
+  <testcase name="testMultiply()" classname="UtilitiesTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

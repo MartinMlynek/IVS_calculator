@@ -44,7 +44,6 @@ public class Display extends javax.swing.JFrame {
         menuBar.add(menuHelp);
     }
     /**
-    *@name setEquation
     * \~english @brief Sets equation into the display of the calculator
     * \~english @param equation
     * \~czech @brief Nastaví rovnici do displeje kalkulačky
@@ -54,7 +53,6 @@ public class Display extends javax.swing.JFrame {
         this.tvDisplay.setText(equation);
     }
     /**
-    *@name getOperatorPriority
     * \~english @brief Returns the priority of operator in form of number
     * \~czech @brief Vrátí prioritu operátoru v čísle
     *@param operator
@@ -78,7 +76,6 @@ public class Display extends javax.swing.JFrame {
     }
     
      /**
-    *name solveFactorials
     * \~english @brief Finds every factorial in equation and calls method solveOperator. 
     * \~english @param equation
     * \~english @return equation Returns equation with solved factorials.
@@ -99,7 +96,6 @@ public class Display extends javax.swing.JFrame {
         return equation;
     }
      /**
-    *@name solveOperators
     * \~english @brief Finds every operator in equation and calls method solveOperator. 
     *@param equation
     * \~english @return equation Return equation with solved operators.
@@ -130,7 +126,6 @@ public class Display extends javax.swing.JFrame {
 
     }
     /**
-    *@name checkDoubleOperators
     * \~english @brief Checks equation for operators next to each other.
     * \~czech @brief Zjistí, jestli jsou v rovnici dva operátory vedle sebe. 
     *@param equation
@@ -146,7 +141,6 @@ public class Display extends javax.swing.JFrame {
 
     }
     /**
-    *@name checkInvalidChars
     * \~english @brief Checks equation for invalid characters specified in method.
     * \~english @brief Zjistí, jestli jsou v rovnici nepovolené znaky
     *@param equation
@@ -163,7 +157,6 @@ public class Display extends javax.swing.JFrame {
     }
 
     /**
-    *@name getStringNumberBeforeOper
     *@param equation
     * \~english @param operIndex index of the operator in the equation
     * \~czech @param operIndex index operátoru v rovnici
@@ -182,7 +175,6 @@ public class Display extends javax.swing.JFrame {
         return number;
     }
      /**
-    *@name getStringNumberAfterOper
     *@param equation
     * \~english @param operIndex index of the operator in the equation
     * \~czech @param operIndex index operátoru v rovnici
@@ -203,7 +195,6 @@ public class Display extends javax.swing.JFrame {
     }
     
      /**
-    *@name calculateOperator
     * \~english @brief Calls appropriate library method CalculatorUtils 
     * \~czech @brief Volá správnou metodu z knihovny CalculatorUtils
     *@param equation
@@ -257,7 +248,6 @@ public class Display extends javax.swing.JFrame {
 
     }
      /**
-    *@name solveOperator
     * \~english @brief Method gets number for the operator, solves subequation and replaces the subequation with result
     * \~czech @brief Metoda zjistí čísla pro výpočet operátoru, vypočítá subrovnici a nahradí subrovnici výsledkem
     *@param equation
@@ -288,7 +278,6 @@ public class Display extends javax.swing.JFrame {
         }
     }
      /**
-    *@name findOperator
     * \~english @brief Checks if equation contains any operator
     * \~czech @brief Zjistí, jestli rovnice obsahuje operátor
     *@param equation
@@ -305,7 +294,6 @@ public class Display extends javax.swing.JFrame {
         return false;
     }
      /**
-    *@name checkNegativeEquation
     * \~english @brief Checks if equation starts with minus
     * \~czech @brief Zjistí, jestli rovnice začne mínusem
     *@param equation
@@ -320,7 +308,6 @@ public class Display extends javax.swing.JFrame {
         return false;
     }
      /**
-    *@name checkInvalidEquation
     * \~english @brief Sets error message into the display if error occurs
     * \~czech @brief Do displeje kalkulačky nastaví chybové hlášení, pokud nějaké nastane
     *@param equation
@@ -334,7 +321,6 @@ public class Display extends javax.swing.JFrame {
         }
     }
      /**
-    *@name replaceMinuses
     * \~english @brief Replaces all the minuses with another symbol to prevent confusion between operator and negative numbers.
     * \~czech @brief  Nahradí všechny operátory mínus jiným znakem, aby nedošlo k záměně operátoru a negativního čísla
     *@param equation

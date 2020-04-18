@@ -63,11 +63,9 @@ public class Power extends javax.swing.JFrame {
     }
 
       /**
-    *@name setEquation
     * \~english @brief Sets equation into the display of the calculator
     * \~czech @brief Nastaví rovnici do displeje kalkulačky
     *@param equation
-    *@return void
     */
      public void setEquation(String equation){
         this.tvDisplayPower.setText(equation);

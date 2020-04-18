@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Martin
+ * @author Martin Ml√Ωnek
  */
 public class Deviation {
     /**
@@ -67,7 +67,7 @@ public class Deviation {
     
     /**
      * Calculate standard deviation
-     * @param arr - ArrayList used to standard deviation¥s calculation
+     * @param arr - ArrayList used to standard deviations calculation
      * @throws Exception 
      */
     public double standardDeviation(ArrayList<Double> arr) throws Exception {
