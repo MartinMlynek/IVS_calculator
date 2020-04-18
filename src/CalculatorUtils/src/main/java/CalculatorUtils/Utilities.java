@@ -113,7 +113,7 @@ public class Utilities {
     * @param first Očekává dělenec
     * @param second Očekává dělitel
     * @return Vrací podíl
-    * @throw Vrací chybu při překročení velikosti datového typu
+    * @throw Vrací chybu při překročení velikosti datového typu a při dělení nulou
     */
     public static double div(double first, double second) throws Exception{  
         if(second == 0.0){
@@ -148,7 +148,7 @@ public class Utilities {
     *
     * @param first Očekává číslo pro výpočet faktoriálu
     * @return Vrací výsledek výpočtu
-    * @throw Vrací chybu při překročení velikosti datového typu
+    * @throw Vrací chybu při překročení velikosti datového typu a při záporné hodnotě
     */
     public static int fact(int first) throws Exception{
         if(first < 0){
@@ -169,10 +169,11 @@ public class Utilities {
     /**
     * @brief Metoda pro mocninu
     *
+    * @todo Záporný exponent
     * @param first Očekává číslo k umocnění
     * @param second Očekává exponent mocniny
     * @return Vrací výsledek výpočtu
-    * @throw Vrací chybu při překročení velikosti datového typu
+    * @throw Vrací chybu při překročení velikosti datového typu, matematickou chybu při 0^0 a nepodporuje záporný exponent
     */
     public static double exp(double first, int second) throws Exception{
         double result = 1;
@@ -288,9 +289,15 @@ public class Utilities {
     *
     * @param first Očekává číslo ke zpracování
     * @return Vrací absolutní hodnotu
+    * @throw Vrací chybu při překročení velikosti datového typu
     */
     public static double abs(double first){
-        if(first < 0){
+       
+       if(first == Double.POSITIVE_INFINITY || first == Double.NEGATIVE_INFINITY){
+            throw new Exception("Infinity value");
+        } 
+       
+       if(first < 0){
             return -(first);
         }
         
@@ -298,6 +305,11 @@ public class Utilities {
     }
     
     public static int abs(int first){
+       
+       if(first > Integer.MAX_VALUE || first < Integer.MIN_VALUE){
+            throw new Exception("Value overflow/underflow");
+        }
+       
         if(first < 0){
             return -(first);
         }
