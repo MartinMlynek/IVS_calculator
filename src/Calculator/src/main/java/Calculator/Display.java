@@ -7,7 +7,7 @@ import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
 public class Display extends javax.swing.JFrame {
-
+    Display display = this;
     /**
      * @author Pavel Bobƒç√≠k, xbobci03
      * @author tomalatomas, xtomal02
@@ -27,6 +27,7 @@ public class Display extends javax.swing.JFrame {
                 Help help = new Help();
                 help.setHelp(getHelpArray(), sizeOfArray);
                 help.showHelp(indexOfFirst);
+                help.setLocation(display.getLocation());
                 help.setVisible(true);
             }
 
@@ -1065,7 +1066,7 @@ public class Display extends javax.swing.JFrame {
     private javax.swing.JTextField tvDisplay;
     // End of variables declaration//GEN-END:variables
 
-  /**
+/**
     * @brief Metoda vytvo¯Ì pole textovÈho ¯etÏzce s n·povÏdu
     * 
     * @return VracÌ pole s n·povÏdou 
