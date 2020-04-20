@@ -53,6 +53,7 @@ public class Help extends javax.swing.JFrame {
         tvHelp.setDragEnabled(false);
         tvHelp.setFocusable(false);
         jScrollPane1.setViewportView(tvHelp);
+        tvHelp.getAccessibleContext().setAccessibleName("");
 
         btnNext.setText("Další");
         btnNext.addActionListener(new java.awt.event.ActionListener() {
@@ -90,12 +91,12 @@ public class Help extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addComponent(tvFunction)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNext)
                     .addComponent(btnPrev))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

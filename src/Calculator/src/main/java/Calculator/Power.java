@@ -29,6 +29,7 @@ public class Power extends javax.swing.JFrame {
                 Help help = new Help();
                 help.setHelp(getHelpArray(), sizeOfArray);
                 help.showHelp(indexOfFirst);
+                help.setAlwaysOnTop(true);
                 help.setVisible(true);
             }
 
@@ -800,7 +801,7 @@ public class Power extends javax.swing.JFrame {
         String winTitle = "Rozložení oken";
         String winHelp = "Levé okno obsahuje číslo, jenž umocňujeme.\n\n"
                 + "Do pravého okna se zobrazí zvolený exponent.";
-        String menuTitle= "Menu tlačítko \"Zpět\"";
+        String menuTitle= "Menu tlačítko ( Zpět )";
         String menuHelp = "Tlačítko slouží k návratu zpět do kalkulačky,\n"
                 + "aniž by se provedl výpočet.\n\n"
                 + "Zachová se nám původní hodnota.";

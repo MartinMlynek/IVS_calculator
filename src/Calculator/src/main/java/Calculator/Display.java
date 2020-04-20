@@ -28,6 +28,7 @@ public class Display extends javax.swing.JFrame {
                 help.setHelp(getHelpArray(), sizeOfArray);
                 help.showHelp(indexOfFirst);
                 help.setLocation(display.getLocation());
+                help.setAlwaysOnTop(true);
                 help.setVisible(true);
             }
 
@@ -1017,37 +1018,37 @@ public class Display extends javax.swing.JFrame {
     *@return The array of string with help text 
     */
     private ArrayList<String> getHelpArray(){
-        String addFunction = "Sčítání \"+\"";
+        String addFunction = "Sčítání ( + )";
         String addHelp = "Funkce vyžaduje minimálně dva číselné vstupy\n"
-                + "oddělené zmanénkem \"+\".";
-        String subFunction = "Odčítání \"-\"";
+                + "oddělené zmanénkem ( + ).";
+        String subFunction = "Odčítání ( - )";
         String subHelp = "Funkce vyžaduje minimálně dva číselné vstupy\n"
-                + "oddělené zmanénkem \"-\".\n\n"
-                + "Při vložení znaménka \"-\" následoveného číslem,\n"
+                + "oddělené zmanénkem ( - ).\n\n"
+                + "Při vložení znaménka ( - ) následoveného číslem,\n"
                 + "lze získat záporné číslo.";
-        String mulFunction = "Násobení \"*\"";
+        String mulFunction = "Násobení ( * )";
         String mulHelp = "Funkce vyžaduje minimálně dva číselné vstupy\n"
-                + "oddělené zmanénkem \"*\".";
-        String divFunction = "Dělení \"/\"";
+                + "oddělené zmanénkem ( * ).";
+        String divFunction = "Dělení ( / )";
         String divHelp = "Funkce vyžaduje minimálně dva číselné vstupy\n"
-                + "oddělené zmanénkem \"/\".\n\n"
+                + "oddělené zmanénkem ( / ).\n\n"
                 + "Dělení nulou bohužel umí pouze Chuck Norris.";
-        String powFunction = "Mocnina \"^\"";
+        String powFunction = "Mocnina ( ^ )";
         String powHelp = "Funkce vyžaduje číselný vstup reprezentující\n"
                 + "hodnotu k umocnění.\n\n"
-                + "Po kliknutí na tlačítko \"^\" dojde k otevření nového\n"
-                + "okna pro výběr exponentu.";
-        String rootFunction = "Odmocnina \"√\"";
+                + "Po kliknutí na tlačítko ( ^ ) dojde k otevření\n"
+                + "nového okna pro výběr exponentu.";
+        String rootFunction = "Odmocnina ( √ )";
         String rootHelp = "Funkce vyžaduje číselný vstup reprezentující\n"
                 + "hodnotu pod odmocninou.\n\n"
-                + "Po kliknutí na tlačítko \"√\" dojde k otevření nového\n"
-                + "okna pro výběr odmocniny.";
-        String factFunction = "Faktoriál \"!\"";
+                + "Po kliknutí na tlačítko ( √ ) dojde k otevření\n"
+                + "nového okna pro výběr odmocniny.";
+        String factFunction = "Faktoriál ( ! )";
         String factHelp = "Funkce vyžaduje číselný vstup reprezentující\n"
-                + "hodnotu faktoriálu následovanou znaménkem \"!\".";
-        String absFunction = "Absolutní hodnota (\"ABS\")";
-        String absHelp = "Funkce vyžaduje číselný vstup reprezentující\n"
-                + "hodnotu absolutní hodnoty.";
+                + "hodnotu faktoriálu následovanou znaménkem ( ! ).";
+        String absFunction = "Absolutní hodnota ( ABS )";
+        String absHelp = "Funkce vyžaduje číselný vstup pro zpracování\n"
+                + "hodnoty na absolutní hodnotu.";
         
         ArrayList<String> help = new ArrayList<>();
         help.add(addFunction);

@@ -320,7 +320,7 @@ public class Utilities {
         }
 
         double toRound = Math.pow(first, ((double) 1 / second));
-        double result = (double)Math.round(toRound * 1000d) / 1000d;
+        double result = (double)Math.round(toRound * 1000000000d) / 1000000000d;
         
         return result;
     }
