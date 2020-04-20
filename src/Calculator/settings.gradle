@@ -1,1 +1,3 @@
 rootProject.name = 'Calculator'
+include 'CalculatorUtils'
+project(':CalculatorUtils').projectDir = file('../CalculatorUtils')
