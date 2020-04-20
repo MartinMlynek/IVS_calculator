@@ -3,25 +3,19 @@ package CalculatorUtils;
 import java.lang.Math;
 
 /**
- * \~czech @brief Knihovna matematických funkci
- * \~english @brief Math library
+ * Math library
  *
  * @author Pavel Bobčík, xbobci03
  * @author Tomáš Daněk, xdanek23
  */
 public class Utilities {
    /**
-    * \~czech @brief Metoda pro sčítání
-    * \~english @brief Addition
+    * Addition
     *
-    * \~czech @param first Očekává sčítanec
-    * \~english @param first Expecting addend
-    * \~czech @param second Očekává sčítanec
-    * \~english @param second Expecting addend
-    * \~czech @return Vrací součet
-    * \~english @return Grand total
-    * \~czech @throw Vrací chybu při překročení velikosti datového typu
-    * \~english @throw Overflow error
+    * @param first Expecting addend
+    * @param second Expecting addend
+    * @return Grand total
+    * @throw Overflow error
     */
     public static double add(double first, double second) throws Exception{
         double result = first + second; 
@@ -46,17 +40,12 @@ public class Utilities {
     }
     
     /**
-    * \~czech @brief Metoda pro odčítání
-    * \~english @brief Subtraction
+    * Subtraction
     *
-    * \~czech @param first Očekává menšenec
-    * \~english @param first Expecting minuend
-    * \~czech @param second Očekává menšitel
-    * \~english @param second Expecting subtrahend
-    * \~czech @return Vrací rozdíl
-    * \~english @return Difference
-    * \~czech @throw Vrací chybu při překročení velikosti datového typu
-    * \~english @throw Overflow error
+    * @param first Expecting minuend
+    * @param second Expecting subtrahend
+    * @return Difference
+    * @throw Overflow error
     */
     public static double sub(double first, double second) throws Exception{
         double result = first - second; 
@@ -82,17 +71,12 @@ public class Utilities {
     
 
     /**
-    * \~czech @brief Metoda pro násobení
-    * \~english @brief Multiplication
+    * Multiplication
     *
-    * \~czech @param first Očekává činitel
-    * \~english @param first Expecting multiplier
-    * \~czech @param second Očekává činitel
-    * \~english @param second Expecting multiplicand
-    * \~czech @return Vrací součin
-    * \~english @return Product
-    * \~czech @throw Vrací chybu při překročení velikosti datového typu
-    * \~english @throw Overflow error
+    * @param first Expecting multiplier
+    * @param second Expecting multiplicand
+    * @return Product
+    * @throw Overflow error
     */
 
     public static double mul(double first, double second) throws Exception{
@@ -122,21 +106,12 @@ public class Utilities {
     }
     
     /**
-    * \~czech @brief Metoda pro dělení
-    * \~english @brief Division
+    * Division
     *
-    * \~czech @param first Očekává dělenec
-    * \~english param first Expecting dividend
-    * \~czech @param second Očekává dělitel
-    * \~english @param second Expecting divisor
-    * \~czech @return Vrací podíl
-    * \~english @return Quotient
-    * \~czech @throw Vrací chybu při překročení velikosti datového typu a při dělení nulou
-    * \~english @throw Overflow error and dividing by zero
-
-    * @param first - dividend
-    * @param second - divisor
-    * @return quotient
+    * param first Expecting dividend
+    * @param second Expecting divisor
+    * @return Quotient
+    * @throw Overflow error and dividing by zero
     */
     public static double div(double first, double second) throws Exception{  
         if(second == 0.0){
@@ -167,15 +142,11 @@ public class Utilities {
     }
 
     /**
-    * \~czech @brief Metoda pro faktoriál
-    * \~english @brief Factorial
+    * Factorial
     *
-    * \~czech @param first Očekává číslo pro výpočet faktoriálu
-    * \~english @param first Expecting positive number
-    * \~czech @return Vrací výsledek výpočtu
-    * \~english @return The result of a mathematica
-    * \~czech @throw Vrací chybu při překročení velikosti datového typu a při záporné hodnotě
-    * \~english @throw Overflow error and negative number
+    * @param first Expecting positive number
+    * @return The result of a mathematica
+    * @throw Overflow error and negative number
     */
 
     public static int fact(int first) throws Exception{
@@ -195,19 +166,13 @@ public class Utilities {
     
     
     /**
-    * \~czech @brief Metoda pro mocninu
-    * \~english @brief Power
+    * Power
     *
-    * \~czech @todo Záporný exponent
-    * \~english @todo Negative exponent
-    * \~czech @param first Očekává číslo k umocnění
-    * \~english @param first Expecting number under exponent
-    * \~czech @param second Očekává exponent mocniny
-    * \~english @param second Expecting exponent
-    * \~czech @return Vrací výsledek výpočtu
-    * \~english @return The result of a mathematical operation
-    * \~czech @throw Vrací chybu při překročení velikosti datového typu, matematickou chybu při 0^0 a nepodporuje záporný exponent
-    * \~english @throw Overflow error, math error for 0^0, and negative exponent is not supported
+    * @todo Negative exponent
+    * @param first Expecting number under exponent
+    * @param second Expecting exponent
+    * @return The result of a mathematical operation
+    * @throw Overflow error, math error for 0^0, and negative exponent is not supported
     */
     public static double exp(double first, int second) throws Exception{
         double result = 1;
@@ -299,17 +264,12 @@ public class Utilities {
     }
     
     /**
-    * \~czech @brief Metoda pro odmocninu
-    * \~english @brief Root
+    * Root
     *
-    * \~czech @param first Očekává číslo pod odmocninou
-    * \~english @param first Expecting number under root
-    * \~czech @param second Očekává index odmocniny
-    * \~english @param second Expecting index of root
-    * \~czech @return Vrací výsledek výpočtu
-    * \~english @return The result of a mathematical operation
-    * \~czech @throw Vrací chybu při nulovém indexu nebo negativní hodnotě
-    * \~english @throw Zero root number and negative value under root
+    * @param first Expecting number under root
+    * @param second Expecting index of root
+    * @return The result of a mathematical operation
+    * @throw Zero root number and negative value under root
     */
     public static double radical(double first, int second) throws Exception{
         
@@ -326,15 +286,11 @@ public class Utilities {
     }
     
     /**
-    * \~czech @brief Metoda pro absolutní hodnotu
-    * \~english @brief Absolute value
+    * Absolute value
     *
-    * \~czech @param first Očekává číslo ke zpracování
-    * \~english @param first Expecting number
-    * \~czech @return Vrací absolutní hodnotu
-    * \~english @return Absolute value of number
-    * \~czech @throw Vrací chybu při překročení velikosti datového typu
-    * \~english @throw Overflow error
+    * @param first Expecting number
+    * @return Absolute value of number
+    * @throw Overflow error
     */
     public static double abs(double first) throws Exception{
        
