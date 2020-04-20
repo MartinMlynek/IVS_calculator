@@ -8,7 +8,7 @@ import javax.swing.event.MenuListener;
 
 
 public class Power extends javax.swing.JFrame {
-
+    Power power = this;
     /**
      * @author Pavel Bobčík, xbobci03
      * @author tomalatomas, xtomal02
@@ -30,6 +30,7 @@ public class Power extends javax.swing.JFrame {
                 help.setHelp(getHelpArray(), sizeOfArray);
                 help.showHelp(indexOfFirst);
                 help.setAlwaysOnTop(true);
+                help.setLocation(power.getLocation());
                 help.setVisible(true);
             }
 
