@@ -12,7 +12,7 @@ import javax.swing.event.MenuListener;
 
 
 public class Root extends javax.swing.JFrame {
-
+    Root root = this;
     /**
      * @author Pavel Bobčík, xbobci03
      * @author tomalatomas, xtomal02
@@ -35,6 +35,7 @@ public class Root extends javax.swing.JFrame {
                 help.setHelp(getHelpArray(), sizeOfArray);
                 help.showHelp(indexOfFirst);
                 help.setAlwaysOnTop(true);
+                help.setLocation(root.getLocation());
                 help.setVisible(true);
             }
 
