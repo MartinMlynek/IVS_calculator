@@ -975,7 +975,9 @@ public class Display extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Display().setVisible(true);
+                Display display = new Display();  
+                display.setLocationRelativeTo(null);
+                display.setVisible(true);
             }
         });
     }
