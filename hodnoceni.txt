@@ -1,4 +1,4 @@
 xbobci03 105 (GUI aplikace, matematická knihovna, nápověda v aplikaci, uživatelská dokumentace)
 xdanek23 80 (mockup, debugging, matematická knihovna)
-xmlyne06 110 (testy, profilling, instalátor, makefile, javadoc)
+xmlyne06 110 (testy, profiling, instalátor, makefile, javadoc)
 xtomal02 105 (testy, navázání GUI s knihovnou)
