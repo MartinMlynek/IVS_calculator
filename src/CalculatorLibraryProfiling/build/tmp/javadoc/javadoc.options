@@ -1,4 +1,4 @@
--classpath 'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\build\\classes\\java\\main;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\build\\resources\\main;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\libs\\CalculatorUtils.jar'
+-classpath 'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\build\\classes\\java\\main;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\build\\resources\\main;C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorUtils\\build\\libs\\CalculatorUtils.jar'
 -d 'C:\\Users\\Martin\\Documents\\GitHub\\IVS_calculator\\src\\CalculatorLibraryProfiling\\build\\docs\\javadoc'
 -doctitle 'CalculatorLibraryProfiling API'
 -encoding 'UTF-8'
