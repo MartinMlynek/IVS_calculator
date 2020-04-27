@@ -1,1 +1,7 @@
-tento soubor bude obsahovat rozdil mezi planem projektu a skutecnosti
+﻿-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Problémy----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- Problém s dodržováním časového plánu (mockup příliš pozdě)
+- Problémy s kódování projektu u specifických znaků(√)
+- Sestavovací nástroj Gradle v Netbeans nepodporuje nejnovější JDK
+- Problém se zápornou lichou odmocninou (nefunguje např. 3√-125)
+- Problém s Javadocem, gradlew javadoc zachytával neexistují daemon, soubory novějších JDK potřebné pro javadoc se nacházely v jiných složkách
+
