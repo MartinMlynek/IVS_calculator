@@ -138,11 +138,11 @@ public class UtilitiesTest {
             assertEquals(2, utils.div(42, 21));
             assertEquals(10, utils.div(100, 10));
             assertEquals(1, utils.div(2147483646, 2147483646));
-            assertEquals(1073741823, utils.div(2147483646, 2));
             assertEquals(2, utils.div(1, 0.5), EPSILON);
             assertEquals(-2, utils.div(1, -0.5), EPSILON);
             assertEquals(1.54, utils.div(804.496, 522.4), EPSILON);
             assertEquals(0.88, utils.div(459.712, 522.4), EPSILON);
+            assertEquals(4.5, utils.div(9, 2));
 
             //Doesnt equal
             assertFalse(0 == utils.mul(1, 1));

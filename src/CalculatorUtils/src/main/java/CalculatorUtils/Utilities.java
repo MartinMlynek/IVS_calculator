@@ -132,7 +132,7 @@ public class Utilities {
             throw new Exception("Dividing by zero value");
         }
         
-        double result = first / second;
+        double result = (double) first / second;
         
         if(result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY){
             throw new Exception("Infinity value");
