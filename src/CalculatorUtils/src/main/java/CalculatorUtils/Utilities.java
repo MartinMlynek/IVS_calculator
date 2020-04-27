@@ -18,11 +18,13 @@ public class Utilities {
     * @throws Exception Overflow error
     */
     public static double add(double first, double second) throws Exception{
-        double result = first + second; 
+        double toRound = first + second; 
 
-        if(result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY){
+        if(toRound == Double.POSITIVE_INFINITY || toRound == Double.NEGATIVE_INFINITY){
             throw new Exception("Infinity value");
         }
+
+        double result = (double)Math.round(toRound * 10000000000000d) / 10000000000000d;
         
         return result;
     }
@@ -48,12 +50,14 @@ public class Utilities {
     * @throws Exception Overflow error
     */
     public static double sub(double first, double second) throws Exception{
-        double result = first - second; 
+        double toRound = first - second; 
 
-        if(result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY){
+        if(toRound == Double.POSITIVE_INFINITY || toRound == Double.NEGATIVE_INFINITY){
             throw new Exception("Infinity value");
         }
         
+        double result = (double)Math.round(toRound * 10000000000000d) / 10000000000000d;
+
         return result;
     }
     
